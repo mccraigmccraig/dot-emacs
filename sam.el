@@ -1,6 +1,10 @@
 ;Fonts
 (color-theme-blackboard)
-(set-face-font 'default "-apple-dejavu sans mono-medium-r-normal--12-120-72-72-m-120-iso10646-1")
+
+;;to set the font:
+;;M-x mac-font-panel-mode
+;;M-x describe-font
+(set-face-font 'default "-apple-dejavu sans mono-medium-r-normal--10-100-72-72-m-100-iso10646-1")
 
 (global-set-key  (kbd "M-p") (lambda () (interactive) (previous-line 10) (recenter)))
 (global-set-key  (kbd "M-n") (lambda () (interactive) (next-line 10) (recenter)))
@@ -16,6 +20,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'textmate)
 (textmate-mode)
+
+;; bar cursor mode
+(add-to-list 'load-path "~/.emacs.d/vendor/bar-cursor")
+(require 'bar-cursor)
+(bar-cursor-mode 1)  
 (require 'linum)
 (linum-mode)
 (autoload 'ioke-mode "ioke-mode")
