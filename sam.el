@@ -61,3 +61,8 @@
 
 ;;(eval-after-load 'ruby-mode '(require 'rails-apidock))
 
+
+;;enable pc mode for shift selection
+(pc-selection-mode)
+
+
