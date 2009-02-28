@@ -23,6 +23,10 @@
 (require 'textmate)
 (textmate-mode)
 
+;;wrap region
+(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
+(require 'wrap-region)
+
 ;; bar cursor mode
 (add-to-list 'load-path "~/.emacs.d/vendor/bar-cursor")
 (require 'bar-cursor)
