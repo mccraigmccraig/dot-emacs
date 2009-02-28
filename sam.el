@@ -6,6 +6,8 @@
 ;;M-x describe-font
 (set-face-font 'default "-apple-dejavu sans mono-medium-r-normal--10-100-72-72-m-100-iso10646-1")
 
+
+;;fast vertical naviation
 (global-set-key  (kbd "M-p") (lambda () (interactive) (previous-line 10) (recenter)))
 (global-set-key  (kbd "M-n") (lambda () (interactive) (next-line 10) (recenter)))
 
