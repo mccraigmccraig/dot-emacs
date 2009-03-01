@@ -54,7 +54,7 @@
 
 (defface ioke-font-lock-object-mimic-face
   '((((class grayscale)) (:foreground "grey"))
-    (((class color)) (:foreground "medium blue"))
+    (((class color)) (:foreground "orange"))
     (t (:bold t)))
   "Font Lock Mode face used to highlight mimicking of something."
   :group 'ioke-font-lock-faces)
@@ -103,7 +103,7 @@
     (((class grayscale) (background dark))
      (:foreground "Gray50" :bold t :underline t))
     (((class color) (background light)) (:foreground "CadetBlue"))
-    (((class color) (background dark)) (:foreground "Aquamarine"))
+    (((class color) (background dark)) (:foreground "DeepPink"))
     (t (:bold t :underline t)))
   "Font Lock mode face used to highlight known kinds."
   :group 'ioke-font-lock-faces)

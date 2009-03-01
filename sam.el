@@ -1,3 +1,7 @@
+(setq custom-basedir (expand-file-name "~/.emacs.d/"))
+(defun add-path (p)
+  (add-to-list 'load-path (concat custom-basedir p)))
+
 ;Fonts
 (color-theme-blackboard)
 
@@ -19,48 +23,32 @@
       (winner-mode 1))
 
 ;; Minor Modes
-(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-path "vendor")
 (require 'textmate)
 (textmate-mode)
 
 ;;wrap region
-(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
+;(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
 (require 'wrap-region)
 
 ;; bar cursor mode
-(add-to-list 'load-path "~/.emacs.d/vendor/bar-cursor")
 (require 'bar-cursor)
-(bar-cursor-mode 1)  
+(bar-cursor-mode 1)
+
 (require 'linum)
 (linum-mode)
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet")
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/common")
-(require 'cedet)
 
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/speedbar")
-(require 'speedbar)
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/eieio")
-(require 'eieio)
-(add-to-list 'load-path "~/.emacs.d/vendor/cedet/semantic")
-(require 'semantic)
-(add-to-list 'load-path "~/.emacs.d/vendor/ecb")
-(require 'ecb)
+;;allow rectangular selections
 (cua-mode)
-(add-to-list 'load-path "~/.emacs.d/vendor/ack")
 
 ;;yassnippet
-(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet")
+(add-path "vendor/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
-
-;;Rails api dock magic
-
-;;(eval-after-load 'ruby-mode '(require 'rails-apidock))
-
 
 ;;enable pc mode for shift selection
 (pc-selection-mode)
