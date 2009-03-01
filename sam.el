@@ -1,4 +1,4 @@
-(setq custom-basedir (expand-file-name "~/.emacs.d/"))
+(setq custom-basedir (expand-file-name "~/.emacs.d/"))   
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
@@ -25,7 +25,7 @@
 ;; Minor Modes
 (add-path "vendor")
 (require 'textmate)
-(textmate-mode)
+(textmate-mode 1)  
 
 ;;wrap region
 ;(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
@@ -36,10 +36,16 @@
 (bar-cursor-mode 1)
 
 (require 'linum)
-(linum-mode)
+(linum-mode)  
+
+;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
+
+;;whitespace mode
+(require 'whitespace)
+(whitespace-mode)
 
 ;;allow rectangular selections
 (cua-mode)
