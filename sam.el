@@ -4,12 +4,35 @@
 
 ;Fonts
 (color-theme-blackboard)
+(set-face-background 'region "#3C2C51")
+;(set-face-background 'hl-line "#261C32")
+
+;make ^h delete rather than help
+(keyboard-translate ?\C-h ?\C-?)
+
+;;macro to insert text above the current line
+(fset 'insert-above
+   [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
+(global-set-key "\M-]" 'insert-above)
+
+(fset 'move-to-end-of-line-after-creating-and-removing-a-new-line
+      [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-e])
+(global-set-key "\M-[" 'move-to-end-of-line-after-creating-and-removing-a-new-line)
 
 ;;to set the font:
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
-(set-face-font 'default "-apple-dejavu sans mono-medium-r-normal--10-100-72-72-m-100-iso10646-1")
+(set-face-font 'default "-apple-DejaVu_Sans_Mono-medium-normal-normal-Book-10-*-*-*-*-*-iso10646-1")
 
+;allow the deletion of words
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
+;get rid of clutter
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;;fast vertical naviation
 (global-set-key  (kbd "M-p") (lambda () (interactive) (previous-line 10) (recenter)))
