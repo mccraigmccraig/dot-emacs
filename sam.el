@@ -29,6 +29,10 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
+;;shortcuts for growing and shrinking windows horizontally
+(global-set-key [(control ,)] 'enlarge-window-horizontally)
+(global-set-key [(control .)] 'shrink-window-horizontally)
+
 ;get rid of clutter
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -70,9 +74,6 @@
 (require 'whitespace)
 (whitespace-mode)
 
-;;allow rectangular selections
-(cua-mode)
-
 ;;yassnippet
 (add-path "vendor/yasnippet")
 (require 'yasnippet)
@@ -82,4 +83,7 @@
 ;;enable pc mode for shift selection
 (pc-selection-mode)
 
+;show trailing whitespace
+(setq default-indicate-empty-lines t)
 
+(server-start)
