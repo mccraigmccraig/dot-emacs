@@ -5,7 +5,6 @@
 ;Fonts
 (color-theme-blackboard)
 (set-face-background 'region "#3C2C51")
-;(set-face-background 'hl-line "#261C32")
 
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
@@ -58,12 +57,13 @@
 ;(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
 (require 'wrap-region)
 
-;; bar cursor mode
-(require 'bar-cursor)
-(bar-cursor-mode 1)
+;;highlight current line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#352748")
 
 (require 'linum)
-(linum-mode)  
+(global-linum-mode)  
+(setq linum-format "%d ")
 
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
