@@ -4,7 +4,7 @@
 
 ;Fonts
 (color-theme-blackboard)
-(set-face-background 'region "#3C2C51")
+(set-face-background 'region "#954B00")
 
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
@@ -61,10 +61,6 @@
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#352748")
 
-(require 'linum)
-(global-linum-mode)  
-(setq linum-format "%d ")
-
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
@@ -85,5 +81,8 @@
 
 ;show trailing whitespace
 (setq default-indicate-empty-lines t)
+
+;cursor
+(set-cursor-color "yellow")
 
 (server-start)
