@@ -21,7 +21,7 @@
 ;;to set the font:
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
-(set-face-font 'default "-apple-DejaVu_Sans_Mono-medium-normal-normal-Book-10-*-*-*-*-*-iso10646-1")
+(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
 
 ;allow the deletion of words
 (global-set-key "\C-w" 'backward-kill-word)
