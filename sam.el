@@ -12,11 +12,11 @@
 ;;macro to insert text above the current line
 (fset 'insert-above
    [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
-(global-set-key "\M-]" 'insert-above)
+(global-set-key (kbd "M-h") 'insert-above)
 
 (fset 'move-to-end-of-line-after-creating-and-removing-a-new-line
       [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-e])
-(global-set-key "\M-[" 'move-to-end-of-line-after-creating-and-removing-a-new-line)
+(global-set-key (kbd "M-[") 'move-to-end-of-line-after-creating-and-removing-a-new-line)
 
 ;;to set the font:
 ;;M-x mac-font-panel-mode
@@ -24,13 +24,13 @@
 (set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
 
 ;allow the deletion of words
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;;shortcuts for growing and shrinking windows horizontally
-(global-set-key [(control ,)] 'enlarge-window-horizontally)
-(global-set-key [(control .)] 'shrink-window-horizontally)
+(global-set-key (kbd "C-,") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-.") 'shrink-window-horizontally)
 
 ;get rid of clutter
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
