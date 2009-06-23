@@ -1,11 +1,11 @@
-;; Blackboard Colour Theme for Emacs.
+;; Blackbored Colour Theme for Emacs.
 ;;
 ;; Defines a colour scheme resembling that of the original TextMate Blackboard colour theme.
 ;; To use add the following to your .emacs file (requires the color-theme package):
 ;;
 ;; (require 'color-theme)
 ;; (color-theme-initialize)
-;; (load-file "~/.emacs.d/themes/color-theme-blackboard.el")
+;; (load-file "~/.emacs.d/themes/color-theme-blackbored.el")
 ;;
 ;; And then (color-theme-blackboard) to activate it.
 ;;
@@ -17,16 +17,16 @@
 (require 'color-theme)
 
 ;;;###autoload
-(defun color-theme-blackboard ()
-  "Color theme by JD Huntington, based off the TextMate Blackboard theme, created 2008-11-27"
+(defun color-theme-blackbored ()
+  "Color theme by Sam Aaron, based off BlackBoard by JD Huntington based off the TextMate Blackboard theme, created 2008-11-27"
   (interactive)
   (color-theme-install
-   '(color-theme-blackboard
-     ((background-color . "#0C1021")
+   '(color-theme-blackbored
+     ((background-color . "black")
       (background-mode . dark)
       (border-color . "black")
-      (cursor-color . "#A7A7A7")
-      (foreground-color . "#F8F8F8")
+      (cursor-color . "red")
+      (foreground-color . "#EDEDED")
       (mouse-color . "sienna1"))
      (default ((t (:background "#0C1021" :foreground "#F8F8F8"))))
      (blue ((t (:foreground "blue"))))
@@ -45,14 +45,14 @@
 
      (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
-
+     
      (font-lock-string-face ((t (:foreground "#61CE3C"))))
      (font-lock-type-face ((t (:foreground "#8DA6CE"))))
      (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
      (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
-     (gui-element ((t (:background "#D4D0C8" :foreground "black"))))
+     (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
      (region ((t (:background "#253B76"))))
-     (mode-line ((t (:background "grey75" :foreground "black"))))
+     (mode-line ((t (:background "#333333" :foreground "#96CBFE"))))
      (highlight ((t (:background "#222222"))))
      (highline-face ((t (:background "SeaGreen"))))
      (italic ((t (nil))))

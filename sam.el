@@ -2,9 +2,9 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
-;Fonts
-(color-theme-blackboard)
-(set-face-background 'region "#954B00")
+;;Fonts
+(load-file "~/.emacs.d/vendor/blackbored.el")
+(color-theme-blackbored)
 
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
@@ -59,7 +59,7 @@
 
 ;;highlight current line
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#352748")
+(set-face-background 'hl-line "#333333")
 
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
