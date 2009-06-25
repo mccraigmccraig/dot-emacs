@@ -25,7 +25,7 @@
      ((background-color . "black")
       (background-mode . dark)
       (border-color . "black")
-      (cursor-color . "red")
+      (cursor-color . "#96CBFE")
       (foreground-color . "#EDEDED")
       (mouse-color . "sienna1"))
      (default ((t (:background "#0C1021" :foreground "#F8F8F8"))))
