@@ -66,6 +66,12 @@
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
 
+;;paredit-mode
+(add-hook 'ruby-mode-hook '(lambda ()
+                             (paredit-mode)))
+
+
+
 ;;whitespace mode
 (require 'whitespace)
 (whitespace-mode)
