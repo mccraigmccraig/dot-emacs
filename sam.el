@@ -66,11 +66,14 @@
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
 
-;;paredit-mode
-(add-hook 'ruby-mode-hook '(lambda ()
-                             (paredit-mode)))
-
-
+; enable skeleton-pair insert globally
+(setq skeleton-pair t)
+(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.
+(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
+(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
+(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
+(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
 ;;whitespace mode
 (require 'whitespace)
@@ -90,5 +93,11 @@
 
 ;cursor
 (set-cursor-color "yellow")
+
+;clojure
+(eval-after-load 'clojure-mode '(clojure-slime-config))
+(load-file (expand-file-name "~/.emacs.d/elpa/clojure-mode-1.1/clojure-mode.el"))
+(setq clojure-src-root (expand-file-name "~/src"))
+(eval-after-load 'clojure-mode '(clojure-slime-config))
 
 (server-start)
