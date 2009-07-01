@@ -1,0 +1,4 @@
+#name : it should have one
+#group : shoulda
+# --
+it {should have_one(:${association})}

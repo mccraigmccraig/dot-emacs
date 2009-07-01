@@ -1,0 +1,4 @@
+#name : it should belong to
+#group : shoulda
+# --
+it {should belong_to(:${association})}

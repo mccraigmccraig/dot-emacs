@@ -1,0 +1,4 @@
+#name : it {should have_many(...)}
+#group : shoulda
+# --
+it {should have_many(:${association})}
