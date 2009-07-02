@@ -2,6 +2,17 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+
+;;CEDET mode
+(load-file "~/.emacs.d/vendor/cedet-1.0pre6/common/cedet.el")
+(global-ede-mode 1)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
+
+;;ECB
+(add-path "vendor/ecb-2.40")
+(require 'ecb)
+
 ;;Fonts
 (load-file "~/.emacs.d/vendor/blackbored.el")
 (color-theme-blackbored)
