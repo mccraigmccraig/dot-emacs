@@ -111,4 +111,7 @@
 (setq clojure-src-root (expand-file-name "~/src"))
 (eval-after-load 'clojure-mode '(clojure-slime-config))
 
+;make mark colour a nice usable dark pink
+(set-face-background 'region "#7F073F")
+
 (server-start)
