@@ -2,6 +2,10 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+;;WindMove (for easy window navigation (no more C-x o
+;;To move between windows use S-(<left>|<right>|<up>|<down>)
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
 
 ;;CEDET mode
 (load-file "~/.emacs.d/vendor/cedet-1.0pre6/common/cedet.el")
@@ -95,9 +99,6 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
-
-;;enable pc mode for shift selection
-(pc-selection-mode)
 
 ;show trailing whitespace
 (setq default-indicate-empty-lines t)
