@@ -29,10 +29,6 @@
    [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
 (global-set-key (kbd "M-h") 'insert-above)
 
-(fset 'move-to-end-of-line-after-creating-and-removing-a-new-line
-      [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-e])
-(global-set-key (kbd "M-[") 'move-to-end-of-line-after-creating-and-removing-a-new-line)
-
 ;;to set the font:
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
