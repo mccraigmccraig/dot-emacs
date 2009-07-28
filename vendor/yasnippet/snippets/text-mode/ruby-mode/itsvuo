@@ -1,0 +1,4 @@
+#name : it should validate uniquess of
+#group : shoulda
+# --
+it {should validate_uniqueness_of(:${association})}
