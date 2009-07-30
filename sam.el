@@ -78,13 +78,13 @@
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
 
 ; enable skeleton-pair insert globally
-(setq skeleton-pair t)
-(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.
-(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
+;(setq skeleton-pair t)
+;(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.
+;(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
+;(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
+;(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
+;(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
 ;;whitespace mode
 (require 'whitespace)
