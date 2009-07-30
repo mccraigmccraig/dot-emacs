@@ -34,6 +34,9 @@
 ;;M-x describe-font
 (set-face-font 'default "-apple-Menlo-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
+;;to set the  frame width and height
+(setq default-frame-alist '((width . 175) (height . 50)))
+
 ;allow the deletion of words
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
