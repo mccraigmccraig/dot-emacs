@@ -2,6 +2,13 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+;;enable icomplete
+(icomplete-mode 1)
+(setq icomplete-compute-delay 0)
+(load-file "~/.emacs.d/vendor/icomplete+.el")
+(require 'icomplete+)
+
+
 ;;WindMove (for easy window navigation (no more C-x o
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)
 (when (fboundp 'windmove-default-keybindings)
