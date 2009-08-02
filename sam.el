@@ -36,6 +36,9 @@
    [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
 (global-set-key (kbd "M-h") 'insert-above)
 
+;;redefine help to be C-M-h
+(global-set-key (kbd "C-M-h") 'help)
+
 ;;to set the font:
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
