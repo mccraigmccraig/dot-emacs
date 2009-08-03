@@ -14,35 +14,26 @@
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
-;;CEDET mode
-(load-file "~/.emacs.d/vendor/cedet-1.0pre6/common/cedet.el")
-(global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
-
-;;ECB
-(add-path "vendor/ecb-2.40")
-(require 'ecb)
-
 ;;Fonts
+;;to set the font:
+;;M-x mac-font-panel-mode
+;;M-x describe-font
+(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+
+;;colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
 (color-theme-blackbored)
 
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
 
+;;redefine help to be C-M-h
+(global-set-key (kbd "C-M-h") 'help)
+
 ;;macro to insert text above the current line
 (fset 'insert-above
    [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
 (global-set-key (kbd "M-h") 'insert-above)
-
-;;redefine help to be C-M-h
-(global-set-key (kbd "C-M-h") 'help)
-
-;;to set the font:
-;;M-x mac-font-panel-mode
-;;M-x describe-font
-(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
 
 ;allow the deletion of words:
 ;backward kill word (forward kill word is M-d)
@@ -70,7 +61,8 @@
 ;;make sure ansi colour character escapes are honoured
 (ansi-color-for-comint-mode-on)
 
-;;enable winner mode
+;;enable winner mode for C-c-(<left>|<right>) to navigate the history
+;;of buffer changes i.e. undo a split screen
 (when (fboundp 'winner-mode)
       (winner-mode 1))
 
@@ -92,27 +84,11 @@
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
 
-; enable skeleton-pair insert globally
-;(setq skeleton-pair t)
-;(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.
-;(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
-
-;;whitespace mode
-(require 'whitespace)
-(whitespace-mode)
-
 ;;yassnippet
 (add-path "vendor/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
-
-;show trailing whitespace
-(setq default-indicate-empty-lines t)
 
 ;cursor
 (set-cursor-color "yellow")
@@ -127,3 +103,31 @@
 (set-face-background 'region "#7F073F")
 
 (server-start)
+
+;;stuff I tried out and either couldn't get to work or didn't like, but might try again;;
+;;ECB
+;(add-path "vendor/ecb-2.40")
+;(require 'ecb)
+
+;;CEDET mode
+;(load-file "~/.emacs.d/vendor/cedet-1.0pre6/common/cedet.el")
+;(global-ede-mode 1)                      ; Enable the Project management system
+;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+;(global-srecode-minor-mode 1)            ; Enable template insertion menu
+
+; enable skeleton-pair insert globally                                          
+;(setq skeleton-pair t)                                                         
+;(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word. 
+;(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)                        
+;(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)                        
+;(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)                        
+;(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)                        
+;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
+
+;;whitespace mode
+;(require 'whitespace)
+;(whitespace-mode)
+
+;show trailing whitespace
+;(setq default-indicate-empty-lines t)
+
