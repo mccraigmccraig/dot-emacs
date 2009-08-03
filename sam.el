@@ -44,8 +44,13 @@
 ;;M-x describe-font
 (set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
 
-;allow the deletion of words
+;allow the deletion of words:
+;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
+;delete current word
+(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
+
+;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
