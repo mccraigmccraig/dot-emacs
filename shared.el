@@ -2,6 +2,9 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+;;remove all trailing whitespace before saving the file
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;;enable icomplete
 (icomplete-mode 1)
 (setq icomplete-compute-delay 0)
@@ -35,9 +38,12 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
+;;repeat previous command
+(global-set-key (kbd "C-.") 'repeat)
+
 ;;shortcuts for growing and shrinking windows horizontally
-(global-set-key (kbd "C-,") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-.") 'shrink-window-horizontally)
+(global-set-key (kbd "C-<") 'enlarge-window-horizontally)
+(global-set-key (kbd "C->") 'shrink-window-horizontally)
 
 ;get rid of clutter
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
