@@ -21,10 +21,10 @@
 
 
 ;clojure
-(eval-after-load 'clojure-mode '(clojure-slime-config))
-(load-file (expand-file-name "~/.emacs.d/elpa/clojure-mode-1.1/clojure-mode.el"))
-(setq clojure-src-root (expand-file-name "~/.emacs.d/vendor/clojure/src"))
-(eval-after-load 'clojure-mode '(clojure-slime-config))
+;(eval-after-load 'clojure-mode '(clojure-slime-config))
+;(load-file (expand-file-name "~/.emacs.d/elpa/clojure-mode-1.1/clojure-mode.el"))
+;(setq clojure-src-root (expand-file-name "~/.emacs.d/vendor/clojure/src"))
+;(eval-after-load 'clojure-mode '(clojure-slime-config))
 
 
 ;make mark colour a nice usable dark pink
