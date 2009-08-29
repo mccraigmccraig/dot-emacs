@@ -1,6 +1,13 @@
-(setq custom-basedir (expand-file-name "~/.emacs.d/"))   
+(setq custom-basedir (expand-file-name "~/.emacs.d/"))
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
+
+
+;;make evil tabs visible as arrows
+(let ((d (make-display-table)))
+  (aset d 9 (vector ?→ ? ))
+  (set-window-display-table nil d))
+
 
 ;;remove all trailing whitespace before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -65,7 +72,7 @@
 ;; Minor Modes
 (add-path "vendor")
 (require 'textmate)
-(textmate-mode 1)  
+(textmate-mode 1)
 
 ;;wrap region
 ;(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
