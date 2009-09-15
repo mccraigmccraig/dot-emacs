@@ -8,6 +8,8 @@
   (aset d 9 (vector ?→ ? ))
   (set-window-display-table nil d))
 
+;;enable cua-mode for rectangular selections
+(cua-mode 1)
 
 ;;remove all trailing whitespace before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -17,7 +19,6 @@
 (setq icomplete-compute-delay 0)
 (load-file "~/.emacs.d/vendor/icomplete+.el")
 (require 'icomplete+)
-
 
 ;;WindMove (for easy window navigation (no more C-x o
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)
@@ -89,4 +90,9 @@
 (autoload 'run-ioke "inf-ioke" nil t)
 (add-to-list 'auto-mode-alist '("\\.ik$" . ioke-mode))
 
+(add-to-list 'load-path "/path/to/full-ack")
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
 
