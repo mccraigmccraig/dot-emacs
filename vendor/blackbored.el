@@ -45,7 +45,7 @@
 
      (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
-     
+
      (font-lock-string-face ((t (:foreground "#61CE3C"))))
      (font-lock-type-face ((t (:foreground "#8DA6CE"))))
      (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
@@ -61,3 +61,19 @@
      (toolbar ((t (nil))))
      (underline ((nil (:underline nil))))
      (zmacs-region ((t (:background "snow" :foreground "ble")))))))
+
+(custom-set-faces
+ ;;magit colours
+ '(magit-item-highlight ((((class color) (background dark)) (:background "gray15"))))
+ '(magit-diff-add  ((((class color) (background dark)) (:foreground "chartreuse3"))))
+ '(magit-diff-del ((((class color) (background dark)) (:foreground "violet red"))))
+ '(magit-section-title ((((class color) (background dark)) (:foreground "deep pink"))))
+ '(magit-diff-hunk-header ((((class color) (background dark)) (:foreground "orange"))))
+ '(magit-branch ((((class color) (background dark)) (:foreground "gold"))))
+
+ ;;nXhtml colours
+ '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))))
+ '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
+
+
+ )
