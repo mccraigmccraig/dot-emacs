@@ -2,6 +2,8 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+(add-to-list 'load-path "~/.emacs.d/vendor/tramp/lisp")
+(require 'tramp)
 
 ;;make evil tabs visible as arrows
 (let ((d (make-display-table)))
