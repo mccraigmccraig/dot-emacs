@@ -5,7 +5,19 @@
 ;;to set the font:
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
-(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+;;for NS emacs 23
+;;(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+;;
+;;for Carbon emacs 22
+(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
+
+
+(defun toggle-fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
+                                           nil
+                                           'fullboth)))
+(global-set-key [(meta return)] 'toggle-fullscreen)
 
 ;;colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
@@ -33,9 +45,6 @@
 
 
 (server-start)
-
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;stuff I tried out and either couldn't get to work or didn't like, but might try again;;
