@@ -9,8 +9,7 @@
 ;;(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
 ;;
 ;;for Carbon emacs 22
-(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
-
+(set-face-font 'default "-apple-menlo-medium-r-normal--12-100-72-72-m-100-iso10646-1")
 
 (defun toggle-fullscreen ()
   (interactive)
