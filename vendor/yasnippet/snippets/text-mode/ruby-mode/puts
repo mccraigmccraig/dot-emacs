@@ -1,0 +1,4 @@
+#name : puts "varname: #{varname}"
+#group : logging
+# --
+puts "${1:variable_name}: #{$1}"
