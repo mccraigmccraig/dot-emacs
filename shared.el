@@ -5,6 +5,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/tramp/lisp")
 (require 'tramp)
 
+;;add mo-git-blame for git blame support
+(add-to-list 'load-path "~/.emacs.d/vendor/mo-git-blame")
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+
 ;;; enables outlining for ruby
 ;;; You may also want to bind hide-body, hide-subtree, show-substree,
 ;;; show-all, show-children, ... to some keys easy folding and unfolding
