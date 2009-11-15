@@ -5,6 +5,28 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/tramp/lisp")
 (require 'tramp)
 
+;; clojure-mode
+(add-to-list 'load-path "~/.emacs.d/vendor/clojure-mode")
+(require 'clojure-mode)
+
+;; swank-clojure
+(add-to-list 'load-path "~/.emacs.d/vendor/swank-clojure/src/emacs")
+
+(setq swank-clojure-jar-path "~/.clojure/clojure.jar"
+      swank-clojure-extra-classpaths (list
+				      "~/.emacs.d/vendor/swank-clojure/src/main/clojure"
+				      "~/.clojure/clojure-contrib.jar"))
+
+(require 'swank-clojure-autoload)
+
+;; slime
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))
+
+(add-to-list 'load-path "~/.emacs.d/vendor/slime")
+(require 'slime)
+(slime-setup)
+
 ;;add mo-git-blame for git blame support
 (add-to-list 'load-path "~/.emacs.d/vendor/mo-git-blame")
 (autoload 'mo-git-blame-file "mo-git-blame" nil t)
