@@ -2,6 +2,18 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+(load-file "~/.emacs.d/vendor/linkd.el")
+(require 'linkd)
+
+(load-file "~/.emacs.d/vendor/anything.el")
+(require 'anything)
+
+(load-file "~/.emacs.d/vendor/anything-config/anything-config.el")
+(require 'anything-config)
+
+(load-file "~/.emacs.d/vendor/rcodetools.el")
+(require 'rcodetools)
+
 (add-to-list 'load-path "~/.emacs.d/vendor/tramp/lisp")
 (require 'tramp)
 
