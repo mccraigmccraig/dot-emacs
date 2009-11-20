@@ -26,8 +26,8 @@
 
 (setq swank-clojure-jar-path "~/.clojure/clojure.jar"
       swank-clojure-extra-classpaths (list
-				      "~/.emacs.d/vendor/swank-clojure/src/main/clojure"
-				      "~/.clojure/clojure-contrib.jar"))
+                                      "~/.emacs.d/vendor/swank-clojure/src/main/clojure"
+                                      "~/.clojure/clojure-contrib.jar"))
 
 (require 'swank-clojure-autoload)
 
@@ -59,6 +59,8 @@
 
 ;;enable cua-mode for rectangular selections
 (cua-mode 1)
+
+(global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
 
 ;;remove all trailing whitespace before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
