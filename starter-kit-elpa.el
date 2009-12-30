@@ -6,8 +6,7 @@
                                    'ruby-mode
                                    'inf-ruby
                                    'css-mode
-                                   'gist
-                                   'nxml-mode)
+                                   'nxml-mode
                                    'gist)
   "Libraries that should be installed by default.")
 
