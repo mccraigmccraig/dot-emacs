@@ -22,13 +22,13 @@
 
 (defconst inferior-ioke-error-regexp-alist
        '(("SyntaxError: compile error\n^\\([^\(].*\\):\\([1-9][0-9]*\\):" 1 2)
-	 ("^\tfrom \\([^\(].*\\):\\([1-9][0-9]*\\)\\(:in `.*'\\)?$" 1 2)))
+         ("^\tfrom \\([^\(].*\\):\\([1-9][0-9]*\\)\\(:in `.*'\\)?$" 1 2)))
 
 (cond ((not inferior-ioke-mode-map)
        (setq inferior-ioke-mode-map
-	     (copy-keymap comint-mode-map))
+             (copy-keymap comint-mode-map))
 ;       (define-key inferior-ioke-mode-map "\M-\C-x" ;gnu convention
-;	           'ioke-send-definition)
+;                  'ioke-send-definition)
 ;       (define-key inferior-ioke-mode-map "\C-x\C-e" 'ioke-send-last-sexp)
        (define-key inferior-ioke-mode-map "\C-c\C-l" 'ioke-load-file)
 ))
@@ -73,7 +73,7 @@ For information on running multiple processes in multiple buffers, see
 documentation for variable ioke-buffer.
 
 Commands:
-Return after the end of the process' output sends the text from the 
+Return after the end of the process' output sends the text from the
     end of process to point.
 Return before the end of the process' output copies the sexp ending at point
     to the end of the process' output, and sends it.
@@ -116,8 +116,8 @@ Defaults to a regexp ignoring all inputs of 0, 1, or 2 letters.")
   (let ((rtn-str "") (start 0) match prev-start)
     (while (setq match (string-match regexp str start))
       (setq prev-start start
-	    start (match-end 0)
-	    rtn-str (concat rtn-str (substring str prev-start match))))
+            start (match-end 0)
+            rtn-str (concat rtn-str (substring str prev-start match))))
     (concat rtn-str (substring str start))))
 
 (defun ioke-get-old-input ()
@@ -126,21 +126,21 @@ Defaults to a regexp ignoring all inputs of 0, 1, or 2 letters.")
     (let ((end (point)))
       (re-search-backward inferior-ioke-first-prompt-pattern)
       (remove-in-string (buffer-substring (point) end)
-			inferior-ioke-prompt-pattern)
+                        inferior-ioke-prompt-pattern)
       )))
 
 (defun ioke-args-to-list (string)
   (let ((where (string-match "[ \t]" string)))
     (cond ((null where) (list string))
-	  ((not (= where 0))
-	   (cons (substring string 0 where)
-		 (ioke-args-to-list (substring string (+ 1 where)
-						 (length string)))))
-	  (t (let ((pos (string-match "[^ \t]" string)))
-	       (if (null pos)
-		   nil
-		 (ioke-args-to-list (substring string pos
-						 (length string)))))))))
+          ((not (= where 0))
+           (cons (substring string 0 where)
+                 (ioke-args-to-list (substring string (+ 1 where)
+                                                 (length string)))))
+          (t (let ((pos (string-match "[^ \t]" string)))
+               (if (null pos)
+                   nil
+                 (ioke-args-to-list (substring string pos
+                                                 (length string)))))))))
 
 (defun run-ioke (cmd)
   "Run an inferior Ioke process, input and output via buffer *ioke*.
@@ -151,13 +151,13 @@ of `ioke-program-name').  Runs the hooks `inferior-ioke-mode-hook'
 \(Type \\[describe-mode] in the process buffer for a list of commands.)"
 
   (interactive (list (if current-prefix-arg
-			 (read-string "Run Ioke: " ioke-program-name)
-			 ioke-program-name)))
+                         (read-string "Run Ioke: " ioke-program-name)
+                         ioke-program-name)))
   (if (not (comint-check-proc "*ioke*"))
       (let ((cmdlist (ioke-args-to-list cmd)))
-	(set-buffer (apply 'make-comint "ioke" (car cmdlist)
-			   nil (cdr cmdlist)))
-	(inferior-ioke-mode)))
+        (set-buffer (apply 'make-comint "ioke" (car cmdlist)
+                           nil (cdr cmdlist)))
+        (inferior-ioke-mode)))
   (setq ioke-program-name cmd)
   (setq ioke-buffer "*ioke*")
   (pop-to-buffer "*ioke*"))
@@ -174,20 +174,20 @@ Must not contain ioke meta characters.")
   (let (term (file (buffer-file-name)) line)
     (save-excursion
       (save-restriction
-	(widen)
-	(goto-char start)
-	(setq line (+ start (forward-line (- start)) 1))
-	(goto-char start)
-	(while (progn
-		 (setq term (apply 'format ioke-send-terminator (random) (current-time)))
-		 (re-search-forward (concat "^" (regexp-quote term) "$") end t)))))
+        (widen)
+        (goto-char start)
+        (setq line (+ start (forward-line (- start)) 1))
+        (goto-char start)
+        (while (progn
+                 (setq term (apply 'format ioke-send-terminator (random) (current-time)))
+                 (re-search-forward (concat "^" (regexp-quote term) "$") end t)))))
     ;; compilation-parse-errors parses from second line.
     (save-excursion
       (let ((m (process-mark (ioke-proc))))
-	(set-buffer (marker-buffer m))
-	(goto-char m)
-	(insert ioke-eval-separator "\n")
-	(set-marker m (point))))
+        (set-buffer (marker-buffer m))
+        (goto-char m)
+        (insert ioke-eval-separator "\n")
+        (set-marker m (point))))
     (comint-send-string (ioke-proc) (format "eval <<'%s', nil, %S, %d\n" term file line))
     (comint-send-region (ioke-proc) start end)
     (comint-send-string (ioke-proc) (concat "\n" term "\n"))))
@@ -224,8 +224,8 @@ With argument, positions cursor at end of buffer."
       (pop-to-buffer ioke-buffer)
       (error "No current process buffer. See variable ioke-buffer."))
   (cond (eob-p
-	 (push-mark)
-	 (goto-char (point-max)))))
+         (push-mark)
+         (goto-char (point-max)))))
 
 (defun ioke-send-region-and-go (start end)
   "Send the current region to the inferior Ioke process.
@@ -235,14 +235,14 @@ Then switch to the process buffer."
   (switch-to-ioke t))
 
 (defun ioke-send-definition-and-go ()
-  "Send the current definition to the inferior Ioke. 
+  "Send the current definition to the inferior Ioke.
 Then switch to the process buffer."
   (interactive)
   (ioke-send-definition)
   (switch-to-ioke t))
 
 (defun ioke-send-block-and-go ()
-  "Send the current block to the inferior Ioke. 
+  "Send the current block to the inferior Ioke.
 Then switch to the process buffer."
   (interactive)
   (ioke-send-block)
@@ -257,35 +257,35 @@ Used by these commands to determine defaults.")
 (defvar ioke-prev-l/c-dir/file nil
   "Caches the last (directory . file) pair.
 Caches the last pair used in the last ioke-load-file command.
-Used for determining the default in the 
+Used for determining the default in the
 next one.")
 
 (defun ioke-load-file (file-name)
   "Load a Ioke file into the inferior Ioke process."
   (interactive (comint-get-source "Load Ioke file: " ioke-prev-l/c-dir/file
-				  ioke-source-modes t)) ; T because LOAD 
+                                  ioke-source-modes t)) ; T because LOAD
                                                           ; needs an exact name
   (comint-check-source file-name) ; Check to see if buffer needs saved.
   (setq ioke-prev-l/c-dir/file (cons (file-name-directory    file-name)
-				       (file-name-nondirectory file-name)))
+                                       (file-name-nondirectory file-name)))
   (comint-send-string (ioke-proc) (concat "(load \""
-					    file-name
-					    "\"\)\n")))
+                                            file-name
+                                            "\"\)\n")))
 
 (defun ioke-proc ()
   "Returns the current ioke process. See variable ioke-buffer."
   (let ((proc (get-buffer-process (if (eq major-mode 'inferior-ioke-mode)
-				      (current-buffer)
-				    ioke-buffer))))
+                                      (current-buffer)
+                                    ioke-buffer))))
     (or proc
-	(error "No current process. See variable ioke-buffer"))))
+        (error "No current process. See variable ioke-buffer"))))
 
 ;;; Do the user's customisation...
 
 (defvar inf-ioke-load-hook nil
   "This hook is run when inf-ioke is loaded in.
 This is a good place to put keybindings.")
-	
+
 (run-hooks 'inf-ioke-load-hook)
 
 (provide 'inf-ioke)

@@ -1,6 +1,23 @@
+
 (setq custom-basedir (expand-file-name "~/.emacs.d/"))
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
+
+;;on os x use command key as meta
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'nil)
+
+(global-set-key (kbd "C-' l") (lambda () (interactive) (insert "λ")))
+(global-set-key (kbd "C-' n") (lambda () (interactive) (insert "ℕ")))
+(global-set-key (kbd "C-' i") (lambda () (interactive) (insert "∞")))
+(global-set-key (kbd "C-' .") (lambda () (interactive) (insert "×")))
+(global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
+(global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
+
+
+(load-file "~/.emacs.d/vendor/undo-tree.el")
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 (load-file "~/.emacs.d/vendor/linkd.el")
 (require 'linkd)
@@ -27,7 +44,20 @@
 (setq swank-clojure-jar-path "~/.clojure/clojure.jar"
       swank-clojure-extra-classpaths (list
                                       "~/.emacs.d/vendor/swank-clojure/src/main/clojure"
-                                      "~/.clojure/clojure-contrib.jar"))
+                                      "/Users/sam/Development/overtone/deps/abc4j_v0.5.jar"
+                                      "/Users/sam/Development/overtone/deps/clj-backtrace.jar"
+                                      "/Users/sam/Development/overtone/deps/clojure-contrib.jar"
+                                      "/Users/sam/Development/overtone/deps/clojure.jar"
+                                      "/Users/sam/Development/overtone/deps/jcommon-1.0.16.jar"
+                                      "/Users/sam/Development/overtone/deps/jfreechart-1.0.13.jar"
+                                      "/Users/sam/Development/overtone/deps/jvi-0.7.1.jar"
+                                      "/Users/sam/Development/overtone/deps/processing-core.jar"
+                                      "/Users/sam/Development/overtone/deps/rosado.processing.jar"
+                                      "/Users/sam/Development/overtone/deps/swing-layout.jar"
+                                      "/Users/sam/Development/overtone/deps/vimclojure.jar"
+                                      "/Users/sam/Development/overtone/src"
+                                      "/Users/sam/Development/overtone/test"
+))
 
 (require 'swank-clojure-autoload)
 
@@ -45,7 +75,7 @@
 (autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 ;;; enables outlining for ruby
-;;; You may also want to bind hide-body, hide-subtree, show-substree,
+;;; You may also want to bind hide-body, hide-subtree, show-substree
 ;;; show-all, show-children, ... to some keys easy folding and unfolding
 (add-hook 'ruby-mode-hook
               '(lambda ()
@@ -79,7 +109,7 @@
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
 
-;;redefine help to be C-M-h
+;;redefine help to be A-h
 (global-set-key (kbd "C-M-h") 'help)
 
 ;;macro to insert text above the current line
