@@ -14,6 +14,8 @@
 (global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
 (global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
 
+(load-file "~/.emacs.d/vendor/dircolors.el")
+(require 'dircolors)
 
 (load-file "~/.emacs.d/vendor/undo-tree.el")
 (require 'undo-tree)
