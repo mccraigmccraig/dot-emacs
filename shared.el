@@ -17,7 +17,7 @@
 (load-file "~/.emacs.d/vendor/dircolors.el")
 (require 'dircolors)
 
-(load-file "~/.emacs.d/vendor/undo-tree.el")
+(load-file "~/.emacs.d/vendor/undo-tree/undo-tree.el")
 (require 'undo-tree)
 (global-undo-tree-mode)
 
