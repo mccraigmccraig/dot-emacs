@@ -2,12 +2,13 @@
 ;;; undo-tree.el --- Treat undo history as a tree
 
 
-;; Copyright (C) 2009 Toby Cubitt
+;; Copyright (C) 2009-2010 Toby Cubitt
 
 ;; Author: Toby Cubitt <toby-undo-tree@dr-qubit.org>
-;; Version: 0.1.4
+;; Version: 0.1.5
 ;; Keywords: undo, redo, history, tree
 ;; URL: http://www.dr-qubit.org/emacs.php
+;; Git Repository: http://www.dr-qubit.org/git/undo-tree.git
 
 ;; This file is NOT part of Emacs.
 ;;
@@ -132,8 +133,8 @@
 ;;
 ;;
 ;;
-;; Explanation
-;; ===========
+;; Undo Systems
+;; ============
 ;;
 ;; To understand the different undo systems, it's easiest to consider an
 ;; example. Imagine you make a few edits in a buffer. As you edit, you
@@ -320,13 +321,12 @@
 ;; state that you want. But whatever you do, don't move around in the buffer
 ;; to check you've got back to where you want! Because you'll break the undo
 ;; chain, and then you'll have to traverse the entire string of undos again to
-;; get back to the point at which you broke the chain. Commands such as
-;; `undo-only', and undo in region (in transient-mark-mode), help to make
-;; using Emacs' undo a little easier, but nonetheless it remains confusing for
-;; many people.
+;; get back to the point at which you broke the chain. Undo in region and
+;; commands such as `undo-only' help to make using Emacs' undo a little
+;; easier, but nonetheless it remains confusing for many people.
 ;;
 ;;
-;; So what does undo-tree mode do? Remember the diagram we drew to represent
+;; So what does `undo-tree-mode' do? Remember the diagram we drew to represent
 ;; the history we've been discussing (make a few edits, undo a couple of them,
 ;; and edit again)? The diagram that conceptually represented our undo
 ;; history, before we started discussing specific undo systems? It looked like
@@ -367,13 +367,13 @@
 ;; the other hand you redo the change, you'll end up back at the bottom of the
 ;; most recent branch:
 ;;
-;;                                o
+;;                                o  (undo takes you here)
 ;;                                |
 ;;                                |
 ;;                                o  (start here)
 ;;                                |\
 ;;                                | \
-;;                                o  x  (redo)
+;;                                o  x  (redo takes you here)
 ;;                                |
 ;;                                |
 ;;                                o
@@ -421,13 +421,18 @@
 ;; possibility of switching between branches and accessing the full undo
 ;; history is still there.
 ;;
-;; Actually, it gets better. You don't have to imagine all these diagrams,
-;; because `undo-tree-mode' includes an undo-tree visualizer which draws them
-;; for you! In fact, it draws even better diagrams: it highlights the node
-;; representing the current buffer state, it highlights the current branch,
-;; and it can optionally display time-stamps for each buffer state. (There's
-;; one other tiny difference: the visualizer puts the most recent branch on
-;; the left rather than the right.)
+;;
+;;
+;; The Undo-Tree Visualizer
+;; ========================
+;;
+;; Actually, it gets better. You don't have to imagine all these tree
+;; diagrams, because `undo-tree-mode' includes an undo-tree visualizer which
+;; draws them for you! In fact, it draws even better diagrams: it highlights
+;; the node representing the current buffer state, it highlights the current
+;; branch, and you can toggle the display of time-stamps for each buffer
+;; state. (There's one other tiny difference: the visualizer puts the most
+;; recent branch on the left rather than the right.)
 ;;
 ;;
 ;;
@@ -457,6 +462,13 @@
 
 
 ;;; Change Log:
+;;
+;; Version 0.1.5
+;; * modified `undo-tree-visualize' to mark the visualizer window as
+;;   soft-dedicated and changed `undo-tree-visualizer-quit' to use
+;;   `kill-buffer', so that visualizer window is deleted along with buffer if
+;;   visualizer buffer was displayed in a new window, but not if it was
+;;   displayed in an existing window.
 ;;
 ;; Version 0.1.4
 ;; * modified `undo-tree-undo' and `undo-tree-redo' to always replace
@@ -563,8 +575,9 @@ in visualizer."
 
 (unless undo-tree-map
   (setq undo-tree-map (make-sparse-keymap))
-  ;; remap `undo' to `undo-tree-undo'
+  ;; remap `undo' and `undo-only' to `undo-tree-undo'
   (define-key undo-tree-map [remap undo] 'undo-tree-undo)
+  (define-key undo-tree-map [remap undo-only] 'undo-tree-undo)
   ;; bind standard undo bindings (since these match redo counterparts)
   (define-key undo-tree-map (kbd "C-/") 'undo-tree-undo)
   (define-key undo-tree-map "\C-_" 'undo-tree-undo)
@@ -580,6 +593,10 @@ in visualizer."
 (unless undo-tree-visualizer-map
   (setq undo-tree-visualizer-map (make-keymap))
   ;; vertical motion keys undo/redo
+  (define-key undo-tree-visualizer-map [remap previous-line]
+    'undo-tree-visualize-undo)
+  (define-key undo-tree-visualizer-map [remap next-line]
+    'undo-tree-visualize-redo)
   (define-key undo-tree-visualizer-map [up]
     'undo-tree-visualize-undo)
   (define-key undo-tree-visualizer-map "p"
@@ -593,6 +610,10 @@ in visualizer."
   (define-key undo-tree-visualizer-map "\C-n"
     'undo-tree-visualize-redo)
   ;; horizontal motion keys switch branch
+  (define-key undo-tree-visualizer-map [remap forward-char]
+    'undo-tree-visualize-switch-branch-right)
+  (define-key undo-tree-visualizer-map [remap backward-char]
+    'undo-tree-visualize-switch-branch-left)
   (define-key undo-tree-visualizer-map [right]
     'undo-tree-visualize-switch-branch-right)
   (define-key undo-tree-visualizer-map "f"
@@ -1286,7 +1307,8 @@ using `undo-tree-redo'."
   (add-hook 'before-change-functions 'undo-tree-kill-visualizer nil t)
   ;; prepare *undo-tree* buffer, then draw tree in it
   (let ((undo-tree buffer-undo-tree)
-        (buff (current-buffer)))
+        (buff (current-buffer))
+	(display-buffer-mark-dedicated 'soft))
     (switch-to-buffer-other-window " *undo-tree*")
     (undo-tree-visualizer-mode)
     (setq undo-tree-visualizer-buffer buff)
@@ -1302,8 +1324,7 @@ using `undo-tree-redo'."
   ;; buffer when visualizer is invoked.
   (unless undo-in-progress
     (unwind-protect
-	(save-excursion
-	  (set-buffer " *undo-tree*")
+	(with-current-buffer " *undo-tree*"
 	  (undo-tree-visualizer-quit)))))
 
 
@@ -1669,10 +1690,9 @@ using `undo-tree-redo' or `undo-tree-visualizer-redo'."
   (interactive)
   (undo-tree-clear-visualizer-data buffer-undo-tree)
   ;; remove kill visualizer hook from parent buffer
-  (save-excursion
-    (set-buffer undo-tree-visualizer-buffer)
+  (with-current-buffer undo-tree-visualizer-buffer
     (remove-hook 'before-change-functions 'undo-tree-kill-visualizer t))
-  (kill-buffer-and-window))
+  (kill-buffer))
 
 
 (defun undo-tree-visualizer-set (pos)
