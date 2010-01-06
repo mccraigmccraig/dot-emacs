@@ -1,5 +1,5 @@
 (load-file "~/.emacs.d/shared.el")
-(setq exec-path (append exec-path '("/Users/sam/bin/git")))
+(setq exec-path (append exec-path '("/usr/local/git/bin/git")))
 
 ;;Fonts
 ;;to set the font:

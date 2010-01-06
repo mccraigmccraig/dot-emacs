@@ -1,4 +1,3 @@
-
 (setq custom-basedir (expand-file-name "~/.emacs.d/"))
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
@@ -24,11 +23,12 @@
 (load-file "~/.emacs.d/vendor/linkd.el")
 (require 'linkd)
 
-(load-file "~/.emacs.d/vendor/anything.el")
-(require 'anything)
-
-(load-file "~/.emacs.d/vendor/anything-config/anything-config.el")
-(require 'anything-config)
+;comment out because it is currently broken in 23.1.5 edge (OS X)
+; (load-file "~/.emacs.d/vendor/anything.el")
+; (require 'anything)
+; 
+; (load-file "~/.emacs.d/vendor/anything-config/anything-config.el")
+; (require 'anything-config)
 
 (load-file "~/.emacs.d/vendor/rcodetools.el")
 (require 'rcodetools)
