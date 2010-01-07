@@ -1,6 +1,13 @@
 (setq custom-basedir (expand-file-name "~/.emacs.d/"))
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
+;; Line-wrapping
+(set-default 'fill-column 180)
+
+(add-path "vendor")
+
+;; set comment style to be indent
+(setq comment-style 'indent)
 
 ;;on os x use command key as meta
 (setq mac-command-modifier 'meta)
@@ -26,7 +33,7 @@
 ;comment out because it is currently broken in 23.1.5 edge (OS X)
 ; (load-file "~/.emacs.d/vendor/anything.el")
 ; (require 'anything)
-; 
+;
 ; (load-file "~/.emacs.d/vendor/anything-config/anything-config.el")
 ; (require 'anything-config)
 
