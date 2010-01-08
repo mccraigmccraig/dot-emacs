@@ -149,8 +149,8 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;;fast vertical naviation
-(global-set-key  (kbd "M-p") (lambda () (interactive) (previous-line 10)))
-(global-set-key  (kbd "M-n") (lambda () (interactive) (next-line 10)))
+(global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
+(global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
 ;;make sure ansi colour character escapes are honoured
 (ansi-color-for-comint-mode-on)
