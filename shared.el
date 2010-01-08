@@ -149,6 +149,8 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;;fast vertical naviation
+(global-set-key  (kbd "M-P") (lambda () (interactive) (previous-line 10)))
+(global-set-key  (kbd "M-N") (lambda () (interactive) (next-line 10)))
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
