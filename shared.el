@@ -6,6 +6,9 @@
 
 (add-path "vendor")
 
+(add-to-list 'load-path "~/.emacs.d/vendor/supercollider/el")
+(require 'sclang)
+
 ;; set comment style to be indent
 (setq comment-style 'indent)
 
@@ -19,6 +22,15 @@
 (global-set-key (kbd "C-' .") (lambda () (interactive) (insert "×")))
 (global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
 (global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
+
+(load-file "~/.emacs.d/vendor/backup-dir.el")
+(require 'backup-dir)
+(setq bkup-backup-directory-info
+      '((t "~/.backup" ok-create full-path prepend-name)))
+(setq delete-old-versions t
+      kept-old-versions 1
+      kept-new-versions 3
+      version-control t)
 
 (load-file "~/.emacs.d/vendor/dircolors.el")
 (require 'dircolors)
@@ -43,40 +55,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/tramp/lisp")
 (require 'tramp)
 
-;; clojure-mode
-(add-to-list 'load-path "~/.emacs.d/vendor/clojure-mode")
-(require 'clojure-mode)
-
-;; swank-clojure
-(add-to-list 'load-path "~/.emacs.d/vendor/swank-clojure/src/emacs")
-
-(setq swank-clojure-jar-path "~/.clojure/clojure.jar"
-      swank-clojure-extra-classpaths (list
-                                      "~/.emacs.d/vendor/swank-clojure/src/main/clojure"
-                                      "/Users/sam/Development/overtone/deps/abc4j_v0.5.jar"
-                                      "/Users/sam/Development/overtone/deps/clj-backtrace.jar"
-                                      "/Users/sam/Development/overtone/deps/clojure-contrib.jar"
-                                      "/Users/sam/Development/overtone/deps/clojure.jar"
-                                      "/Users/sam/Development/overtone/deps/jcommon-1.0.16.jar"
-                                      "/Users/sam/Development/overtone/deps/jfreechart-1.0.13.jar"
-                                      "/Users/sam/Development/overtone/deps/jvi-0.7.1.jar"
-                                      "/Users/sam/Development/overtone/deps/processing-core.jar"
-                                      "/Users/sam/Development/overtone/deps/rosado.processing.jar"
-                                      "/Users/sam/Development/overtone/deps/swing-layout.jar"
-                                      "/Users/sam/Development/overtone/deps/vimclojure.jar"
-                                      "/Users/sam/Development/overtone/src"
-                                      "/Users/sam/Development/overtone/test"
-))
-
-(require 'swank-clojure-autoload)
-
-;; slime
-(eval-after-load "slime"
-  '(progn (slime-setup '(slime-repl))))
-
-(add-to-list 'load-path "~/.emacs.d/vendor/slime")
-(require 'slime)
-(slime-setup)
 
 ;;add mo-git-blame for git blame support
 (add-to-list 'load-path "~/.emacs.d/vendor/mo-git-blame")
@@ -117,6 +95,9 @@
 
 ;make ^h delete rather than help
 (keyboard-translate ?\C-h ?\C-?)
+
+(global-set-key (kbd "C-x C-j") 'join-line)
+(global-set-key (kbd "M-§") 'file-cache-minibuffer-complete)
 
 ;;redefine help to be A-h
 (global-set-key (kbd "C-M-h") 'help)
