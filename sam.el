@@ -1,5 +1,20 @@
 (load-file "~/.emacs.d/shared.el")
 (setq exec-path (append exec-path '("/usr/local/git/bin/git")))
+(push "/Applications/SuperCollider" exec-path)
+
+(setq path "/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:/usr/local/ruby1.9/bin:/Users/sam/Development/jruby/bin:/Users/sam/Development/chuck/bin:/Users/sam/Development/ioke/bin:~/innovationfactory/suite/dev/if-scripts")
+(setenv "PATH" path)
+
+(add-to-list 'load-path "~/.emacs.d/vendor/supercollider/el")
+(require 'sclang)
+
+(custom-set-variables
+'(sclang-auto-scroll-post-buffer t)
+'(sclang-eval-line-forward nil)
+'(sclang-help-path (quote ("/Applications/SuperCollider/Help")))
+'(sclang-library-configuration-file "~/.sclang.cfg")
+'(sclang-runtime-directory "~/.sclang/"))
+;'(sclang-server-panel "Server.default.makeGui"))
 
 ;;Fonts
 ;;to set the font:

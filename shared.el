@@ -6,9 +6,6 @@
 
 (add-path "vendor")
 
-(add-to-list 'load-path "~/.emacs.d/vendor/supercollider/el")
-(require 'sclang)
-
 ;; set comment style to be indent
 (setq comment-style 'indent)
 
