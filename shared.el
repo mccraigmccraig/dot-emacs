@@ -6,6 +6,10 @@
 
 (add-path "vendor")
 
+;add mk-project
+(add-to-list 'load-path "~/.emacs.d/vendor/mk-project")
+(require 'mk-project)
+
 ;; set comment style to be indent
 (setq comment-style 'indent)
 

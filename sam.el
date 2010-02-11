@@ -5,6 +5,17 @@
 (setq path "/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:/usr/local/ruby1.9/bin:/Users/sam/Development/jruby/bin:/Users/sam/Development/chuck/bin:/Users/sam/Development/ioke/bin:~/innovationfactory/suite/dev/if-scripts")
 (setenv "PATH" path)
 
+
+;projects
+
+ (project-def "polynome"
+       '((basedir          "/Users/sam/Development/polynome")
+         (src-patterns     ("*.rb"))
+         (ignore-patterns  ("*.rbc" "*.log"))
+         (vcs              git)
+         (ack-args         "--ruby")
+        (shutdown-hook    nil)))
+
 (add-to-list 'load-path "~/.emacs.d/vendor/supercollider/el")
 (require 'sclang)
 

@@ -23,3 +23,6 @@
 [submodule "vendor/supercollider"]
 	path = vendor/supercollider
 	url = git@github.com:samaaron/scel.git
+[submodule "vendor/mk-project"]
+	path = vendor/mk-project
+	url = git://github.com/mattkeller/mk-project.git
