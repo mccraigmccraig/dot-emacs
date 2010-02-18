@@ -7,9 +7,6 @@
 [submodule "vendor/slime"]
 	path = vendor/slime
 	url = git://git.boinkor.net/slime.git
-[submodule "vendor/swank-clojure"]
-	path = vendor/swank-clojure
-	url = git://github.com/jochu/swank-clojure.git
 [submodule "vendor/mo-git-blame"]
 	path = vendor/mo-git-blame
 	url = git://git.bunkus.org/mo-git-blame
