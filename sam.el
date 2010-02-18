@@ -44,24 +44,9 @@
                                            'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
-
-
 ;; clojure-mode
 (add-to-list 'load-path "~/.emacs.d/vendor/clojure-mode")
 (require 'clojure-mode)
-
-;; swank-clojure
-(add-to-list 'load-path "~/.emacs.d/vendor/swank-clojure/src/emacs")
-
-(setq swank-clojure-jar-path "~/.clojure/clojure.jar"
-      swank-clojure-extra-classpaths (list
-                                      "~/.clojure/"
-                                      "~/Development/overtone/lib"
-                                      "~/Development/overtone/src"
-                                      "~/Development/overtone/test"
-))
-
-(require 'swank-clojure-autoload)
 
 ;; slime
 (eval-after-load "slime"
