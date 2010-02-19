@@ -77,6 +77,7 @@
 
 ;;enable cua-mode for rectangular selections
 (cua-mode 1)
+(setq cua-enable-cua-keys nil)
 
 (global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
 
