@@ -6,6 +6,10 @@
 
 (add-path "vendor")
 
+;make C-i and M-i cut and copy respectively
+(global-set-key (kbd "C-i") 'kill-region)
+(global-set-key (kbd "M-i") 'kill-ring-save)
+
 ;add mk-project
 (add-to-list 'load-path "~/.emacs.d/vendor/mk-project")
 (require 'mk-project)
