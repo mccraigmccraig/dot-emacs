@@ -30,7 +30,7 @@
 (global-set-key (kbd "M-i") 'kill-ring-save)
 
 ;make tab indent current line appropriately
-(global-set-key (kbd "C-;") 'indent-according-to-mode)
+(global-set-key (kbd "C-]") 'indent-according-to-mode)
 
 ;add mk-project
 (add-to-list 'load-path "~/.emacs.d/vendor/mk-project")
