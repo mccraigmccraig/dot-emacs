@@ -26,6 +26,7 @@
 
 ;make C-i and M-i cut and copy respectively
 (global-set-key (kbd "C-i") 'kill-region)
+(global-set-key [tab] 'kill-region)
 (global-set-key (kbd "M-i") 'kill-ring-save)
 
 ;make tab indent current line appropriately

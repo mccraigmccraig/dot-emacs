@@ -5,6 +5,28 @@
 (setq path "/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:/usr/local/ruby1.9/bin:/Users/sam/Development/jruby/bin:/Users/sam/Development/chuck/bin:/Users/sam/Development/ioke/bin:~/innovationfactory/suite/dev/if-scripts")
 (setenv "PATH" path)
 
+;organise ibuffer into handy groups
+(setq ibuffer-saved-filter-groups
+          (quote (("default"
+                   ("IF"       (filename . "innovationfactory/"))
+                   ("overtone" (filename . "Development/overtone/"))
+                   ("polynome" (filename . "Development/polynome/"))
+                   ("ioke"     (filename . "Development/ioke/"))
+                   ("supercollider" (or
+                                     (mode . SCLang)
+                                     (mode . SCLangHelp)))
+                   ("dev"      (filename . "Development/"))
+                   ("dired" (mode . dired-mode))
+                   ("emacs" (or
+                             (name . "^\\*scratch\\*$")
+                             (name . "^\\*Messages\\*$")
+                             (name . "^\\*Completions\\*$")
+                             (filename . ".emacs.d")))
+
+                   ))))
+    (add-hook 'ibuffer-mode-hook
+              (lambda ()
+                (ibuffer-switch-to-saved-filter-groups "default")))
 
 ;projects
 
