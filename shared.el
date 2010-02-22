@@ -6,6 +6,9 @@
 
 (add-path "vendor")
 
+;;allow the ability to switch frames using the default OS X keybinding
+(global-set-key (kbd "M-`") 'other-frame)
+
 ;;WindMove (for easy window navigation (no more C-x o
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)
 (when (fboundp 'windmove-default-keybindings)
@@ -18,19 +21,9 @@
 (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
-;add framemove
-(add-to-list 'load-path "~/.emacs.d/vendor/framemove")
-(require 'framemove)
-(windmove-default-keybindings)
-(setq framemove-hook-into-windmove t)
-
-;make C-i and M-i cut and copy respectively
-(global-set-key (kbd "C-i") 'kill-region)
-(global-set-key [tab] 'kill-region)
-(global-set-key (kbd "M-i") 'kill-ring-save)
-
-;make tab indent current line appropriately
-(global-set-key (kbd "C-]") 'indent-according-to-mode)
+;make C-] and M-] cut and copy respectively
+(global-set-key (kbd "C-]") 'kill-region)
+(global-set-key (kbd "M-]") 'kill-ring-save)
 
 ;add mk-project
 (add-to-list 'load-path "~/.emacs.d/vendor/mk-project")
