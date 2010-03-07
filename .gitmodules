@@ -23,3 +23,6 @@
 [submodule "vendor/supercollider"]
 	path = vendor/supercollider
 	url = git://github.com/samaaron/scel.git
+[submodule "org-mode"]
+	path = org-mode
+	url = git://repo.or.cz/org-mode.git
