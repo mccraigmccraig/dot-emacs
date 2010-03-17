@@ -54,7 +54,7 @@
 
 (defface ioke-font-lock-object-mimic-face
   '((((class grayscale)) (:foreground "grey"))
-    (((class color)) (:foreground "orange"))
+    (((class color)) (:foreground "medium blue"))
     (t (:bold t)))
   "Font Lock Mode face used to highlight mimicking of something."
   :group 'ioke-font-lock-faces)
@@ -103,7 +103,7 @@
     (((class grayscale) (background dark))
      (:foreground "Gray50" :bold t :underline t))
     (((class color) (background light)) (:foreground "CadetBlue"))
-    (((class color) (background dark)) (:foreground "DeepPink"))
+    (((class color) (background dark)) (:foreground "Aquamarine"))
     (t (:bold t :underline t)))
   "Font Lock mode face used to highlight known kinds."
   :group 'ioke-font-lock-faces)
@@ -172,6 +172,8 @@
                                  "Dict"
                                  "FileSystem"
                                  "Ground"
+                                 "IokeGround"
+                                 "JavaGround"
                                  "Handler"
                                  "IO"
                                  "JavaMethod"
@@ -470,42 +472,53 @@
   (interactive)
   (if (bobp)
       (indent-line-to 0)
-    (let (current-depth current-close-flag current-close-open-flag
-	  last-indent last-depth last-close-flag last-close-open-flag)
-      (save-excursion
-	(let (start-point end-point)
-	  ; get the balance of parentheses on the current line
-	  (end-of-line)
-	  (setq end-point (point))
-	  (beginning-of-line)
-	  (setq current-close-flag (looking-at "^[]} \\t)]*)[]} \\t)]*$"))
-	  (setq current-close-open-flag (looking-at "^[[:space:]]*[]})].*[({[][[:space:]]*$"))
-	  (setq start-point (point))
-	  (setq current-depth (car (parse-partial-sexp start-point end-point)))
-	  ; and the previous non-blank line
-	  (while (progn 
-		   (forward-line -1)
-		   (beginning-of-line)
-		   (and (not (bobp))
-			(looking-at "^\\s-*$"))))
-	  (setq last-indent (current-indentation))
-	  (end-of-line)
-	  (setq end-point (point))
-	  (beginning-of-line)
-	  (setq last-close-flag (looking-at "^[]} \\t)]*)[]} \\t)]*$"))
-	  (setq last-close-open-flag (looking-at "^[[:space:]]*[]})].*[({[][[:space:]]*$"))
-	  (setq start-point (point))
-	  (setq last-depth (car (parse-partial-sexp start-point end-point)))))
-      (let ((depth last-depth))
-	(if ioke-clever-indent-p
-	    (setq depth (+ depth
-			   (if current-close-flag current-depth 0)
-			   (if last-close-flag (- last-depth) 0)
-			   (if current-close-open-flag -1 0)
-			   (if last-close-open-flag 1 0))))
-	(indent-line-to (max 0
-			     (+ last-indent
-				(* depth ioke-indent-offset))))))))
+      (let (current-depth current-close-flag current-close-open-flag
+                          (last-indent 0) last-depth last-close-flag last-close-open-flag first-line)
+        (save-excursion
+          (let (start-point end-point)
+                                        ; get the balance of parentheses on the current line
+            (end-of-line)
+            (setq end-point (point))
+            (beginning-of-line)
+            (setq first-line (bobp))
+            (setq current-close-flag (looking-at "^[ \\t)]*[])}][ \\t)]*$"))
+            (setq current-close-open-flag (looking-at "^\\s-*).*(\\s-*$"))
+            (setq start-point (point))
+            (setq current-depth (car (parse-partial-sexp start-point end-point)))
+                                        ; and the previous non-blank line
+            (if (not first-line)
+                (progn
+                  (while (progn 
+                           (forward-line -1)
+                           (beginning-of-line)
+                           (and (not (bobp))
+                                (looking-at "^\\s-*$"))))
+                  (setq last-indent (current-indentation))
+                  (end-of-line)
+                  (setq end-point (point))
+                  (beginning-of-line)
+                  (setq last-close-flag (looking-at "^[ \\t)]*[])}][ \\t)]*$"))
+                  (setq last-close-open-flag (looking-at "^\\s-*).*(\\s-*$"))
+                  (setq start-point (point))
+                  (setq last-depth (car (parse-partial-sexp start-point end-point))))
+                (setq last-depth 0))))
+
+        (let ((depth last-depth))
+          (if ioke-clever-indent-p
+              (setq depth (+ depth
+                             (if current-close-flag current-depth 0)
+                             (if last-close-flag (- last-depth) 0)
+                             (if current-close-open-flag -1 0)
+                             (if last-close-open-flag 1 0))))
+          (indent-line-to (max 0
+                          (+ last-indent
+                             (* depth ioke-indent-offset))))))))
+
+
+
+
+
+
 
 (defun ioke-electric-open-paren ()
   "ioke mode electric close parenthesis"
