@@ -6,8 +6,14 @@
 
 (add-path "vendor")
 
+;pull in org-mode
+(add-path "vendor/org-mode/lisp")
+(add-path "vendor/org-mode/contrib/lisp")
+
 ;;allow the ability to switch frames using the default OS X keybinding
 (global-set-key (kbd "M-`") 'other-frame)
+(require 'org-install)
+
 
 ;;WindMove (for easy window navigation (no more C-x o
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)
@@ -42,6 +48,8 @@
 (global-set-key (kbd "C-' .") (lambda () (interactive) (insert "×")))
 (global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
 (global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
+(global-set-key (kbd "C-' s") (lambda () (interactive) (insert "♯")))
+
 
 (load-file "~/.emacs.d/vendor/backup-dir.el")
 (require 'backup-dir)
