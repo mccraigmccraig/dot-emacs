@@ -9,10 +9,16 @@
 ;pull in org-mode
 (add-path "vendor/org-mode/lisp")
 (add-path "vendor/org-mode/contrib/lisp")
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key (kbd "C-c o l") 'org-store-link)
+(global-set-key (kbd "C-c o a") 'org-agenda)
+(global-set-key (kbd "C-c o b") 'org-iswitchb)
+
+
 
 ;;allow the ability to switch frames using the default OS X keybinding
 (global-set-key (kbd "M-`") 'other-frame)
-(require 'org-install)
+
 
 
 ;;WindMove (for easy window navigation (no more C-x o
@@ -196,4 +202,8 @@
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
 
-
+;use aspell
+(setq-default ispell-program-name "aspell")
+;;Setup some dictionary languages
+(setq ispell-dictionary "british")'
+(setq flyspell-default-dictionary "british")
