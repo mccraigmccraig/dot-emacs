@@ -6,15 +6,38 @@
 
 (add-path "vendor")
 
+;;C-c shortcuts
+;;m - emacs eval shortcuts
+;;s - slime eval shortcuts
+
+;;emacs-lip shortcuts
+(global-set-key (kbd "C-c m r")     'eval-and-replace)
+(global-set-key (kbd "C-c m b")     'eval-buffer)
+(global-set-key (kbd "C-c m e")     'eval-last-sexp)
+(global-set-key (kbd "C-c m i")     'eval-expression)
+
+
+;;slime mode shortcuts
+(global-set-key (kbd "C-c s c")     'slime-connect)
+
+(global-set-key (kbd "C-c s e e")   'slime-eval-last-expression)
+(global-set-key (kbd "C-c s e b")   'slime-eval-buffer)
+(global-set-key (kbd "C-c s e i")   'slime-eval-describe)
+(global-set-key (kbd "C-c s e a")   'slime-eval-async)
+(global-set-key (kbd "C-c s e d")   'slime-eval-defun)
+(global-set-key (kbd "C-c s e f")   'slime-eval-feature-expression)
+(global-set-key (kbd "C-c s e l")   'slime-eval-for-lisp)
+(global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
+(global-set-key (kbd "C-c s e n")   'slime-eval-print-last-expression)
+(global-set-key (kbd "C-c s e r")   'slime-eval-region)
+(global-set-key (kbd "C-c s e t ")  'slime-eval-with-transcript)
+
+
 ;pull in org-mode
-(add-path "vendor/org-mode/lisp")
-(add-path "vendor/org-mode/contrib/lisp")
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(global-set-key (kbd "C-c o l") 'org-store-link)
-(global-set-key (kbd "C-c o a") 'org-agenda)
-(global-set-key (kbd "C-c o b") 'org-iswitchb)
-
-
+(add-path "org-mode/lisp")
+(add-path "org-mode/contrib/lisp")
+;(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(require 'org-install)
 
 ;;allow the ability to switch frames using the default OS X keybinding
 (global-set-key (kbd "M-`") 'other-frame)

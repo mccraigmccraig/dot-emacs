@@ -5,6 +5,9 @@
 (setq path "/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:/usr/local/ruby1.9/bin:/Users/sam/Development/jruby/bin:/Users/sam/Development/chuck/bin:/Users/sam/Development/ioke/bin:~/innovationfactory/suite/dev/if-scripts")
 (setenv "PATH" path)
 
+;;org mode config
+;(load-file "~/.emacs.d/org-mode-config.el")
+
 ;organise ibuffer into handy groups
 (setq ibuffer-saved-filter-groups
           (quote (("default"
@@ -29,7 +32,6 @@
                 (ibuffer-switch-to-saved-filter-groups "default")))
 
 ;projects
-
  (project-def "polynome"
        '((basedir          "/Users/sam/Development/polynome")
          (src-patterns     ("*.rb"))
