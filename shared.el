@@ -34,14 +34,13 @@
 
 
 ;pull in org-mode
-(add-path "org-mode/lisp")
-(add-path "org-mode/contrib/lisp")
+(add-path "vendor/org-mode/lisp")
+(add-path "vendor/org-mode/contrib/lisp")
 ;(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (require 'org-install)
 
 ;;allow the ability to switch frames using the default OS X keybinding
 (global-set-key (kbd "M-`") 'other-frame)
-
 
 
 ;;WindMove (for easy window navigation (no more C-x o
