@@ -6,42 +6,11 @@
 
 (add-path "vendor")
 
-;;C-c shortcuts
-;;m - emacs eval shortcuts
-;;s - slime eval shortcuts
-
-;;emacs-lip shortcuts
-(global-set-key (kbd "C-c m r")     'eval-and-replace)
-(global-set-key (kbd "C-c m b")     'eval-buffer)
-(global-set-key (kbd "C-c m e")     'eval-last-sexp)
-(global-set-key (kbd "C-c m i")     'eval-expression)
-
-
-;;slime mode shortcuts
-(global-set-key (kbd "C-c s c")     'slime-connect)
-
-(global-set-key (kbd "C-c s e e")   'slime-eval-last-expression)
-(global-set-key (kbd "C-c s e b")   'slime-eval-buffer)
-(global-set-key (kbd "C-c s e i")   'slime-eval-describe)
-(global-set-key (kbd "C-c s e a")   'slime-eval-async)
-(global-set-key (kbd "C-c s e d")   'slime-eval-defun)
-(global-set-key (kbd "C-c s e f")   'slime-eval-feature-expression)
-(global-set-key (kbd "C-c s e l")   'slime-eval-for-lisp)
-(global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
-(global-set-key (kbd "C-c s e n")   'slime-eval-print-last-expression)
-(global-set-key (kbd "C-c s e r")   'slime-eval-region)
-(global-set-key (kbd "C-c s e t ")  'slime-eval-with-transcript)
-
-
 ;pull in org-mode
 (add-path "vendor/org-mode/lisp")
 (add-path "vendor/org-mode/contrib/lisp")
 ;(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (require 'org-install)
-
-;;allow the ability to switch frames using the default OS X keybinding
-(global-set-key (kbd "M-`") 'other-frame)
-
 
 ;;WindMove (for easy window navigation (no more C-x o
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)
@@ -50,14 +19,6 @@
 
 ;;use buffer move
 (load-file "~/.emacs.d/vendor/windmove.el")
-(global-set-key (kbd "<C-S-up>")     'buf-move-up)
-(global-set-key (kbd "<C-S-down>")   'buf-move-down)
-(global-set-key (kbd "<C-S-left>")   'buf-move-left)
-(global-set-key (kbd "<C-S-right>")  'buf-move-right)
-
-;make C-] and M-] cut and copy respectively
-(global-set-key (kbd "C-]") 'kill-region)
-(global-set-key (kbd "M-]") 'kill-ring-save)
 
 ;add mk-project
 (add-to-list 'load-path "~/.emacs.d/vendor/mk-project")
@@ -69,15 +30,6 @@
 ;;on os x use command key as meta
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'nil)
-
-(global-set-key (kbd "C-' l") (lambda () (interactive) (insert "λ")))
-(global-set-key (kbd "C-' n") (lambda () (interactive) (insert "ℕ")))
-(global-set-key (kbd "C-' i") (lambda () (interactive) (insert "∞")))
-(global-set-key (kbd "C-' .") (lambda () (interactive) (insert "×")))
-(global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
-(global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
-(global-set-key (kbd "C-' s") (lambda () (interactive) (insert "♯")))
-
 
 (load-file "~/.emacs.d/vendor/backup-dir.el")
 (require 'backup-dir)
@@ -134,8 +86,6 @@
 (cua-mode 1)
 (setq cua-enable-cua-keys nil)
 
-(global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
-
 ;;remove all trailing whitespace before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -145,47 +95,10 @@
 (load-file "~/.emacs.d/vendor/icomplete+.el")
 (require 'icomplete+)
 
-;make ^h delete rather than help
-(keyboard-translate ?\C-h ?\C-?)
-
-(global-set-key (kbd "C-x C-j") 'join-line)
-(global-set-key (kbd "M-§") 'file-cache-minibuffer-complete)
-
-;;redefine help to be A-h
-(global-set-key (kbd "C-M-h") 'help)
-
-;;macro to insert text above the current line
-(fset 'insert-above
-   [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
-(global-set-key (kbd "M-o") 'insert-above)
-
-;allow the deletion of words:
-;backward kill word (forward kill word is M-d)
-(global-set-key (kbd "C-w") 'backward-kill-word)
-;delete current word
-(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
-
-;kill regions
-(global-set-key (kbd "C-x C-k") 'kill-region)
-(global-set-key (kbd "C-c C-k") 'kill-region)
-
-;;repeat previous command
-(global-set-key (kbd "C-.") 'repeat)
-
-;;shortcuts for growing and shrinking windows horizontally
-(global-set-key (kbd "C-<") 'enlarge-window-horizontally)
-(global-set-key (kbd "C->") 'shrink-window-horizontally)
-
 ;get rid of clutter
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;;fast vertical naviation
-(global-set-key  (kbd "M-P") (lambda () (interactive) (previous-line 10)))
-(global-set-key  (kbd "M-N") (lambda () (interactive) (next-line 10)))
-(global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
-(global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
 ;;make sure ansi colour character escapes are honoured
 (ansi-color-for-comint-mode-on)
@@ -229,3 +142,5 @@
 ;;Setup some dictionary languages
 (setq ispell-dictionary "british")'
 (setq flyspell-default-dictionary "british")
+
+(load-file "~/.emacs.d/shortcuts.el")
