@@ -15,9 +15,9 @@
       " "
       (size 9 -1 :right)
       " "
-      (mode 16 16 :left :elide)
+      (git-status 8 8 :left :elide)
       " "
-      (git-status 8 8 :left)
+      (mode 16 16 :left :elide)
       " " filename-and-process)))
 
 ;;pull in org-mode
