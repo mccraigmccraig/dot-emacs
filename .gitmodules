@@ -27,3 +27,6 @@
 [submodule "vendor/org-mode"]
 	path = vendor/org-mode
 	url = git://repo.or.cz/org-mode.git
+[submodule "vendor/ibuffer-git"]
+	path = vendor/ibuffer-git
+	url = git://github.com/jrockway/ibuffer-git
