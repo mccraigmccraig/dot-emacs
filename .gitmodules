@@ -29,4 +29,4 @@
 	url = git://repo.or.cz/org-mode.git
 [submodule "vendor/ibuffer-git"]
 	path = vendor/ibuffer-git
-	url = git://github.com/jrockway/ibuffer-git
+	url = git://github.com/samaaron/ibuffer-git.git

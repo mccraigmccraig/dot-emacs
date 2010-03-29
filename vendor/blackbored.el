@@ -75,5 +75,7 @@
  '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))))
  '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
 
-
+ ;;diff colours
+ '(diff-removed ((t (:foreground "Red"))) 'now)
+ '(diff-added ((t (:foreground "Green"))) 'now)
  )

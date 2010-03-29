@@ -6,7 +6,21 @@
 
 (add-path "vendor")
 
-;pull in org-mode
+;;use ibuffer-git
+(add-path "vendor/ibuffer-git")
+(require 'ibuffer-git)
+
+(setq ibuffer-formats '((mark modified read-only git-status-mini " "
+      (name 18 18 :left :elide)
+      " "
+      (size 9 -1 :right)
+      " "
+      (mode 16 16 :left :elide)
+      " "
+      (git-status 8 8 :left)
+      " " filename-and-process)))
+
+;;pull in org-mode
 (add-path "vendor/org-mode/lisp")
 (add-path "vendor/org-mode/contrib/lisp")
 ;(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
@@ -110,8 +124,6 @@
 
 ;; Minor Modes
 (add-path "vendor")
-(require 'textmate)
-(textmate-mode 1)
 
 ;;wrap region
 ;(add-to-list 'load-path "~/.emacs.d/vendor/wrap-region")
