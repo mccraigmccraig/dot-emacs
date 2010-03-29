@@ -78,4 +78,17 @@
  ;;diff colours
  '(diff-removed ((t (:foreground "Red"))) 'now)
  '(diff-added ((t (:foreground "Green"))) 'now)
+
+ ;;ediff
+ '(ediff-even-diff-A ((((class color) (background dark)) (:background "dark green"))))
+ '(ediff-odd-diff-A ((((class color) (background dark)) (:background "dark green"))))
+ '(ediff-odd-diff-B ((((class color) (background dark)) (:background "dark red"))))
+ '(ediff-even-diff-B ((((class color) (background dark)) (:background "dark red"))))
+; '(ediff-current-diff-B ((((class color)) (:background "white"))))
+; '(ediff-even-diff-A ((((class color)) nil)))
+; '(ediff-even-diff-B ((((class color)) nil)))
+; '(ediff-fine-diff-A ((((class color)) (:background "cyan"))))
+; '(ediff-fine-diff-B ((((class color)) (:background "cyan"))))
+; '(ediff-odd-diff-A ((((class color)) nil)))
+; '(ediff-odd-diff-B ((((class color)) nil)))
  )

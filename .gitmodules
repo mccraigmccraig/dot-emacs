@@ -30,3 +30,6 @@
 [submodule "vendor/ibuffer-git"]
 	path = vendor/ibuffer-git
 	url = git://github.com/jrockway/ibuffer-git.git
+[submodule "vendor/git-emacs"]
+	path = vendor/git-emacs
+	url = git://github.com/tsgates/git-emacs.git

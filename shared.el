@@ -4,7 +4,9 @@
 ;; Line-wrapping
 (set-default 'fill-column 180)
 
-(add-path "vendor")
+;;git-emacs
+(add-path "vendor/git-emacs")
+(require 'git-emacs)
 
 ;;use ibuffer-git
 (add-path "vendor/ibuffer-git")
