@@ -7,7 +7,9 @@
 ;;t - text manipulation shortcuts
 
 ;;text manipulation shortcuts
-(global-set-key (kbd "C-c t t")     'untabify)
+(global-set-key (kbd "C-c t b")     'untabify-buffer)
+(global-set-key (kbd "C-c t r")     'untabify)
+
 
 ;;emacs-lisp shortcuts
 (global-set-key (kbd "C-c m s")     'eval-and-replace) ;swap
