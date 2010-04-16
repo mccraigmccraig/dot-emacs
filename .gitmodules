@@ -33,3 +33,6 @@
 [submodule "vendor/git-emacs"]
 	path = vendor/git-emacs
 	url = git://github.com/tsgates/git-emacs.git
+[submodule "vendor/nxhtml"]
+	path = vendor/nxhtml
+	url = git://github.com/emacsmirror/nxhtml.git

@@ -158,3 +158,11 @@
 (setq flyspell-default-dictionary "british")
 
 (load-file "~/.emacs.d/shortcuts.el")
+
+(add-path "vendor/nxhtml")
+(load "~/.emacs.d/vendor/nxhtml/autostart.el")
+
+(require 'rainbow-parens)
+;;(autoload 'rainbow-parens-mode "emacs-lisp-mode")
+;;(autoload 'rainbow-parens-mode "clojure-mode")
+(autoload 'clojure-mode "rainbow-parens-mode")
