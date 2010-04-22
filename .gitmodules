@@ -36,3 +36,9 @@
 [submodule "vendor/nxhtml"]
 	path = vendor/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "vendor/emacs-rails"]
+	path = vendor/emacs-rails
+	url = git://github.com/remvee/emacs-rails.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = git://github.com/senny/rvm.el.git

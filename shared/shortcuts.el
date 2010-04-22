@@ -6,6 +6,11 @@
 ;;s - slime eval shortcuts
 ;;t - text manipulation shortcuts
 
+
+
+;;toggle fullscreen
+(global-set-key (kbd "<C-M-return>")     'ns-toggle-fullscreen)
+
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
 (global-set-key (kbd "C-c t r")     'untabify)
@@ -80,6 +85,10 @@
 ;;shortcuts for growing and shrinking windows horizontally
 (global-set-key (kbd "C-<") 'enlarge-window-horizontally)
 (global-set-key (kbd "C->") 'shrink-window-horizontally)
+
+;;window navigation
+(global-set-key (kbd "C-M-]") 'next-multiframe-window)
+(global-set-key (kbd "C-M-[") 'previous-multiframe-window)
 
 ;;fast vertical naviation
 (global-set-key  (kbd "M-P") (lambda () (interactive) (previous-line 10)))
