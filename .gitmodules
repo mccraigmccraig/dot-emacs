@@ -1,4 +1,4 @@
-[submodule "vendor/mo-git-blame.git"]
+[submodule "vendor/mo-git-blame"]
 	path = vendor/mo-git-blame.git
 	url = git://git.bunkus.org/mo-git-blame
 [submodule "vendor/clojure-mode"]
@@ -7,13 +7,9 @@
 [submodule "vendor/slime"]
 	path = vendor/slime
 	url = git://git.boinkor.net/slime.git
-[submodule "vendor/mo-git-blame"]
-	path = vendor/mo-git-blame
-	url = git://git.bunkus.org/mo-git-blame
 [submodule "vendor/anything-config"]
 	path = vendor/anything-config
 	url = git://repo.or.cz/anything-config.git
-
 [submodule "vendor/undo-tree"]
 	path = vendor/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
@@ -23,7 +19,6 @@
 [submodule "vendor/supercollider"]
 	path = vendor/supercollider
 	url = git://github.com/samaaron/scel.git
-[submodule "vendor/org-mode"]
 [submodule "vendor/org-mode"]
 	path = vendor/org-mode
 	url = git://repo.or.cz/org-mode.git
@@ -42,3 +37,6 @@
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = git://github.com/senny/rvm.el.git
+[submodule "vendor/yaml-mode"]
+	path = vendor/yaml-mode
+	url = git://github.com/yoshiki/yaml-mode.git

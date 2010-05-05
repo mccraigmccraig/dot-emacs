@@ -80,6 +80,17 @@
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
 
+;;yaml mode
+(add-path "vendor/yaml-mode")
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-hook 'yaml-mode-hook
+      '(lambda ()
+        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+
+
 ;I currently get strange behavour with org-mode
 ;(add-path "vendor/org-mode/lisp")
 ;(add-path "vendor/org-mode/contrib/lisp")
