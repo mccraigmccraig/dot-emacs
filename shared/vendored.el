@@ -22,10 +22,6 @@
 (add-path "vendor/tramp/lisp")
 (require 'tramp)
 
-(add-path "vendor/rvm")
-(require 'rvm)
-(rvm-use-default)
-
 (add-path "vendor/undo-tree/")
 (require 'undo-tree)
 (global-undo-tree-mode)

@@ -110,6 +110,9 @@
 ;make mark colour a nice usable dark pink
 (set-face-background 'region "#7F073F")
 
+(add-path "~/.emacs.d/vendor/rvm")
+(require 'rvm)
+(rvm-use-default)
 
 (server-start)
 
