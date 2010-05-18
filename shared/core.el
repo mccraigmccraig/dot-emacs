@@ -1,4 +1,3 @@
-
 (setq custom-basedir (expand-file-name "~/.emacs.d/"))
 
 (defun add-path (p)

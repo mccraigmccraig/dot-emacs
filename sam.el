@@ -1,4 +1,4 @@
-;;colour theme
+;;load colour theme first so Emacs looks a little nicer on start
 (load-file "~/.emacs.d/vendor/blackbored.el")
 (color-theme-blackbored)
 
@@ -76,21 +76,6 @@
                                            'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
-;; clojure-mode
-(add-to-list 'load-path "~/.emacs.d/vendor/clojure-mode")
-(require 'clojure-mode)
-
-;; slime
-(eval-after-load "slime"
-  '(progn (slime-setup '(slime-repl))))
-
-(add-to-list 'load-path "~/.emacs.d/vendor/slime")
-(require 'slime)
-(slime-setup)
-
-
-
-
 ;;highlight current line
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#333333")
@@ -110,9 +95,9 @@
 ;make mark colour a nice usable dark pink
 (set-face-background 'region "#7F073F")
 
-(add-path "~/.emacs.d/vendor/rvm")
-(require 'rvm)
-(rvm-use-default)
+;(add-path "~/.emacs.d/vendor/rvm")
+;(require 'rvm)
+;(rvm-use-default)
 
 (server-start)
 

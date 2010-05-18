@@ -7,6 +7,9 @@
 (require 'custom-ruby)
 (require 'smooth-scrolling)
 
+(add-path "vendor/slime")
+(require 'slime)
+
 (add-path "vendor/emacs-rails")
 (require 'rails)
 
@@ -29,15 +32,22 @@
 (add-path "vendor/nxhtml")
 (load "~/.emacs.d/vendor/nxhtml/autostart.el")
 
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))
+(add-path "vendor/slime")
+(require 'slime)
+(slime-setup)
+
+(add-path "vendor/clojure-mode")
+(require 'clojure-mode)
+
 (require 'icomplete+)
 (icomplete-mode 1)
 (setq icomplete-compute-delay 0)
 
 ;;TODO: get working
 (require 'rainbow-parens)
-;;(autoload 'rainbow-parens-mode "emacs-lisp-mode")
-;;(autoload 'rainbow-parens-mode "clojure-mode")
-(autoload 'clojure-mode "rainbow-parens-mode")
+(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
 
 ;;for easy window navigation (no more C-x o)
 ;;To move between windows use S-(<left>|<right>|<up>|<down>)

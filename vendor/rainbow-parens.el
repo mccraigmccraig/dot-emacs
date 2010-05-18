@@ -39,7 +39,7 @@
 
 
 (defvar *rainbow-paren-faces*
-  `[,(rainbow-paren-face-from-colour "gray15")
+  `[,(rainbow-paren-face-from-colour "dark red")
     ,(rainbow-paren-face-from-colour "#AEAEAE")
     ,(rainbow-paren-face-from-colour "#96CBFE")
     ,(rainbow-paren-face-from-colour "gray")
