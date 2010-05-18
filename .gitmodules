@@ -3,7 +3,7 @@
 	url = git://git.bunkus.org/mo-git-blame
 [submodule "vendor/clojure-mode"]
 	path = vendor/clojure-mode
-	url = git://github.com/technomancy/clojure-mode.git
+	url = git://github.com/samaaron/clojure-mode.git
 [submodule "vendor/slime"]
 	path = vendor/slime
 	url = git://github.com/technomancy/slime.git
