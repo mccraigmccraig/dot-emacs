@@ -6,7 +6,9 @@
 ;;s - slime eval shortcuts
 ;;t - text manipulation shortcuts
 
-
+;;paredit
+(global-set-key (kbd "C-M-f")     'paredit-forward)
+(global-set-key (kbd "C-M-b")     'paredit-backward)
 
 ;;toggle fullscreen
 (global-set-key (kbd "<C-M-return>")     'ns-toggle-fullscreen)
@@ -15,6 +17,9 @@
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
 (global-set-key (kbd "C-c t r")     'untabify)
 
+
+;;C-c C-? bindings
+(global-set-key (kbd "C-c C-e")   'slime-eval-last-expression)
 
 ;;emacs-lisp shortcuts
 (global-set-key (kbd "C-c m s")     'eval-and-replace) ;swap
@@ -27,7 +32,6 @@
 
 ;;slime mode shortcuts
 (global-set-key (kbd "C-c s c")     'slime-connect)
-
 (global-set-key (kbd "C-c s e e")   'slime-eval-last-expression)
 (global-set-key (kbd "C-c s e b")   'slime-eval-buffer)
 (global-set-key (kbd "C-c s e i")   'slime-eval-describe)
