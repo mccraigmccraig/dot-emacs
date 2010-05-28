@@ -6,6 +6,7 @@
 ;;make sure ansi colour character escapes are honoured
 (ansi-color-for-comint-mode-on)
 
+;;nicely format the ibuffer and include git-status
 (setq ibuffer-formats '((mark modified read-only git-status-mini " "
       (name 18 18 :left :elide)
       " "

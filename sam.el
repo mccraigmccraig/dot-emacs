@@ -69,28 +69,12 @@
 ;;for Carbon emacs 22
 ;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
 
-(defun toggle-fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-                                           nil
-                                           'fullboth)))
-(global-set-key [(meta return)] 'toggle-fullscreen)
-
 ;;highlight current line
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#333333")
 
-
 ;cursor
 (set-cursor-color "yellow")
-
-
-;clojure
-;(eval-after-load 'clojure-mode '(clojure-slime-config))
-;(load-file (expand-file-name "~/.emacs.d/elpa/clojure-mode-1.1/clojure-mode.el"))
-;(setq clojure-src-root (expand-file-name "~/.emacs.d/vendor/clojure/src"))
-;(eval-after-load 'clojure-mode '(clojure-slime-config))
-
 
 ;make mark colour a nice usable dark pink
 (set-face-background 'region "#7F073F")
@@ -127,3 +111,4 @@
 ;;on os x use command key as meta
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'nil)
+

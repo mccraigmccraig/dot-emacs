@@ -11,7 +11,7 @@
 (global-set-key (kbd "C-M-b")     'paredit-backward)
 
 ;;toggle fullscreen
-(global-set-key (kbd "<C-M-return>")     'ns-toggle-fullscreen)
+(global-set-key (kbd "C-.")  'ns-toggle-fullscreen)
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -84,7 +84,12 @@
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;;repeat previous command
-(global-set-key (kbd "C-.") 'repeat)
+(global-set-key (kbd "C-.")   'repeat)
+(global-set-key (kbd "C-@")   'repeat)
+(global-set-key (kbd "C-SPC") 'repeat)
+
+;;set the mark
+(global-set-key (kbd "C-m") 'set-mark-command)
 
 ;;shortcuts for growing and shrinking windows horizontally
 (global-set-key (kbd "C-<") 'enlarge-window-horizontally)
@@ -94,17 +99,20 @@
 (global-set-key (kbd "C-M-]") 'next-multiframe-window)
 (global-set-key (kbd "C-M-[") 'previous-multiframe-window)
 
+(global-set-key (kbd "C-c w s") 'swap-windows)
+(global-set-key (kbd "C-c w r") 'rotate-windows)
+
+;requires buffer-move
+(global-set-key (kbd "C-c w p")  'buf-move-up)
+(global-set-key (kbd "C-c w n")  'buf-move-down)
+(global-set-key (kbd "C-c w b")  'buf-move-left)
+(global-set-key (kbd "C-c w f")  'buf-move-right)
+
 ;;fast vertical naviation
 (global-set-key  (kbd "M-P") (lambda () (interactive) (previous-line 10)))
 (global-set-key  (kbd "M-N") (lambda () (interactive) (next-line 10)))
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
-
-;requires windmove
-(global-set-key (kbd "<C-S-up>")     'buf-move-up)
-(global-set-key (kbd "<C-S-down>")   'buf-move-down)
-(global-set-key (kbd "<C-S-left>")   'buf-move-left)
-(global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
 ;requires cua-mode
 (global-set-key (kbd "C-#") 'cua-set-rectangle-mark)

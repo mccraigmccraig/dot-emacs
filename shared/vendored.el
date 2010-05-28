@@ -49,11 +49,7 @@
 (require 'rainbow-parens)
 (add-hook 'clojure-mode-hook 'rainbow-paren-mode)
 
-;;for easy window navigation (no more C-x o)
-;;To move between windows use S-(<left>|<right>|<up>|<down>)
-(require 'windmove)
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
+(require 'buffer-move)
 
 ;;TODO: Test to see whether this actually works
 (require 'backup-dir)
@@ -91,17 +87,13 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-(add-hook 'yaml-mode-hook
-      '(lambda ()
-        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-
 
 
 ;I currently get strange behavour with org-mode
-;(add-path "vendor/org-mode/lisp")
-;(add-path "vendor/org-mode/contrib/lisp")
-;(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
-;(require 'org-install)
+(add-path "vendor/org-mode/lisp")
+(add-path "vendor/org-mode/contrib/lisp")
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(require 'org-install)
 
 ;comment out because it is currently broken in 23.1.5 edge (OS X)
 ; (load-file "~/.emacs.d/vendor/anything.el")
