@@ -84,12 +84,11 @@
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;;repeat previous command
-(global-set-key (kbd "C-.")   'repeat)
-(global-set-key (kbd "C-@")   'repeat)
-(global-set-key (kbd "C-SPC") 'repeat)
+(global-set-key (kbd "C-@")   'set-mark-command)
+(global-set-key (kbd "C-SPC") 'set-mark-command)
 
 ;;set the mark
-(global-set-key (kbd "C-m") 'set-mark-command)
+(global-set-key (kbd "M-SPC") 'repeat)
 
 ;;shortcuts for growing and shrinking windows horizontally
 (global-set-key (kbd "C-<") 'enlarge-window-horizontally)
@@ -114,6 +113,6 @@
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
-;requires cua-mode
-(global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
-
+;requires cua-mode for rectangle selection
+(global-set-key (kbd "C-/") 'cua-set-rectangle-mark)
+(define-key undo-tree-map (kbd "C-/") 'cua-set-rectangle-mark)
