@@ -38,6 +38,10 @@
 (require 'slime)
 (slime-setup)
 
+(require 'highlight)
+(require 'eval-sexp-fu)
+(setq eval-sexp-fu-flash-duration 0.5)
+
 (add-path "vendor/clojure-mode")
 (require 'clojure-mode)
 

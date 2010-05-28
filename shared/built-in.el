@@ -9,6 +9,9 @@
 
 
 ;;enable cua-mode for rectangular selections
+(require 'cua-base)
+(require 'cua-gmrk)
+(require 'cua-rect)
 (cua-mode 1)
 (setq cua-enable-cua-keys nil)
 

@@ -75,6 +75,8 @@
  '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))))
  '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
 
+ '(eval-sexp-fu-flash ((((class color) (background dark)) (:background "grey15" :foreground "DeepPink3"))))
+
  ;;diff colours
  '(diff-removed ((t (:foreground "Red"))) 'now)
  '(diff-added ((t (:foreground "Green"))) 'now)

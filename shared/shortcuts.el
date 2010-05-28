@@ -116,3 +116,5 @@
 ;requires cua-mode for rectangle selection
 (global-set-key (kbd "C-/") 'cua-set-rectangle-mark)
 (define-key undo-tree-map (kbd "C-/") 'cua-set-rectangle-mark)
+(global-set-key (kbd "C-\\") 'cua-set-rectangle-mark)
+(define-key undo-tree-map (kbd "C-\\") 'cua-set-rectangle-mark)
