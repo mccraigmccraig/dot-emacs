@@ -106,9 +106,13 @@
 ;(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 ;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
+;;on os x use command key as meta
+;(setq mac-command-modifier 'meta)
+;(setq mac-option-modifier 'nil)
+
+
 (ns-toggle-fullscreen)
 
-;;on os x use command key as meta
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'nil)
+
+
 

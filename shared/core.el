@@ -2,6 +2,7 @@
 (defun add-path (p)
   (add-to-list 'load-path (concat custom-basedir p)))
 
+(load-file "~/.emacs.d/shared/bespoke.el")
 (load-file "~/.emacs.d/shared/vendored.el")
 (load-file "~/.emacs.d/shared/look-and-feel.el")
 (load-file "~/.emacs.d/shared/built-in.el")

@@ -113,8 +113,6 @@
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
-;requires cua-mode for rectangle selection
-(global-set-key (kbd "C-/") 'cua-set-rectangle-mark)
-(define-key undo-tree-map (kbd "C-/") 'cua-set-rectangle-mark)
-(global-set-key (kbd "C-\\") 'cua-set-rectangle-mark)
-(define-key undo-tree-map (kbd "C-\\") 'cua-set-rectangle-mark)
+ ;;requires cua-mode for rectangle selection
+(global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
+
