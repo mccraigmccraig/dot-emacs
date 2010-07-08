@@ -7,14 +7,14 @@
 (require 'custom-ruby)
 (require 'smooth-scrolling)
 
+(add-path "vendor/magit")
+(require 'magit)
+
 (add-path "vendor/slime")
 (require 'slime)
 
 (add-path "vendor/emacs-rails")
 (require 'rails)
-
-(add-path "vendor/git-emacs")
-(require 'git-emacs)
 
 (add-path "vendor/ibuffer-git")
 (require 'ibuffer-git)

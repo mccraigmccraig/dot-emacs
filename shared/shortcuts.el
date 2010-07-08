@@ -113,6 +113,11 @@
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
- ;;requires cua-mode for rectangle selection
-(global-set-key (kbd "C-#") 'cua-set-rectangle-mark)
+;;requires cua-mode for rectangle selection
+(global-set-key (kbd "§") 'cua-set-rectangle-mark)
+
+;;shortcuts not available to termainal mode
+;;(essentially handy shorter shortcuts to otherwise already available shortcuts)
+(global-set-key (kbd "C-,") 'other-window)
+(global-set-key (kbd "C-;") 'rotate-windows)
 

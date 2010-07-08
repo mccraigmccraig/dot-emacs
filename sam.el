@@ -19,6 +19,7 @@
 ;organise ibuffer into handy groups
 (setq ibuffer-saved-filter-groups
           (quote (("default"
+                   ("IRC"      (mode . erc-mode))
                    ("IF"       (filename . "innovationfactory/"))
                    ("overtone" (filename . "Development/overtone/"))
                    ("polynome" (filename . "Development/polynome/"))
@@ -79,9 +80,23 @@
 ;make mark colour a nice usable dark pink
 (set-face-background 'region "#7F073F")
 
-;(add-path "~/.emacs.d/vendor/rvm")
-;(require 'rvm)
-;(rvm-use-default)
+;;(add-path "~/.emacs.d/vendor/rvm")
+;;(require 'rvm)
+;;(rvm-use-default)
+
+(require 'erc-join)
+(erc-autojoin-mode 1)
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#emacs" "#clojure" "#clojure-casual")
+        ("irc.goto10.org" "#openlab")))
+
+(add-hook 'erc-after-connect
+          '(lambda (SERVER NICK)
+             (cond
+              ((string-match "freenode\\.net" SERVER)
+               (erc-message "PRIVMSG" "NickServ identify .mcatis")))))
+(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
+(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
 
 (server-start)
 
@@ -107,7 +122,7 @@
 ;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
 ;;on os x use command key as meta
-;(setq mac-command-modifier 'meta)
+(setq mac-command-modifier 'meta)
 ;(setq mac-option-modifier 'nil)
 
 
