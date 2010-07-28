@@ -83,11 +83,11 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
-;;repeat previous command
+;;set the mark
 (global-set-key (kbd "C-@")   'set-mark-command)
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
-;;set the mark
+;;repeat previous command
 (global-set-key (kbd "M-SPC") 'repeat)
 
 ;;shortcuts for growing and shrinking windows horizontally

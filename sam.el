@@ -4,6 +4,9 @@
 
 (load-file "~/.emacs.d/shared/core.el")
 
+
+(setq mac-command-modifier 'meta)
+
 (setq exec-path (append exec-path '("/usr/local/git/bin/git")))
 (push "/Applications/SuperCollider" exec-path)
 
@@ -84,6 +87,12 @@
 ;;(require 'rvm)
 ;;(rvm-use-default)
 
+
+
+(server-start)
+(ns-toggle-fullscreen)
+
+
 (require 'erc-join)
 (erc-autojoin-mode 1)
 (setq erc-autojoin-channels-alist
@@ -97,8 +106,6 @@
                (erc-message "PRIVMSG" "NickServ identify .mcatis")))))
 (erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
 (erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
-
-(server-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;stuff I tried out and either couldn't get to work or didn't like, but might try again;;
@@ -122,12 +129,5 @@
 ;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
 ;;on os x use command key as meta
-(setq mac-command-modifier 'meta)
+
 ;(setq mac-option-modifier 'nil)
-
-
-(ns-toggle-fullscreen)
-
-
-
-
