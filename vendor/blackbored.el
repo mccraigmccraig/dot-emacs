@@ -47,7 +47,7 @@
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
 
      (font-lock-string-face ((t (:foreground "#61CE3C"))))
-     (font-lock-type-face ((t (:foreground "#8DA6CE"))))
+     (font-lock-type-face ((t (:foreground "dark red"))))
      (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
      (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
