@@ -40,3 +40,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = git://github.com/philjackson/magit.git
+[submodule "vendor/ac-slime"]
+	path = vendor/ac-slime
+	url = git://github.com/purcell/ac-slime.git

@@ -1,11 +1,33 @@
 (add-path "vendor")
 
+;; utils
 (require 'linkd)
 (require 'rcodetools)
 (require 'wrap-region)
 (require 'dircolors)
 (require 'custom-ruby)
 (require 'smooth-scrolling)
+(require 'rainbow-parens)
+(require 'buffer-move)
+
+;; highlight expression on eval
+(require 'highlight)
+(require 'eval-sexp-fu)
+(setq eval-sexp-fu-flash-duration 0.5)
+
+;;yassnippet
+(add-path "vendor/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
+
+;; The amazing undo tree
+(add-path "vendor/undo-tree/")
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+
+;; modes
 
 (add-path "vendor/magit")
 (require 'magit)
@@ -25,35 +47,18 @@
 (add-path "vendor/tramp/lisp")
 (require 'tramp)
 
-(add-path "vendor/undo-tree/")
-(require 'undo-tree)
-(global-undo-tree-mode)
-
 (add-path "vendor/nxhtml")
 (load "~/.emacs.d/vendor/nxhtml/autostart.el")
 
-(eval-after-load "slime"
-  '(progn (slime-setup '(slime-repl))))
-(add-path "vendor/slime")
-(require 'slime)
-(slime-setup)
-
-(require 'highlight)
-(require 'eval-sexp-fu)
-(setq eval-sexp-fu-flash-duration 0.5)
 
 (add-path "vendor/clojure-mode")
 (require 'clojure-mode)
+(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
 
 (require 'icomplete+)
 (icomplete-mode 1)
 (setq icomplete-compute-delay 0)
 
-;;TODO: get working
-(require 'rainbow-parens)
-(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
-
-(require 'buffer-move)
 
 ;;TODO: Test to see whether this actually works
 (require 'backup-dir)
@@ -64,11 +69,6 @@
       kept-new-versions 3
       version-control t)
 
-;;yassnippet
-(add-path "vendor/yasnippet")
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 
 ;;add mo-git-blame for git blame support
 (add-path  "vendor/mo-git-blame")
@@ -91,6 +91,43 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))
+(add-path "vendor/slime")
+(require 'slime)
+(slime-setup)
+
+;;auto-complete mode
+(add-path "vendor/auto-complete")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/auto-complete/dict")
+(global-auto-complete-mode t)
+;;(setq ac-auto-start nil)
+(setq ac-dwim t)
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
+
+(set-default 'ac-sources
+             '(ac-source-dictionary
+               ac-source-words-in-buffer
+               ac-source-words-in-same-mode-buffers
+               ac-source-words-in-all-buffer))
+
+(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
+                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+                html-mode nxml-mode sh-mode smarty-mode clojure-mode
+                lisp-mode textile-mode markdown-mode tuareg-mode))
+  (add-to-list 'ac-modes mode))
+
+
+;;ac-slime auto-complete plugin
+(add-path "vendor/ac-slime")
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 
 
 ;I currently get strange behavour with org-mode
