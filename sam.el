@@ -104,8 +104,9 @@
              (cond
               ((string-match "freenode\\.net" SERVER)
                (erc-message "PRIVMSG" "NickServ identify .mcatis")))))
-(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
-(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
+
+;;(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
+;;(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;stuff I tried out and either couldn't get to work or didn't like, but might try again;;
