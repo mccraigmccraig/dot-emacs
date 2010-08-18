@@ -1,7 +1,20 @@
-;;load colour theme first so Emacs looks a little nicer on start
+;;load fonts and colour theme first so Emacs looks a little nicer on start
+
+;;Colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
 (color-theme-blackbored)
 
+;;Fonts
+;;to set the font:
+;;M-x mac-font-panel-mode
+;;M-x describe-font
+;;for NS emacs 23
+(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+;;
+;;for Carbon emacs 22
+;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
+
+;; Pull in all shared init stuff
 (load-file "~/.emacs.d/shared/core.el")
 
 
@@ -23,21 +36,19 @@
 (setq ibuffer-saved-filter-groups
           (quote (("default"
                    ("IRC"      (mode . erc-mode))
-                   ("IF"       (filename . "innovationfactory/"))
-                   ("overtone" (filename . "Development/overtone/"))
-                   ("polynome" (filename . "Development/polynome/"))
-                   ("ioke"     (filename . "Development/ioke/"))
-                   ("supercollider" (or
-                                     (mode . SCLang)
-                                     (mode . SCLangHelp)))
-                   ("dev"      (filename . "Development/"))
-                   ("dired" (mode . dired-mode))
-                   ("emacs" (or
+                                      ("emacs" (or
                              (name . "^\\*scratch\\*$")
                              (name . "^\\*Messages\\*$")
                              (name . "^\\*Completions\\*$")
                              (filename . ".emacs.d")))
 
+                   ("overtone" (filename . "Development/overtone/"))
+                   ("polynome" (filename . "Development/polynome/"))
+                   ("dev"      (filename . "Development/"))
+                   ("dired" (mode . dired-mode))
+                   ("supercollider" (or
+                                     (mode . SCLang)
+                                     (mode . SCLangHelp)))
                    ))))
     (add-hook 'ibuffer-mode-hook
               (lambda ()
@@ -63,15 +74,6 @@
 '(sclang-runtime-directory "~/.sclang/"))
 ;'(sclang-server-panel "Server.default.makeGui"))
 
-;;Fonts
-;;to set the font:
-;;M-x mac-font-panel-mode
-;;M-x describe-font
-;;for NS emacs 23
-(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
-;;
-;;for Carbon emacs 22
-;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
 
 ;;highlight current line
 (global-hl-line-mode 1)
@@ -86,7 +88,6 @@
 ;;(add-path "~/.emacs.d/vendor/rvm")
 ;;(require 'rvm)
 ;;(rvm-use-default)
-
 
 
 (server-start)
