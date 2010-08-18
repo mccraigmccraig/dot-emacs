@@ -1,6 +1,7 @@
 (add-path "vendor")
 
 ;; utils
+(require 'pos-tip)
 (require 'linkd)
 (require 'rcodetools)
 (require 'wrap-region)
@@ -103,10 +104,16 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
+(ac-flyspell-workaround)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/auto-complete/dict")
 (global-auto-complete-mode t)
-;;(setq ac-auto-start nil)
+(setq ac-auto-show-menu nil)
 (setq ac-dwim t)
+(setq ac-use-menu-map t)
+(setq ac-quick-help-delay 1)
+
+(ac-set-trigger-key "TAB")
+
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
