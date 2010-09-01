@@ -7,4 +7,5 @@
 (load-file "~/.emacs.d/shared/look-and-feel.el")
 (load-file "~/.emacs.d/shared/built-in.el")
 (load-file "~/.emacs.d/shared/shortcuts.el")
+(load-file "~/.emacs.d/shared/erc-growl.el")
 
