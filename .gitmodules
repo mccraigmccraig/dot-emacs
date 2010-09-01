@@ -43,3 +43,6 @@
 [submodule "vendor/ac-slime"]
 	path = vendor/ac-slime
 	url = git://github.com/purcell/ac-slime.git
+[submodule "vendor/scratch-el"]
+	path = vendor/scratch-el
+	url = git://github.com/ieure/scratch-el.git

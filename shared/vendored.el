@@ -27,6 +27,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;;scratch-el
+(add-path "vendor/scratch-el")
+(require 'scratch)
 
 ;; modes
 
