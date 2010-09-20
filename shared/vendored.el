@@ -9,6 +9,7 @@
 (require 'custom-ruby)
 (require 'smooth-scrolling)
 (require 'rainbow-parens)
+(require 'rainbow-delimiters)
 (require 'buffer-move)
 
 ;; highlight expression on eval
@@ -57,6 +58,7 @@
 
 (add-path "vendor/clojure-mode")
 (require 'clojure-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'rainbow-paren-mode)
 
 (require 'icomplete+)
