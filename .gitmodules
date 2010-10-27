@@ -46,3 +46,9 @@
 [submodule "vendor/scratch-el"]
 	path = vendor/scratch-el
 	url = git://github.com/ieure/scratch-el.git
+[submodule "vendor/elein"]
+	path = vendor/elein
+	url = git://github.com/remvee/elein.git
+[submodule "vendor/smex"]
+	path = vendor/smex
+	url = http://github.com/nonsequitur/smex.git
