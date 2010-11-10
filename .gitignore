@@ -1,4 +1,6 @@
+sk-old
 *.dat
+*~
 abbrev_defs
 loaddefs.el*
 backups/*

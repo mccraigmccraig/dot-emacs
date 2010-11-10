@@ -1,4 +1,6 @@
-;;load fonts and colour theme first so Emacs looks a little nicer on start
+;; Pull in all shared init stuff
+(load-file "~/.emacs.d/config/core.el")
+
 
 ;;Colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
@@ -14,8 +16,7 @@
 ;;for Carbon emacs 22
 ;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
 
-;; Pull in all shared init stuff
-(load-file "~/.emacs.d/shared/core.el")
+
 
 
 (setq mac-command-modifier 'meta)
