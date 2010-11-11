@@ -5,13 +5,6 @@
 (require 'ansi-color)
 (require 'recentf)
 
-;;; enables outlining for ruby
-;;; You may also want to bind hide-body, hide-subtree, show-substree
-;;; show-all, show-children, ... to some keys easy folding and unfolding
-(add-hook 'ruby-mode-hook
-              '(lambda ()
-                 (outline-minor-mode)
-                 (setq outline-regexp " *\\(def \\|class\\|module\\|describe \\|it \\)")))
 
 
 ;;enable cua-mode for rectangular selections
@@ -35,3 +28,22 @@
 (setq ispell-dictionary "british")'
 (setq flyspell-default-dictionary "british")
 
+(setq visible-bell t
+      echo-keystrokes 0.1
+      font-lock-maximum-decoration t
+      inhibit-startup-message t
+      transient-mark-mode t
+      color-theme-is-global t
+      shift-select-mode nil
+      mouse-yank-at-point t
+      require-final-newline t
+      truncate-partial-width-windows nil
+      delete-by-moving-to-trash nil
+      uniquify-buffer-name-style 'forward
+      whitespace-style '(trailing lines space-before-tab
+                                  indentation space-after-tab)
+      whitespace-line-column 100
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      oddmuse-directory (concat dotfiles-dir "oddmuse")
+      xterm-mouse-mode t
+      save-place-file (concat dotfiles-dir "places"))

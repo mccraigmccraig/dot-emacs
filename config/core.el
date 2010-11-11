@@ -9,6 +9,8 @@
 (load-file "~/.emacs.d/config/sk-misc.el")
 (load-file "~/.emacs.d/config/erc-growl.el")
 (load-file "~/.emacs.d/config/sk-lisp.el")
+(load-file "~/.emacs.d/config/auto-modes.el")
+(load-file "~/.emacs.d/config/ruby.el")
 (load-file "~/.emacs.d/config/vendored/vendored.el")
 
 

@@ -10,25 +10,7 @@
      '(term-default-fg-color "#dddd00"))       ;; foreground color (yellow)
 
 
-(setq visible-bell t
-      echo-keystrokes 0.1
-      font-lock-maximum-decoration t
-      inhibit-startup-message t
-      transient-mark-mode t
-      color-theme-is-global t
-      shift-select-mode nil
-      mouse-yank-at-point t
-      require-final-newline t
-      truncate-partial-width-windows nil
-      delete-by-moving-to-trash nil
-      uniquify-buffer-name-style 'forward
-      whitespace-style '(trailing lines space-before-tab
-                                  indentation space-after-tab)
-      whitespace-line-column 100
-      ediff-window-setup-function 'ediff-setup-windows-plain
-      oddmuse-directory (concat dotfiles-dir "oddmuse")
-      xterm-mouse-mode t
-      save-place-file (concat dotfiles-dir "places"))
+
 
 (auto-compression-mode t)
 (show-paren-mode 1)
