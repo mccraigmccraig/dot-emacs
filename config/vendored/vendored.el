@@ -138,8 +138,8 @@
 
 (ac-set-trigger-key "TAB")
 
-(define-key ac-completing-map (kbd "C-n") 'ac-next)
-(define-key ac-completing-map (kbd "C-p") 'ac-previous)
+(define-key ac-completing-map (kbd "C-M-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-M-p") 'ac-previous)
 
 (set-default 'ac-sources
              '(ac-source-dictionary
