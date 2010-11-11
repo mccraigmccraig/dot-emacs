@@ -17,4 +17,4 @@
                                                (match-end 1) "ƒ")
                                nil))))))
 
-(provide 'clojure-conf)
+

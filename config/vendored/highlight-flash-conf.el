@@ -4,4 +4,4 @@
 (setq eval-sexp-fu-flash-duration 0.5)
 
 
-(provide 'highlight-flash-conf)
+

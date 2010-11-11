@@ -5,4 +5,4 @@
 (require 'slime)
 (slime-setup)
 
-(provide 'slime-conf)
+

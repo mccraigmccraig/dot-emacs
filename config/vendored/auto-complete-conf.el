@@ -36,4 +36,4 @@
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 
 
-(provide 'auto-complete-conf)
+
