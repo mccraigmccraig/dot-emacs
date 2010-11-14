@@ -18,6 +18,20 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
+;;window-number mode
+(require 'window-number)
+(autoload 'window-number-mode "window-number"
+  "A global minor mode that enables selection of windows according to
+numbers with the C-x C-j prefix.  Another mode,
+`window-number-meta-mode' enables the use of the M- prefix."
+  t)
+
+(autoload 'window-number-meta-mode "window-number"
+  "A global minor mode that enables use of the M- prefix to select
+windows, use `window-number-mode' to display the window numbers in
+the mode-line."
+  t)
+
 ;;color-theme
 (add-path "vendor/color-theme-6.6.0")
 (require 'color-theme)
