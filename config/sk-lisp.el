@@ -31,14 +31,6 @@
 
 (define-key emacs-lisp-mode-map (kbd "M-.") 'find-function-at-point)
 
-;;; Clojure
-
-(eval-after-load 'find-file-in-project
-  '(add-to-list 'ffip-patterns "*.clj"))
-
-(defun clojure-project ()
-  (interactive)
-  (message "Deprecated in favour of M-x swank-clojure-project. Install swank-clojure from ELPA."))
 
 ;;; Enhance Lisp Modes
 
@@ -56,8 +48,3 @@
   (add-hook
    (intern (concat (symbol-name x) "-mode-hook")) 'run-coding-hook))
 
-
-
-
-(provide 'starter-kit-lisp)
-;; starter-kit-lisp.el ends here
