@@ -5,8 +5,6 @@
 (load-file "~/.emacs.d/config/bespoke.el")
 (load-file "~/.emacs.d/config/look-and-feel.el")
 (load-file "~/.emacs.d/config/bindings.el")
-(load-file "~/.emacs.d/config/sk-bindings.el")
-(load-file "~/.emacs.d/config/sk-misc.el")
 (load-file "~/.emacs.d/config/erc-growl.el")
 (load-file "~/.emacs.d/config/sk-lisp.el")
 (load-file "~/.emacs.d/config/auto-modes.el")

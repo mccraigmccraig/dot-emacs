@@ -197,4 +197,5 @@ the mode-line."
 (load-file "~/.emacs.d/config/vendored/highlight-flash-conf.el")
 (load-file "~/.emacs.d/config/vendored/clojure-conf.el")
 (load-file "~/.emacs.d/config/vendored/slime-conf.el")
+(load-file "~/.emacs.d/config/vendored/ido-conf.el")
 
