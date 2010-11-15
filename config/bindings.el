@@ -68,11 +68,6 @@
 (global-set-key (kbd "C-x C-j") 'join-line)
 (global-set-key (kbd "M-§") 'file-cache-minibuffer-complete)
 
-;;macro to insert text above the current line
-(fset 'insert-above
-   [?\C-e return ?\C-a ?\C-k ?\C-p ?\C-p M-return])
-(global-set-key (kbd "M-o") 'insert-above)
-
 ;allow the deletion of words:
 ;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
