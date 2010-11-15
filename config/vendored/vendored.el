@@ -194,6 +194,7 @@ the mode-line."
 ;;pull in larger vendored configs
 (load-file "~/.emacs.d/config/vendored/ack-conf.el")
 (load-file "~/.emacs.d/config/vendored/auto-complete-conf.el")
-(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
 (load-file "~/.emacs.d/config/vendored/highlight-flash-conf.el")
+(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
 (load-file "~/.emacs.d/config/vendored/slime-conf.el")
+

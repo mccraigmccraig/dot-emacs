@@ -11,7 +11,7 @@
 
 
 
-
+(set-default 'indent-tabs-mode nil)
 (auto-compression-mode t)
 (show-paren-mode 1)
 
