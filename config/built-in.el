@@ -73,3 +73,5 @@
 
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
+
+(setq confirm-nonexistent-file-or-buffer nil)
