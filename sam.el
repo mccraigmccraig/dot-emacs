@@ -11,7 +11,7 @@
 ;;M-x mac-font-panel-mode
 ;;M-x describe-font
 ;;for NS emacs 23
-(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+(set-face-font 'default "-apple-Menlo-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 ;;
 ;;for Carbon emacs 22
 ;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
@@ -43,9 +43,9 @@
                              (name . "^\\*Completions\\*$")
                              (filename . ".emacs.d")))
 
-                   ("overtone" (filename . "Development/overtone/"))
-                   ("polynome" (filename . "Development/polynome/"))
-                   ("dev"      (filename . "Development/"))
+                   ("practice" (filename . "Development/practice/apps"))
+                   ("apps"      (filename . "Development/improcess/apps"))
+                   ("improcess"      (filename . "Development/improcess/"))
                    ("dired" (mode . dired-mode))
                    ("supercollider" (or
                                      (mode . SCLang)
@@ -101,11 +101,6 @@
       '(("freenode.net" "#emacs" "#clojure" "#clojure-casual")
         ("irc.goto10.org" "#openlab")))
 
-(add-hook 'erc-after-connect
-          '(lambda (SERVER NICK)
-             (cond
-              ((string-match "freenode\\.net" SERVER)
-               (erc-message "PRIVMSG" "NickServ identify .mcatis")))))
 
 ;;(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
 ;;(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
