@@ -72,7 +72,8 @@ the mode-line."
 (add-path"vendor/mk-project")
 (require 'mk-project)
 
-(add-path "vendor/tramp-2.1.19/lisp")
+(add-path "vendor/stored/tramp/lisp")
+(add-to-list 'Info-default-directory-list "/vendor/stored/tramp/info/")
 (require 'tramp)
 
 (add-path "vendor/nxhtml")
