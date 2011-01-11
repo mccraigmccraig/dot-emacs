@@ -116,7 +116,6 @@
 (global-set-key (kbd "C-,") 'other-window)
 (global-set-key (kbd "C-;") 'rotate-windows)
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; starter-kit-bindings.el --- Set up some handy key bindings
 ;;
@@ -211,3 +210,6 @@
 
 (provide 'starter-kit-bindings)
 ;;; starter-kit-bindings.el ends here
+
+(global-set-key (kbd "M-v")  'yank)
+
