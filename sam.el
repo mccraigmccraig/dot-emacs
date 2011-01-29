@@ -92,7 +92,7 @@
 
 
 (server-start)
-(ns-toggle-fullscreen)
+;;(ns-toggle-fullscreen)
 
 
 (require 'erc-join)

@@ -1,6 +1,8 @@
 ;;mark current function
 (global-set-key (kbd "C-x C-p")     'mark-defun)
 
+(global-set-key (kbd "C-c k")     'whack-whitespace)
+
 ;;C-c handy shortcuts
 ;;m - emacs eval shortcuts
 ;;s - slime eval shortcuts
@@ -10,13 +12,9 @@
 (global-set-key (kbd "C-M-f")     'paredit-forward)
 (global-set-key (kbd "C-M-b")     'paredit-backward)
 
-;;toggle fullscreen
-(global-set-key (kbd "C-.")  'ns-toggle-fullscreen)
-
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
 (global-set-key (kbd "C-c t r")     'untabify)
-
 
 ;;C-c C-? bindings
 (global-set-key (kbd "C-c C-e")   'slime-eval-last-expression)
@@ -44,10 +42,7 @@
 (global-set-key (kbd "C-c s e r")   'slime-eval-region)
 (global-set-key (kbd "C-c s e t")   'slime-eval-with-transcript)
 
-;;allow the ability to switch frames using the default OS X keybinding
-(global-set-key (kbd "M-`") 'other-frame)
-
-;make C-] and M-] cut and copy respectively
+;;make C-] and M-] cut and copy respectively
 (global-set-key (kbd "C-]") 'kill-region)
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
@@ -59,22 +54,21 @@
 (global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
 (global-set-key (kbd "C-' s") (lambda () (interactive) (insert "♯")))
 
-;make ^h delete rather than help
-(keyboard-translate ?\C-h ?\C-?)
+;;make ^h delete rather than help
+(global-set-key (kbd "C-h") 'delete-backward-char)
 
-;redefine help shortcut
-(global-set-key (kbd "C-M-h") 'help)
-
+;;redefine help shortcut
+(global-set-key (kbd "M-§") 'help-command)
 (global-set-key (kbd "C-x C-j") 'join-line)
-(global-set-key (kbd "M-§") 'file-cache-minibuffer-complete)
 
-;allow the deletion of words:
+;;allow the deletion of words:
 ;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
-;delete current word
+
+;;delete current word
 (global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
 
-;kill regions
+;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
@@ -96,7 +90,7 @@
 (global-set-key (kbd "C-c w s") 'swap-windows)
 (global-set-key (kbd "C-c w r") 'rotate-windows)
 
-;requires buffer-move
+;;requires buffer-move
 (global-set-key (kbd "C-c w p")  'buf-move-up)
 (global-set-key (kbd "C-c w n")  'buf-move-down)
 (global-set-key (kbd "C-c w b")  'buf-move-left)
@@ -115,14 +109,6 @@
 ;;(essentially handy shorter shortcuts to otherwise already available shortcuts)
 (global-set-key (kbd "C-,") 'other-window)
 (global-set-key (kbd "C-;") 'rotate-windows)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; starter-kit-bindings.el --- Set up some handy key bindings
-;;
-;; Part of the Emacs Starter Kit.
-
-;; You know, like Readline.
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -178,9 +164,6 @@
 ;; Fetch the contents at a URL, display it raw.
 (global-set-key (kbd "C-x C-h") 'view-url)
 
-;; Help should search more than just commands
-(global-set-key (kbd "C-h a") 'apropos)
-
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
@@ -213,3 +196,11 @@
 
 (global-set-key (kbd "M-v")  'yank)
 
+(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+
+;;OSX Bindings
+;;toggle fullscreen
+(global-set-key (kbd "C-.")  'ns-toggle-fullscreen)
+
+;;allow the ability to switch frames using the default OS X keybinding
+(global-set-key (kbd "M-`") 'other-frame)

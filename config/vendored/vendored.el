@@ -76,8 +76,8 @@ the mode-line."
 (add-to-list 'Info-default-directory-list "/vendor/stored/tramp/info/")
 (require 'tramp)
 
-(add-path "vendor/nxhtml")
-(load "~/.emacs.d/vendor/nxhtml/autostart.el")
+;;(add-path "vendor/nxhtml")
+;;(load "~/.emacs.d/vendor/nxhtml/autostart.el")
 
 
 (add-path "vendor/clojure-mode")
