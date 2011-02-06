@@ -145,3 +145,17 @@
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
+
+(defun latexify-quotes ()
+  "Replace fancy quote marks with their simpler counterparts. Useful when
+   dealing with LaTeX documents"
+  (interactive)
+  (let ((st (region-beginning))
+        (end (region-end)))
+    (replace-string "‘" "`" nil st end)
+    (replace-string "’" "'" nil st end)
+    (replace-string "“" "\`\`" nil st end)
+    (replace-string "”" "''" nil st end)))
+
+
+
