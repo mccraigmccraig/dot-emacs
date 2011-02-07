@@ -34,7 +34,7 @@
      (bold-italic ((t (:bold t))))
      (border-glyph ((t (nil))))
      (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
-     (font-lock-builtin-face ((t (:foreground "#96CBFE"))))
+     (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
      (font-lock-comment-face ((t (:italic t :foreground "#AEAEAE"))))
      (font-lock-constant-face ((t (:foreground "#D8FA3C"))))
      (font-lock-doc-string-face ((t (:foreground "DarkOrange"))))
@@ -47,6 +47,7 @@
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
 
      (font-lock-string-face ((t (:foreground "#61CE3C"))))
+
      (font-lock-type-face ((t (:foreground "dark red"))))
      (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
      (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
@@ -54,12 +55,13 @@
      (region ((t (:background "#253B76"))))
      (mode-line ((t (:background "#333333" :foreground "#96CBFE"))))
      (highlight ((t (:background "#222222"))))
-     (highline-face ((t (:background "SeaGreen"))))
+     (Highline-face ((t (:background "SeaGreen"))))
      (italic ((t (nil))))
      (left-margin ((t (nil))))
      (text-cursor ((t (:background "yellow" :foreground "black"))))
      (toolbar ((t (nil))))
      (underline ((nil (:underline nil))))
+     (vertical-border ((t (:background "black" :foreground "#333333"))))
      (zmacs-region ((t (:background "snow" :foreground "ble")))))))
 
 (custom-set-faces

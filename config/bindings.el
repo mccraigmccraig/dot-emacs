@@ -1,16 +1,18 @@
 ;;mark current function
 (global-set-key (kbd "C-x C-p")     'mark-defun)
 
+;;remove whitespace between point and next word
 (global-set-key (kbd "C-c k")     'whack-whitespace)
+
+;;paredit
+(global-set-key (kbd "C-M-f")     'paredit-forward)
+(global-set-key (kbd "C-M-b")     'paredit-backward)
 
 ;;C-c handy shortcuts
 ;;m - emacs eval shortcuts
 ;;s - slime eval shortcuts
 ;;t - text manipulation shortcuts
-
-;;paredit
-(global-set-key (kbd "C-M-f")     'paredit-forward)
-(global-set-key (kbd "C-M-b")     'paredit-backward)
+;;i - utf8 char shortcuts
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -46,13 +48,14 @@
 (global-set-key (kbd "C-]") 'kill-region)
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
-(global-set-key (kbd "C-' l") (lambda () (interactive) (insert "λ")))
-(global-set-key (kbd "C-' n") (lambda () (interactive) (insert "ℕ")))
-(global-set-key (kbd "C-' i") (lambda () (interactive) (insert "∞")))
-(global-set-key (kbd "C-' .") (lambda () (interactive) (insert "×")))
-(global-set-key (kbd "C-' 0") (lambda () (interactive) (insert "∅")))
-(global-set-key (kbd "C-' u") (lambda () (interactive) (insert "∪")))
-(global-set-key (kbd "C-' s") (lambda () (interactive) (insert "♯")))
+;;funky characters
+(global-set-key (kbd "C-c i l") (lambda () (interactive) (insert "λ")))
+(global-set-key (kbd "C-c i n") (lambda () (interactive) (insert "ℕ")))
+(global-set-key (kbd "C-c i i") (lambda () (interactive) (insert "∞")))
+(global-set-key (kbd "C-c i .") (lambda () (interactive) (insert "×")))
+(global-set-key (kbd "C-c i 0") (lambda () (interactive) (insert "∅")))
+(global-set-key (kbd "C-c i u") (lambda () (interactive) (insert "∪")))
+(global-set-key (kbd "C-c i s") (lambda () (interactive) (insert "♯")))
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -73,15 +76,10 @@
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;;set the mark
-(global-set-key (kbd "C-@")   'set-mark-command)
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
 ;;repeat previous command
-(global-set-key (kbd "M-SPC") 'repeat)
-
-;;shortcuts for growing and shrinking windows horizontally
-(global-set-key (kbd "C-<") 'enlarge-window-horizontally)
-(global-set-key (kbd "C->") 'shrink-window-horizontally)
+(global-set-key (kbd "M-#") 'repeat)
 
 ;;window navigation
 (global-set-key (kbd "C-M-]") 'next-multiframe-window)
@@ -105,11 +103,6 @@
 ;;requires cua-mode for rectangle selection
 (global-set-key (kbd "§") 'cua-set-rectangle-mark)
 
-;;shortcuts not available to termainal mode
-;;(essentially handy shorter shortcuts to otherwise already available shortcuts)
-(global-set-key (kbd "C-,") 'other-window)
-(global-set-key (kbd "C-;") 'rotate-windows)
-
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
@@ -121,10 +114,6 @@
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
-
-;; Font size
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -191,16 +180,9 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
-(provide 'starter-kit-bindings)
-;;; starter-kit-bindings.el ends here
-
 (global-set-key (kbd "M-v")  'yank)
 
 (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
 
-;;OSX Bindings
-;;toggle fullscreen
-(global-set-key (kbd "C-.")  'ns-toggle-fullscreen)
 
-;;allow the ability to switch frames using the default OS X keybinding
-(global-set-key (kbd "M-`") 'other-frame)
+

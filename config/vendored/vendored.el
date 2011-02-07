@@ -49,10 +49,6 @@ the mode-line."
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/stored/yasnippet/snippets")
 
-;; The amazing undo tree
-(add-path "vendor/undo-tree/")
-(require 'undo-tree)
-(global-undo-tree-mode)
 
 ;;scratch-el
 (add-path "vendor/stored/scratch")
@@ -60,17 +56,7 @@ the mode-line."
 
 ;; modes
 
-(add-path "vendor/magit")
-(require 'magit)
 
-(add-path "vendor/slime")
-(require 'slime)
-
-(add-path "vendor/ibuffer-git")
-(require 'ibuffer-git)
-
-(add-path"vendor/mk-project")
-(require 'mk-project)
 
 (add-path "vendor/stored/tramp/lisp")
 (add-to-list 'Info-default-directory-list "/vendor/stored/tramp/info/")
@@ -80,21 +66,6 @@ the mode-line."
 ;;(load "~/.emacs.d/vendor/nxhtml/autostart.el")
 
 
-(add-path "vendor/clojure-mode")
-(require 'clojure-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'rainbow-paren-mode)
-
-(add-path "vendor/elein")
-(require 'elein)
-
-(add-path "vendor/smex")
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (require 'icomplete+)
 (icomplete-mode 1)
@@ -111,10 +82,6 @@ the mode-line."
       version-control t)
 
 
-;;add mo-git-blame for git blame support
-(add-path  "vendor/mo-git-blame")
-(autoload 'mo-git-blame-file "mo-git-blame" nil t)
-(autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
@@ -127,24 +94,7 @@ the mode-line."
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
 
-;;yaml mode
-(add-path "vendor/yaml-mode")
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-(eval-after-load "slime"
-  '(progn (slime-setup '(slime-repl))))
-(add-path "vendor/slime")
-(eval-after-load 'slime '(setq slime-protocol-version 'ignore))
-(require 'slime)
-(slime-setup)
-
-;;ac-slime auto-complete plugin
-(add-path "vendor/ac-slime")
-(require 'ac-slime)
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 
 
 ;I currently get strange behavour with org-mode
@@ -153,13 +103,8 @@ the mode-line."
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (require 'org-install)
 
-;comment out because it is currently broken in 23.1.5 edge (OS X)
-; (load-file "~/.emacs.d/vendor/anything.el")
-; (require 'anything)
-;
-; (load-file "~/.emacs.d/vendor/anything-config/anything-config.el")
-; (require 'anything-config)
-
+;;pull in submoduled stuff
+(load-file "~/.emacs.d/config/vendored/submoduled.el")
 
 ;;pull in larger vendored configs
 (load-file "~/.emacs.d/config/vendored/ack-conf.el")
@@ -168,4 +113,6 @@ the mode-line."
 (load-file "~/.emacs.d/config/vendored/clojure-conf.el")
 (load-file "~/.emacs.d/config/vendored/slime-conf.el")
 (load-file "~/.emacs.d/config/vendored/ido-conf.el")
+
+
 

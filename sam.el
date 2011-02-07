@@ -1,7 +1,6 @@
 ;; Pull in all shared init stuff
 (load-file "~/.emacs.d/config/core.el")
 
-
 ;;Colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
 (color-theme-blackbored)
@@ -15,9 +14,6 @@
 ;;
 ;;for Carbon emacs 22
 ;;(set-face-font 'default "-apple-menlo-medium-r-normal--10-100-72-72-m-100-iso10646-1")
-
-
-
 
 (setq mac-command-modifier 'meta)
 
@@ -64,17 +60,6 @@
          (ack-args         "--ruby")
         (shutdown-hook    nil)))
 
-(add-to-list 'load-path "~/.emacs.d/vendor/supercollider/el")
-(require 'sclang)
-
-(custom-set-variables
-'(sclang-auto-scroll-post-buffer t)
-'(sclang-eval-line-forward nil)
-'(sclang-help-path (quote ("/Applications/SuperCollider/Help")))
-'(sclang-library-configuration-file "~/.sclang.cfg")
-'(sclang-runtime-directory "~/.sclang/"))
-;'(sclang-server-panel "Server.default.makeGui"))
-
 
 ;;highlight current line
 (global-hl-line-mode 1)
@@ -85,15 +70,6 @@
 
 ;make mark colour a nice usable dark pink
 (set-face-background 'region "#7F073F")
-
-;;(add-path "~/.emacs.d/vendor/rvm")
-;;(require 'rvm)
-;;(rvm-use-default)
-
-
-(server-start)
-;;(ns-toggle-fullscreen)
-
 
 (require 'erc-join)
 (erc-autojoin-mode 1)
@@ -127,5 +103,4 @@
 ;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
 
 ;;on os x use command key as meta
-
 ;(setq mac-option-modifier 'nil)
