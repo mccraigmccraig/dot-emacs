@@ -1,10 +1,10 @@
 ;;auto-complete mode
-(add-path "vendor/stored/auto-complete")
+(add-path "vendor/submodules/auto-complete")
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 (ac-flyspell-workaround)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/stored/auto-complete/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/auto-complete/dict")
 (global-auto-complete-mode t)
 (setq ac-auto-show-menu nil)
 (setq ac-dwim t)
@@ -29,6 +29,7 @@
   (add-to-list 'ac-modes mode))
 
 
+(add-path "vendor/ac-slime")
 ;;ac-slime auto-complete plugin
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)

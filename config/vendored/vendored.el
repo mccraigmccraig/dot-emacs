@@ -35,7 +35,7 @@ the mode-line."
 (window-number-meta-mode 1)
 
 ;;color-theme
-(add-path "vendor/stored/color-theme")
+(add-path "vendor/color-theme")
 (require 'color-theme)
 
 ;; highlight expression on eval
@@ -44,22 +44,22 @@ the mode-line."
 (setq eval-sexp-fu-flash-duration 0.5)
 
 ;;yassnippet
-(add-path "vendor/stored/yasnippet")
+(add-path "vendor/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/vendor/stored/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 
 
 ;;scratch-el
-(add-path "vendor/stored/scratch")
+(add-path "vendor/scratch")
 (require 'scratch)
 
 ;; modes
 
 
 
-(add-path "vendor/stored/tramp/lisp")
-(add-to-list 'Info-default-directory-list "/vendor/stored/tramp/info/")
+(add-path "vendor/tramp/lisp")
+(add-to-list 'Info-default-directory-list "/vendor/tramp/info/")
 (require 'tramp)
 
 ;;(add-path "vendor/nxhtml")
@@ -81,8 +81,6 @@ the mode-line."
       kept-new-versions 3
       version-control t)
 
-
-
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
@@ -95,8 +93,6 @@ the mode-line."
 (autoload 'ack-find-file "full-ack" nil t)
 
 
-
-
 ;I currently get strange behavour with org-mode
 (add-path "vendor/org-mode/lisp")
 (add-path "vendor/org-mode/contrib/lisp")
@@ -107,11 +103,11 @@ the mode-line."
 (load-file "~/.emacs.d/config/vendored/submoduled.el")
 
 ;;pull in larger vendored configs
+(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
+(load-file "~/.emacs.d/config/vendored/slime-conf.el")
 (load-file "~/.emacs.d/config/vendored/ack-conf.el")
 (load-file "~/.emacs.d/config/vendored/auto-complete-conf.el")
 (load-file "~/.emacs.d/config/vendored/highlight-flash-conf.el")
-(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
-(load-file "~/.emacs.d/config/vendored/slime-conf.el")
 (load-file "~/.emacs.d/config/vendored/ido-conf.el")
 
 
