@@ -18,22 +18,6 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
-;;window-number mode
-(require 'window-number)
-(autoload 'window-number-mode "window-number"
-  "A global minor mode that enables selection of windows according to
-numbers with the C-x C-j prefix.  Another mode,
-`window-number-meta-mode' enables the use of the M- prefix."
-  t)
-(window-number-mode 1)
-
-(autoload 'window-number-meta-mode "window-number"
-  "A global minor mode that enables use of the M- prefix to select
-windows, use `window-number-mode' to display the window numbers in
-the mode-line."
-  t)
-(window-number-meta-mode 1)
-
 ;;color-theme
 (add-path "vendor/color-theme")
 (require 'color-theme)
@@ -43,29 +27,12 @@ the mode-line."
 (require 'eval-sexp-fu)
 (setq eval-sexp-fu-flash-duration 0.5)
 
-;;yassnippet
-(add-path "vendor/yasnippet")
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
-
-
-;;scratch-el
 (add-path "vendor/scratch")
 (require 'scratch)
-
-;; modes
-
-
 
 (add-path "vendor/tramp/lisp")
 (add-to-list 'Info-default-directory-list "/vendor/tramp/info/")
 (require 'tramp)
-
-;;(add-path "vendor/nxhtml")
-;;(load "~/.emacs.d/vendor/nxhtml/autostart.el")
-
-
 
 (require 'icomplete+)
 (icomplete-mode 1)
@@ -81,6 +48,31 @@ the mode-line."
       kept-new-versions 3
       version-control t)
 
+;; The amazing undo tree
+(add-path "vendor/undo-tree/")
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(add-path "vendor/magit")
+(require 'magit)
+
+(add-path "vendor/slime")
+(require 'slime)
+
+(add-path "vendor/ibuffer-git")
+(require 'ibuffer-git)
+
+(add-path "vendor/mk-project")
+(require 'mk-project)
+
+;;add mo-git-blame for git blame support
+(add-path "vendor/mo-git-blame")
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+
+(add-path "vendor/elein")
+(require 'elein)
+
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
@@ -92,23 +84,14 @@ the mode-line."
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
 
-
-;I currently get strange behavour with org-mode
-(add-path "vendor/org-mode/lisp")
-(add-path "vendor/org-mode/contrib/lisp")
-(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
-(require 'org-install)
-
-;;pull in submoduled stuff
-(load-file "~/.emacs.d/config/vendored/submoduled.el")
-
 ;;pull in larger vendored configs
-(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
+(load-file "~/.emacs.d/config/vendored/yaml-conf.el")
+(load-file "~/.emacs.d/config/vendored/smex-conf.el")
+(load-file "~/.emacs.d/config/vendored/org-mode-conf.el")
+(load-file "~/.emacs.d/config/vendored/window-number-conf.el")
 (load-file "~/.emacs.d/config/vendored/slime-conf.el")
+(load-file "~/.emacs.d/config/vendored/clojure-conf.el")
 (load-file "~/.emacs.d/config/vendored/ack-conf.el")
 (load-file "~/.emacs.d/config/vendored/auto-complete-conf.el")
 (load-file "~/.emacs.d/config/vendored/highlight-flash-conf.el")
 (load-file "~/.emacs.d/config/vendored/ido-conf.el")
-
-
-
