@@ -1,5 +1,5 @@
 ;;auto-complete mode
-(add-path "vendor/submodules/auto-complete")
+(add-path "vendor/auto-complete")
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)

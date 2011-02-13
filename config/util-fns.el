@@ -156,6 +156,3 @@
     (replace-string "’" "'" nil st end)
     (replace-string "“" "\`\`" nil st end)
     (replace-string "”" "''" nil st end)))
-
-
-
