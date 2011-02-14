@@ -25,4 +25,6 @@
   (message "Deprecated in favour of M-x swank-clojure-project. Install swank-clojure from ELPA."))
 
 
-
+;;command to align let statements
+(add-path "vendor/align-cljlet")
+(require 'align-cljlet)
