@@ -3,6 +3,7 @@
 
 ;;remove whitespace between point and next word
 (global-set-key (kbd "C-c k")     'whack-whitespace)
+(global-set-key (kbd "C-c C-k")   'whack-whitespace)
 
 ;;paredit
 (global-set-key (kbd "C-M-f")     'paredit-forward)
@@ -73,7 +74,6 @@
 
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
-(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;;set the mark
 (global-set-key (kbd "C-SPC") 'set-mark-command)
