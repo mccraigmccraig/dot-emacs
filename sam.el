@@ -3,6 +3,8 @@
 
 ;;Colour theme
 (load-file "~/.emacs.d/vendor/blackbored.el")
+(load-file "~/.emacs.d/vendor/whitebored.el")
+(color-theme-whitebored)
 (color-theme-blackbored)
 
 ;;Fonts
