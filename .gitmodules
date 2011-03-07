@@ -1,6 +1,3 @@
-[submodule "vendor/submodules/mo-git-blame"]
-	path = vendor/submodules/mo-git-blame
-	url = git://git.bunkus.org/mo-git-blame.git
 [submodule "vendor/submodules/clojure-mode"]
 	path = vendor/submodules/clojure-mode
 	url = git://github.com/samaaron/clojure-mode.git
