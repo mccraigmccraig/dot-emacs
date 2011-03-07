@@ -14,6 +14,8 @@
 ;;s - slime eval shortcuts
 ;;t - text manipulation shortcuts
 ;;i - utf8 char shortcuts
+;;j - quick-jump shortcuts
+;;d - diff shortcuts
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -57,6 +59,15 @@
 (global-set-key (kbd "C-c i 0") (lambda () (interactive) (insert "∅")))
 (global-set-key (kbd "C-c i u") (lambda () (interactive) (insert "∪")))
 (global-set-key (kbd "C-c i s") (lambda () (interactive) (insert "♯")))
+
+(global-set-key (kbd "C-c j p") 'quick-jump-go-back)
+(global-set-key (kbd "C-c j b") 'quick-jump-go-back)
+(global-set-key (kbd "C-c j m") 'quick-jump-push-marker)
+(global-set-key (kbd "C-c j n") 'quick-jump-go-forward)
+(global-set-key (kbd "C-c j f") 'quick-jump-go-forward)
+(global-set-key (kbd "C-c j c") 'quick-jump-clear-all-marker)
+
+(global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
