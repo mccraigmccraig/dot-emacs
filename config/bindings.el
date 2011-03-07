@@ -74,10 +74,9 @@
 
 ;;redefine help shortcut
 (global-set-key (kbd "M-§") 'help-command)
-(global-set-key (kbd "C-x C-j") 'join-line)
 
 ;;allow the deletion of words:
-;backward kill word (forward kill word is M-d)
+;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;;delete current word
@@ -86,11 +85,14 @@
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
+;;shrink window
+(global-set-key (kbd "C-c .") 'shrink-window-horizontally)
+
 ;;set the mark
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
 ;;repeat previous command
-(global-set-key (kbd "M-#") 'repeat)
+(global-set-key (kbd "C-v") 'repeat)
 
 ;;scroll other window
 (global-set-key (kbd "C-M-]") 'scroll-other-window)
@@ -168,3 +170,6 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (global-set-key (kbd "M-v")  'yank)
+
+(global-set-key (kbd "C-c b") 'winner-undo)
+(global-set-key (kbd "C-c f") 'winner-redo)
