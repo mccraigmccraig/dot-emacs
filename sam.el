@@ -19,14 +19,13 @@
 
 (setq mac-command-modifier 'meta)
 
-(setq exec-path (append exec-path '("/usr/local/git/bin/git")))
+(setq exec-path (append exec-path '("/usr/local/git/bin")))
 (push "/Applications/SuperCollider" exec-path)
 
-(setq path "/Users/sam/.rvm/bin:/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:/usr/local/ruby1.9/bin:/Users/sam/Development/jruby/bin:/Users/sam/Development/chuck/bin:/Users/sam/Development/ioke/bin:~/innovationfactory/suite/dev/if-scripts:/bin")
+(setq path "/usr/local/git/bin:/Users/sam/.rvm/bin:/Applications/SuperCollider:/Applications/Emacs.app/Contents/MacOS/bin:/Users/sam/bin:/usr/local/bin:$PATH:/bin:/usr/bin")
 (setenv "PATH" path)
 
 (push "/usr/local/bin" exec-path)
-(push "/Users/sam/.rvm/bin" exec-path)
 
 ;;org mode config
 ;(load-file "~/.emacs.d/org-mode-config.el")
