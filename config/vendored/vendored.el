@@ -15,6 +15,7 @@
 (require 'buffer-move)
 (require 'inf-ruby)
 
+(require 'quick-jump)
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
