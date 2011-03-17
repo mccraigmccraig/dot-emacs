@@ -19,6 +19,12 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode.el"
+   "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+   (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 ;;color-theme
 (add-path "vendor/color-theme")
 (require 'color-theme)
@@ -73,6 +79,9 @@
 
 (add-path "vendor/elein")
 (require 'elein)
+
+(add-path "vendor/arduino-mode")
+(require 'arduino-mode)
 
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
