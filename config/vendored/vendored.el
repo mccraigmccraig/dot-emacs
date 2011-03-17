@@ -105,3 +105,4 @@
 (load-file "~/.emacs.d/config/vendored/auto-complete-conf.el")
 (load-file "~/.emacs.d/config/vendored/highlight-flash-conf.el")
 (load-file "~/.emacs.d/config/vendored/ido-conf.el")
+(load-file "~/.emacs.d/config/vendored/durendal-conf.el")
