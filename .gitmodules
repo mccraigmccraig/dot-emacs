@@ -54,4 +54,4 @@
 	url = https://github.com/bookest/arduino-mode.git
 [submodule "vendor/submodules/durendal"]
 	path = vendor/submodules/durendal
-	url = git://github.com/technomancy/durendal.git
+	url = git://github.com/samaaron/durendal.git
