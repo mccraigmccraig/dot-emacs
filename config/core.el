@@ -11,7 +11,7 @@
 (load-file "~/.emacs.d/config/ruby.el")
 (load-file "~/.emacs.d/config/recentf.el")
 (load-file "~/.emacs.d/config/cut-n-paste.el")
-(load-file "~/.emacs.d/config/vendored/vendored.el")
+(load-file "~/.emacs.d/config/vendored/core.el")
 (load-file "~/.emacs.d/config/bindings.el")
 
 
