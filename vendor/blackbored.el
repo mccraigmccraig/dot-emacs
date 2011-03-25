@@ -28,7 +28,7 @@
       (cursor-color . "#96CBFE")
       (foreground-color . "#EDEDED")
       (mouse-color . "sienna1"))
-     (default ((t (:background "#0C1021" :foreground "#F8F8F8"))))
+     (default ((t (:background "black" :foreground "#F8F8F8"))))
      (blue ((t (:foreground "blue"))))
      (bold ((t (:bold t))))
      (bold-italic ((t (:bold t))))
@@ -66,26 +66,27 @@
      (toolbar ((t (nil))))
      (underline ((nil (:underline nil))))
      (vertical-border ((t (:background "black" :foreground "#333333"))))
-     (zmacs-region ((t (:background "snow" :foreground "ble")))))))
+     (zmacs-region ((t (:background "snow" :foreground "ble"))))
+
+     (diff-added ((t (:foreground "green"))))
+     (diff-removed ((t (:foreground "red"))))
+
+     (magit-diff-add ((t (:foreground "green"))))
+     (magit-diff-del ((t (:foreground "red"))))
+     (magit-item-highlight ((t (:background "gray15"))))
+     (magit-section-title ((t (:foreground "deep pink"))))
+     (magit-diff-hunk-header ((t (:foreground "orange"))))
+     (magit-branch ((t (:foreground "gold"))))
+
+     (eval-sexp-fu-flash ((t (:background "grey15" :foreground "DeepPink3"))))
+
+     )))
 
 (custom-set-faces
- ;;magit colours
- '(magit-item-highlight ((((class color) (background dark)) (:background "gray15"))))
- '(magit-diff-add  ((((class color) (background dark)) (:foreground "chartreuse3"))))
- '(magit-diff-del ((((class color) (background dark)) (:foreground "violet red"))))
- '(magit-section-title ((((class color) (background dark)) (:foreground "deep pink"))))
- '(magit-diff-hunk-header ((((class color) (background dark)) (:foreground "orange"))))
- '(magit-branch ((((class color) (background dark)) (:foreground "gold"))))
 
  ;;nXhtml colours
  '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))))
  '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
-
- '(eval-sexp-fu-flash ((((class color) (background dark)) (:background "grey15" :foreground "DeepPink3"))))
-
- ;;diff colours
- '(diff-removed ((t (:foreground "Red"))) 'now)
- '(diff-added ((t (:foreground "Green"))) 'now)
 
  ;;ediff
  '(ediff-even-diff-A ((((class color) (background dark)) (:background "dark green"))))
