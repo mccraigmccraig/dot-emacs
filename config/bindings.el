@@ -170,6 +170,7 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (global-set-key (kbd "M-v")  'yank)
+(global-set-key (kbd "C-M-_") 'undo-tree-undo)
 
 (global-set-key (kbd "C-c b") 'winner-undo)
 (global-set-key (kbd "C-c f") 'winner-redo)
