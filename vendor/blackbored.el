@@ -44,7 +44,7 @@
      (font-lock-function-name-face ((t (:foreground "deep pink"))))
      (font-lock-keyword-face ((t (:foreground "#FBDE2D"))))
      (font-lock-preprocessor-face ((t (:foreground "gray57"))))
-;;     (font-lock-reference-face ((t (:foreground "medium slate blue"))))
+     (font-lock-reference-face ((t (:foreground "medium slate blue"))))
      (font-lock-reference-face ((t (:foreground "gray"))))
      (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
@@ -56,7 +56,10 @@
 
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
      (region ((t (:background "#7F073F"))))
-     (mode-line ((t (:background "#333333" :foreground "#96CBFE"))))
+
+     (mode-line ((t (:background "gray10" :foreground "#4c83ff"))))
+     (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
+
      (highlight ((t (:background "DarkOrange"))))
      (isearch ((t (:background "yellow" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
@@ -90,6 +93,8 @@
      (popup-tip-face ((t (:background "#333333" :foreground "white"))))
      (popup-scroll-bar-foreground-face ((t (:background "#0A0A0A"))))
      (popup-scroll-bar-background-face ((t (:background "#333333"))))
+
+     (window-number-face ((t (:background "#333333" :foreground "#4c83ff"))))
 
      )))
 
