@@ -69,9 +69,6 @@
 ;cursor
 (set-cursor-color "yellow")
 
-;make mark colour a nice usable dark pink
-(set-face-background 'region "#7F073F")
-
 (require 'erc-join)
 (erc-autojoin-mode 1)
 (setq erc-autojoin-channels-alist
