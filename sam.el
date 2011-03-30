@@ -78,27 +78,3 @@
 
 ;;(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
 ;;(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;stuff I tried out and either couldn't get to work or didn't like, but might try again;;
-;;ECB
-;(add-path "vendor/ecb-2.40")
-;(require 'ecb)
-
-;;CEDET mode
-;(load-file "~/.emacs.d/vendor/cedet-1.0pre6/common/cedet.el")
-;(global-ede-mode 1)                      ; Enable the Project management system
-;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
-;(global-srecode-minor-mode 1)            ; Enable template insertion menu
-
-; enable skeleton-pair insert globally
-;(setq skeleton-pair t)
-;(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.
-;(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-;(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
-
-;;on os x use command key as meta
-;(setq mac-option-modifier 'nil)
