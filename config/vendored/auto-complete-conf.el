@@ -6,7 +6,7 @@
 (ac-flyspell-workaround)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/auto-complete/dict")
 (global-auto-complete-mode t)
-(setq ac-auto-show-menu nil)
+(setq ac-auto-show-menu t)
 (setq ac-dwim t)
 (setq ac-use-menu-map t)
 (setq ac-quick-help-delay 1)
