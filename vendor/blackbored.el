@@ -94,7 +94,7 @@
      (popup-scroll-bar-foreground-face ((t (:background "#0A0A0A"))))
      (popup-scroll-bar-background-face ((t (:background "#333333"))))
 
-     (window-number-face ((t (:background "#333333" :foreground "#4c83ff"))))
+     (window-number-face ((t (:background "grey10" :foreground "#4c83ff"))))
 
      )))
 
