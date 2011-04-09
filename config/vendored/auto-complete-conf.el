@@ -15,6 +15,9 @@
 
 (define-key ac-completing-map (kbd "C-M-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-M-p") 'ac-previous)
+(define-key ac-completing-map "\t" 'ac-complete)
+(define-key ac-completing-map "\r" nil)
+
 
 (set-default 'ac-sources
              '(ac-source-dictionary
@@ -34,6 +37,4 @@
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-
-
 
