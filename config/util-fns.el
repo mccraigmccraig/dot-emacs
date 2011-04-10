@@ -85,9 +85,7 @@
 (defun recompile-init ()
   "Byte-compile all your dotfiles again."
   (interactive)
-  (byte-recompile-directory dotfiles-dir 0)
-  ;; TODO: remove elpa-to-submit once everything's submitted.
-  (byte-recompile-directory (concat dotfiles-dir "elpa-to-submit/") 0))
+  (byte-recompile-directory dotfiles-dir 0))
 
 (defun regen-autoloads (&optional force-regen)
   "Regenerate the autoload definitions file if necessary and load it."
