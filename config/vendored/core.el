@@ -3,7 +3,6 @@
 ;; utils
 (require 'package) ;; slime.el seems to depend on it :-(
 (require 'paredit)
-(require 'pos-tip)
 (require 'linkd)
 (require 'rcodetools)
 (require 'wrap-region)
