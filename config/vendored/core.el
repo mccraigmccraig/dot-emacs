@@ -40,10 +40,6 @@
 (add-to-list 'Info-default-directory-list (concat custom-basedir "vendor/tramp/info/"))
 (require 'tramp)
 
-(require 'icomplete+)
-(icomplete-mode 1)
-(setq icomplete-compute-delay 0)
-
 
 ;;TODO: Test to see whether this actually works
 (require 'backup-dir)
