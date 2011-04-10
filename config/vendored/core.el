@@ -1,7 +1,6 @@
 (add-path "vendor")
 
 ;; utils
-(require 'package) ;; slime.el seems to depend on it :-(
 (require 'paredit)
 (require 'linkd)
 (require 'rcodetools)
