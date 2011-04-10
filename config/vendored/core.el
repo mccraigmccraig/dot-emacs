@@ -37,7 +37,7 @@
 (require 'scratch)
 
 (add-path "vendor/tramp/lisp")
-(add-to-list 'Info-default-directory-list "/vendor/tramp/info/")
+(add-to-list 'Info-default-directory-list (concat custom-basedir "vendor/tramp/info/"))
 (require 'tramp)
 
 (require 'icomplete+)
