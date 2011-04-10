@@ -4,7 +4,6 @@
 (require 'paredit)
 (require 'linkd)
 (require 'rcodetools)
-(require 'wrap-region)
 (require 'dircolors)
 (require 'custom-ruby)
 (require 'smooth-scrolling)
