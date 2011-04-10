@@ -46,9 +46,6 @@
 [submodule "vendor/submodules/auto-complete"]
 	path = vendor/submodules/auto-complete
 	url = git://github.com/m2ym/auto-complete.git
-[submodule "vendor/submodules/mo-git-blame"]
-	path = vendor/submodules/mo-git-blame
-	url = git://github.com/voins/mo-git-blame.git
 [submodule "vendor/submodules/arduino-mode"]
 	path = vendor/submodules/arduino-mode
 	url = https://github.com/bookest/arduino-mode.git

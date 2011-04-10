@@ -65,11 +65,6 @@
 (add-path "vendor/mk-project")
 (require 'mk-project)
 
-;;add mo-git-blame for git blame support
-(add-path "vendor/mo-git-blame")
-(autoload 'mo-git-blame-file "mo-git-blame" nil t)
-(autoload 'mo-git-blame-current "mo-git-blame" nil t)
-
 (add-path "vendor/elein")
 (require 'elein)
 
