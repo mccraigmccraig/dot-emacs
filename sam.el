@@ -44,7 +44,9 @@
 (project-def "overtone"
              '((basedir          "/Users/sam/Development/improcess/lib/overtone")
                (src-patterns     ("*.clj"))
-               (ignore-patterns  ("*.log"))
+               (ignore-patterns  ("*.log" "*#"))
+               (file-list-cache  "/Users/sam/.emacs.d/etc/mk-project-cache/overtone-files")
+               (open-files-cache "/Users/sam/.emacs.d/etc/mk-project-cache/overtone-open-files")
                (vcs              git)
                (ack-args         "--clojure")
                (shutdown-hook    nil)))
