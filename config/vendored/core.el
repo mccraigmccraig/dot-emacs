@@ -41,6 +41,7 @@
 
 ;;TODO: Test to see whether this actually works
 (require 'backup-dir)
+(make-variable-buffer-local 'backup-inhibited)
 (setq bkup-backup-directory-info
       '((t "~/.backup" ok-create full-path prepend-name)))
 (setq delete-old-versions t
