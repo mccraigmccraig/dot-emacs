@@ -10,7 +10,7 @@
 (setq ac-dwim t)
 (setq ac-use-menu-map t)
 (setq ac-quick-help-delay 1)
-
+(setq ac-quick-help-height 60)
 (ac-set-trigger-key "TAB")
 
 (define-key ac-completing-map (kbd "C-M-n") 'ac-next)
