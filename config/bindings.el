@@ -1,3 +1,7 @@
+;;make C-] and M-] cut and copy respectively
+(global-set-key (kbd "C-]") 'kill-region)
+(global-set-key (kbd "M-]") 'kill-ring-save)
+
 ;;mark current function
 (global-set-key (kbd "C-x C-p")     'mark-defun)
 
@@ -16,6 +20,7 @@
 ;;i - utf8 char shortcuts
 ;;j - quick-jump shortcuts
 ;;d - diff shortcuts
+;;p - project shortcuts
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -47,10 +52,6 @@
 (global-set-key (kbd "C-c s e r")   'slime-eval-region)
 (global-set-key (kbd "C-c s e t")   'slime-eval-with-transcript)
 
-;;make C-] and M-] cut and copy respectively
-(global-set-key (kbd "C-]") 'kill-region)
-(global-set-key (kbd "M-]") 'kill-ring-save)
-
 ;;funky characters
 (global-set-key (kbd "C-c i l") (lambda () (interactive) (insert "λ")))
 (global-set-key (kbd "C-c i n") (lambda () (interactive) (insert "ℕ")))
@@ -67,7 +68,23 @@
 (global-set-key (kbd "C-c j f") 'quick-jump-go-forward)
 (global-set-key (kbd "C-c j c") 'quick-jump-clear-all-marker)
 
+;;diff shortcuts
 (global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
+
+;;mk-project shortcuts
+(global-set-key (kbd "C-c p l") 'project-load)
+(global-set-key (kbd "C-c p u") 'project-unload)
+(global-set-key (kbd "C-c p c") 'project-compile)
+(global-set-key (kbd "C-c p g") 'project-grep)
+(global-set-key (kbd "C-c p a") 'project-ack)
+(global-set-key (kbd "C-c p o") 'project-multi-occur)
+(global-set-key (kbd "C-c p f") 'project-find-file-ido)
+(global-set-key (kbd "C-c p i") 'project-index)
+(global-set-key (kbd "C-c p t") 'project-tags)
+(global-set-key (kbd "C-c p d") 'project-dired)
+(global-set-key (kbd "C-c p s") 'project-status)
+
+
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -125,9 +142,6 @@
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
-;; Turn on the menu bar for exploring new modes
-(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
-
 ;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
@@ -156,9 +170,6 @@
 
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
-
-;; For debugging Emacs modes
-(global-set-key (kbd "C-c p") 'message-point)
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
