@@ -98,6 +98,13 @@
 
      (yas/field-highlight-face ((t (:background "deep pink" :foreground "black"))))
 
+     (naeu-green-face ((t (:foreground "green" :background "black"))))
+     (naeu-pink-face ((t (:foreground "deep pink" :background "black"))))
+     (naeu-blue-face ((t (:foreground "medium slate blue" :background "black"))))
+     (naeu-orange-face ((t (:foreground "#FBDE2D" :background "black"))))
+     (naeu-red-face ((t (:foreground "orange" :background "black"))))
+     (naeu-grey-face ((t (:foreground "gray30" :background "black"))))
+
      )))
 
 (custom-set-faces
