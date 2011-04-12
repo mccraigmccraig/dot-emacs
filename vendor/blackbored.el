@@ -96,6 +96,8 @@
 
      (window-number-face ((t (:background "grey10" :foreground "#4c83ff"))))
 
+     (yas/field-highlight-face ((t (:background "deep pink" :foreground "black"))))
+
      )))
 
 (custom-set-faces
