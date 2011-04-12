@@ -1,4 +1,0 @@
-#name : it should validate presence of
-#group : shoulda
-# --
-it {should validate_presence_of(:${association})}
