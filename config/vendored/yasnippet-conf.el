@@ -1,5 +1,9 @@
 (add-path "vendor/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
+
+(setq yas/root-directory "~/.emacs.d/etc/snippets")
+
+;; Load the snippets
+(yas/load-directory yas/root-directory)
 
