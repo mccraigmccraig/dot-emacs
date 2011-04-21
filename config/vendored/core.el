@@ -1,7 +1,6 @@
 (add-path "vendor")
 
 ;; utils
-(require 'paredit)
 (require 'linkd)
 (require 'rcodetools)
 (require 'dircolors)
@@ -84,6 +83,7 @@
 (autoload 'ack-find-file "full-ack" nil t)
 
 ;;pull in larger vendored configs
+(load-file "~/.emacs.d/config/vendored/paredit-conf.el")
 (load-file "~/.emacs.d/config/vendored/yaml-conf.el")
 (load-file "~/.emacs.d/config/vendored/smex-conf.el")
 (load-file "~/.emacs.d/config/vendored/org-mode-conf.el")
