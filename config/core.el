@@ -2,9 +2,6 @@
 (require 'rcodetools)
 (require 'dircolors)
 (require 'custom-ruby)
-(require 'smooth-scrolling)
-(require 'rainbow-parens)
-(require 'rainbow-delimiters)
 (require 'buffer-move)
 (require 'inf-ruby)
 
@@ -12,7 +9,7 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
-(add-lib-path "scratch")
+(add-lib-path "scratch-el")
 (require 'scratch)
 
 (add-lib-path "tramp/lisp")
