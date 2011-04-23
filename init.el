@@ -1,36 +1,39 @@
-;;; init.el --- Where all the magic begins
-;;
-;; Part of the Emacs Starter Kit
-;;
-;; This is the first thing to get loaded.
-;;
-;; "Emacs outshines all other editing software in approximately the
-;; same way that the noonday sun does the stars. It is not just bigger
-;; and brighter; it simply makes everything else vanish."
-;; -Neal Stephenson, "In the Beginning was the Command Line"
+;; This is where everything starts
 
-;; Turn off mouse interface early in startup to avoid momentary display
-;; You really don't need these; trust me.
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
-;; Load path etc.
-
+;; Create a variable to store the path to this dotfile directory
+;; (Usually ~/.emacs.d)
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 
-(add-to-list 'load-path dotfiles-dir)
+;; Create variables to store the path to this dotfile dir's lib etc and tmp directories
+(setq dotfiles-lib-dir (concat dotfiles-dir "lib/"))
+(setq dotfiles-tmp-dir (concat dotfiles-dir "tmp/"))
+(setq dotfiles-etc-dir (concat dotfiles-dir "etc/"))
 
-;; You can keep system- or user-specific customizations here
-(setq system-specific-config (concat dotfiles-dir system-name ".el")
-      user-specific-config (concat dotfiles-dir user-login-name ".el")
-      user-specific-dir (concat dotfiles-dir user-login-name))
-(add-to-list 'load-path user-specific-dir)
+;; Create helper fns for loading dotfile paths and files
+(defun add-dotfile-path (p)
+  (add-to-list 'load-path (concat dotfiles-dir p)))
 
-(if (file-exists-p system-specific-config) (load system-specific-config))
+(defun add-lib-path (p)
+  (add-to-list 'load-path (concat dotfiles-lib-dir p)))
+
+(defun load-dotfile (f)
+  (load-file (concat dotfiles-dir f)))
+
+
+;; Ensure the lib directory is on the load path
+(add-dotfile-path "lib")
+
+
+;; Pull in live-coding config (see https://github.com/overtone/live-coding-emacs)
+(load-dotfile "config/live/live.el")
+
+
+;; Pull in rest of config stuff
+(load-dotfile "config/core.el")
+
+
+;; Pull in user specific config in personal.el if it exists
+(setq user-specific-config (concat dotfiles-dir "personal.el"))
 (if (file-exists-p user-specific-config) (load user-specific-config))
-(if (file-exists-p user-specific-dir)
-  (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 
-;;; init.el ends here
