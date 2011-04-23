@@ -1,3 +1,7 @@
+;; use blackbored colour theme
+(load-file (concat dotfiles-lib-dir "blackbored.el"))
+(color-theme-blackbored)
+
 (require 'linkd)
 (require 'rcodetools)
 (require 'dircolors)
@@ -66,3 +70,4 @@
 (load-dotfile "config/org-mode-conf.el")
 (load-dotfile "config/window-number-conf.el")
 (load-dotfile "config/markdown-conf.el")
+
