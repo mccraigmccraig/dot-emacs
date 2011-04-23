@@ -1,7 +1,3 @@
-(defun add-path (p)
-  (add-to-list 'load-path (concat custom-basedir p)))
-
-
 (defun local-column-number-mode ()
   (make-local-variable 'column-number-mode)
   (column-number-mode t))
