@@ -61,9 +61,9 @@
      (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
 
      (highlight ((t (:background "DarkOrange"))))
-     (isearch ((t (:background "yellow" :foreground "black"))))
+     (isearch ((t (:background "deep pink" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
-     (lazy-highlight ((t (:background "#333333"))))
+     (lazy-highlight ((t (:background "yellow" :foreground "black"))))
      (query-replace ((t (:background "#333333"))))
      (Highline-face ((t (:background "SeaGreen"))))
      (italic ((t (nil))))
