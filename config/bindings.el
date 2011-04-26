@@ -102,8 +102,9 @@
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
-;;shrink window
+;;shrink and grow windows
 (global-set-key (kbd "C-c .") 'shrink-window-horizontally)
+(global-set-key (kbd "C-c ,") 'enlarge-window-horizontally)
 
 ;;set the mark
 (global-set-key (kbd "C-SPC") 'set-mark-command)
@@ -185,3 +186,6 @@
 
 (global-set-key (kbd "C-c b") 'winner-undo)
 (global-set-key (kbd "C-c f") 'winner-redo)
+
+(define-key grep-mode-map (kbd "s") (lambda () (interactive) (previous-error-no-select) (next-error-no-select)))
+(define-key grep-mode-map (kbd "S") (lambda () (interactive) (next-error-no-select) (previous-error-no-select)))
