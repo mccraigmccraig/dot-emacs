@@ -95,6 +95,7 @@
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
+(define-key lisp-mode-shared-map (kbd "C-w") 'paredit-backward-kill-word)
 
 ;;delete current word
 (global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
