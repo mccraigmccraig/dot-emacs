@@ -74,5 +74,6 @@
 
 (setq confirm-nonexistent-file-or-buffer nil)
 
-;;remove all trailing whitespace before saving the file
+;;remove all trailing whitespace and trailing blank lines before saving the file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-blank-lines)
