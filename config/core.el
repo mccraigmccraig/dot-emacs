@@ -70,4 +70,4 @@
 (load-dotfile "config/org-mode-conf.el")
 (load-dotfile "config/window-number-conf.el")
 (load-dotfile "config/markdown-conf.el")
-
+(load-dotfile "config/shell.el")
