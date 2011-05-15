@@ -41,9 +41,6 @@
       truncate-partial-width-windows nil
       delete-by-moving-to-trash nil
       uniquify-buffer-name-style 'forward
-      whitespace-style '(trailing lines space-before-tab
-                                  indentation space-after-tab)
-      whitespace-line-column 100
       ediff-window-setup-function 'ediff-setup-windows-plain
       xterm-mouse-mode t
       save-place-file (concat dotfiles-tmp-dir "places"))
