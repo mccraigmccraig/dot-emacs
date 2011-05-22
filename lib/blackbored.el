@@ -98,6 +98,8 @@
 
      (yas/field-highlight-face ((t (:background "deep pink" :foreground "black"))))
 
+     (show-paren-match-face ((t (:background "deep pink" :foreground "black"))))
+
      (naeu-green-face ((t (:foreground "green" :background "black"))))
      (naeu-pink-face ((t (:foreground "deep pink" :background "black"))))
      (naeu-blue-face ((t (:foreground "medium slate blue" :background "black"))))
