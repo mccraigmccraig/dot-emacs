@@ -2,5 +2,5 @@
 # --
 (ns ${1:name}
   (:use [overtone.live]
-        [overtone.inst.piano]
-        [overtone.inst.synth]))$0
+        [overtone.inst.piano])
+  (:require [polynome.core :as poly]))$0
