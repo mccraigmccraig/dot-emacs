@@ -78,10 +78,10 @@
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
 
-(defun recompile-init ()
+(defun recompile-libs ()
   "Byte-compile all your dotfiles again."
   (interactive)
-  (byte-recompile-directory dotfiles-dir 0))
+  (byte-recompile-directory dotfiles-lib-dir 0))
 
 (defun regen-autoloads (&optional force-regen)
   "Regenerate the autoload definitions file if necessary and load it."
