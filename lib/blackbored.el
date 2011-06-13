@@ -107,7 +107,14 @@
      (naeu-red-face ((t (:foreground "orange" :background "black"))))
      (naeu-grey-face ((t (:foreground "gray30" :background "black"))))
 
-     )))
+     (ido-first-match ((t (:foreground "deep pink" :background "black"))))
+     (ido-only-match ((t (:foreground "deep pink" :background "black"))))
+     (ido-subdir ((t (:foreground "gray60" :background "black"))))
+     (ido-indicator ((t (:foreground "black" :background "deep pink"))))
+
+
+     (undo-tree-visualizer-active-branch-face ((t (:foreground "deep pink" :background "black")))))))
+
 
 (custom-set-faces
 
