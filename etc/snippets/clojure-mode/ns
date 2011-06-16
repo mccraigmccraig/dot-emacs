@@ -1,6 +1,4 @@
 #name: ns
 # --
 (ns ${1:name}
-  (:use [overtone.live]
-        [overtone.inst.piano])
-  (:require [polynome.core :as poly]))$0
+  (:use [overtone.live]))$0
