@@ -1,8 +1,8 @@
 ;;PATH stuff
 (push "/usr/local/bin" exec-path)
-(setq path "/Users/sam/bin:/usr/local/bin:$PATH:/bin:/usr/bin")
+(setq path "/Applications/Supercollider:/Users/sam/bin:/usr/local/bin:$PATH:/bin:/usr/bin")
 (setenv "PATH" path)
-
+(push "/Applications/SuperCollider" exec-path)
 
 ;;organise ibuffer into handy groups
 (setq ibuffer-saved-filter-groups

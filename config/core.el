@@ -71,3 +71,5 @@
 (load-dotfile "config/window-number-conf.el")
 (load-dotfile "config/markdown-conf.el")
 (load-dotfile "config/shell.el")
+(load-dotfile "config/supercollider-conf.el")
+(load-dotfile "config/personal.el")
