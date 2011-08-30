@@ -112,6 +112,10 @@
      (ido-subdir ((t (:foreground "gray60" :background "black"))))
      (ido-indicator ((t (:foreground "black" :background "deep pink"))))
 
+     (grep-match-face ((t (:foreground "black" :background "deep pink"))))
+     (grep-hit-face ((t (:foreground "black" :background "deep pink"))))
+     (grep-context-face ((t (:foreground "black" :background "deep pink"))))
+
 
      (undo-tree-visualizer-active-branch-face ((t (:foreground "deep pink" :background "black")))))))
 
