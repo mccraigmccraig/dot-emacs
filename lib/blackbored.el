@@ -29,7 +29,7 @@
       (foreground-color . "#EDEDED")
       (mouse-color . "sienna1"))
 
-     (default ((t (:background "black" :foreground "#A9A9A9"))))
+     (default ((t (:background "black" :foreground "light gray"))))
      (blue ((t (:foreground "blue"))))
      (bold ((t (:bold t))))
      (bold-italic ((t (:bold t))))
@@ -37,9 +37,9 @@
      (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
 
 
-     (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
+     (font-lock-builtin-face ((t (:foreground "#FF6400"))))
      (font-lock-comment-face ((t (:italic t :foreground "#8B8989"))))
-     (font-lock-constant-face ((t (:foreground "#D8FA3C"))))
+     (font-lock-constant-face ((t (:foreground "#4c83ff"))))
      (font-lock-doc-string-face ((t (:foreground "DarkOrange"))))
      (font-lock-function-name-face ((t (:foreground "deep pink"))))
      (font-lock-keyword-face ((t (:foreground "#FBDE2D"))))
@@ -49,10 +49,9 @@
      (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
      (font-lock-string-face ((t (:foreground "#61CE3C"))))
-     (font-lock-type-face ((t (:foreground "dark red"))))
-     (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
+     (font-lock-type-face ((t (:foreground "#D8FA3C"))))
+     (font-lock-variable-name-face ((t (:foreground "#D8FA3C"))))
      (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
-
 
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
      (region ((t (:background "#7F073F"))))
@@ -112,6 +111,8 @@
      (ido-subdir ((t (:foreground "gray60" :background "black"))))
      (ido-indicator ((t (:foreground "black" :background "deep pink"))))
 
+     (match ((t (:foreground "black" :background "deep pink"))))
+     (minibuffer-prompt ((t (:foreground "#61CE3C" :background "black"))))
      (grep-match-face ((t (:foreground "black" :background "deep pink"))))
      (grep-hit-face ((t (:foreground "black" :background "deep pink"))))
      (grep-context-face ((t (:foreground "black" :background "deep pink"))))
