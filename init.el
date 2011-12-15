@@ -20,6 +20,12 @@
 (defun load-dotfile (f)
   (load-file (concat dotfiles-dir f)))
 
+(defun load-dotfile-if-exists (f)
+  (let ((p (concat dotfiles-dir f)))
+    (if (file-readable-p p)
+        (load-file p)
+      (warn (concat "NO SUCH FILE: " p)))))
+
 (require 'warnings)
 (setq warning-suppress-types '())
 (add-dotfile-path "elpa")

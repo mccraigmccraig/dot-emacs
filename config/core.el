@@ -72,4 +72,4 @@
 (load-dotfile "config/markdown-conf.el")
 (load-dotfile "config/shell.el")
 (load-dotfile "config/supercollider-conf.el")
-(load-dotfile "config/personal.el")
+(load-dotfile-if-exists "config/personal.el")
