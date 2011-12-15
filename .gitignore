@@ -22,3 +22,5 @@ session*
 tramp
 \#*
 tmp/*
+elpa
+config/person.el

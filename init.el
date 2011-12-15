@@ -20,6 +20,12 @@
 (defun load-dotfile (f)
   (load-file (concat dotfiles-dir f)))
 
+(require 'warnings)
+(setq warning-suppress-types '())
+(add-dotfile-path "elpa")
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; Ensure the lib directory is on the load path
 (add-dotfile-path "lib")
@@ -31,4 +37,3 @@
 
 ;; Pull in personalised config
 (load-dotfile "config/core.el")
-
