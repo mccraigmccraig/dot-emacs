@@ -31,4 +31,3 @@
 
 ;; Pull in personalised config
 (load-dotfile "config/core.el")
-
