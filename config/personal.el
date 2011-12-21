@@ -34,18 +34,3 @@
                (vcs              git)
                (ack-args         "--clojure")
                (shutdown-hook    nil)))
-
-
-;;IRC
-(require 'erc-join)
-(erc-autojoin-mode 1)
-(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emacs" "#clojure" "#clojure-casual")
-        ("irc.goto10.org" "#openlab")))
-
-
-;;(erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "naeu")
-;;(erc :server "irc.goto10.org"   :full-name "Sam Aaron" :port 6667 :nick "naeu")
-
-;;org mode config
-;;(load-file "~/.emacs.d/org-mode-config.el")
