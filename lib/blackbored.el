@@ -54,8 +54,8 @@
      (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
 
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
-     (region ((t (:background "#7F073F"))))
-
+;;     (region ((t (:foreground "black" :background "#7F073F"))))
+ (region ((t ( :background "#7F073F"))))
      (mode-line ((t (:background "gray10" :foreground "#4c83ff"))))
      (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
 
@@ -89,7 +89,7 @@
      (ac-candidate-face ((t (:background "gray60" :foreground "black"))))
      (ac-selection-face ((t (:background "deep pink" :foreground "black"))))
      (popup-isearch-match ((t (:background "black" :foreground "deep pink"))))
-     (popup-tip-face ((t (:background "#333333" :foreground "white"))))
+     (popup-tip-face ((t (:background "#333333" :foreground "whitepnpnn"))))
      (popup-scroll-bar-foreground-face ((t (:background "#0A0A0A"))))
      (popup-scroll-bar-background-face ((t (:background "#333333"))))
 
@@ -111,14 +111,40 @@
      (ido-subdir ((t (:foreground "gray60" :background "black"))))
      (ido-indicator ((t (:foreground "black" :background "deep pink"))))
 
-     (match ((t (:foreground "black" :background "deep pink"))))
+     (match ((t (:foreground "deep pink" :background "blackn"))))
      (minibuffer-prompt ((t (:foreground "#61CE3C" :background "black"))))
      (grep-match-face ((t (:foreground "black" :background "deep pink"))))
-     (grep-hit-face ((t (:foreground "black" :background "deep pink"))))
+     (grep-hit-face ((t (:foreground "black" :background "red"))))
      (grep-context-face ((t (:foreground "black" :background "deep pink"))))
+
+     (erc-notice-face ((t (:bold t :foreground "grey26"))))
+
+     (erc-action-face ((t (:foreground "#FF6400"))))
+;;     (erc-bold-face ((t (:bold t :weight bold))))
+;;     (erc-button ((t (:bold t :weight bold))))
+;;     (erc-command-indicator-face ((t (:bold t :weight bold))))
+     (erc-current-nick-face ((t (:foreground "#FBDE2D"))))
+     (erc-dangerous-host-face ((t (:foreground "red"))))
+     (erc-default-face ((t (:foreground "#61CE3C"))))
+     (erc-direct-msg-face ((t (:foreground "orange"))))
+     (erc-error-face ((t (:foreground "red"))))
+     (erc-fool-face ((t (:foreground "dim gray"))))
+     (erc-header-line ((t (:background "grey90" :foreground "grey20"))))
+     (erc-input-face ((t (:foreground "#4c83ff"))))
+     (erc-inverse-face ((t (:background "Black" :foreground "White"))))
+     (erc-keyword-face ((t (:foreground "deep pink"))))
+     (erc-my-nick-face ((t (:bold t :foreground "deep pink" ))))
+     (erc-nick-default-face ((t (:foreground "grey57"))))
+     (erc-nick-msg-face ((t (:foreground "deep pink"))))
+
+     (erc-pal-face ((t (:bold t :foreground "Magenta" :weight bold))))
+     (erc-prompt-face ((t (:bold t :background "lightBlue2" :foreground "Black" :weight bold))))
+     (erc-timestamp-face ((t (:foreground "dim gray"))))
+     (erc-underline-face ((t (:underline t))))
 
 
      (undo-tree-visualizer-active-branch-face ((t (:foreground "deep pink" :background "black")))))))
+
 
 
 (custom-set-faces
