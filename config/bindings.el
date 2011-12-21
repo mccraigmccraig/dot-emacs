@@ -1,3 +1,6 @@
+(require 'key-chord)
+(key-chord-mode 1)
+
 ;;make C-] and M-] cut and copy respectively
 (global-set-key (kbd "C-]") 'kill-region)
 (global-set-key (kbd "M-]") 'kill-ring-save)
@@ -84,10 +87,13 @@
 (global-set-key (kbd "C-c p d") 'project-dired)
 (global-set-key (kbd "C-c p s") 'project-status)
 
-
+;;override default binding to "open-line" to one that simply inserts a blank
+;;line below and moves the cursor to it
+(global-set-key (kbd "C-o") (lambda () (interactive) (end-of-line) (newline-and-indent)))
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(define-key lisp-mode-shared-map (kbd "C-h") 'paredit-backward-delete)
 
 ;;redefine help shortcut
 (global-set-key (kbd "M-§") 'help-command)
@@ -190,3 +196,5 @@
 
 (define-key grep-mode-map (kbd "s") (lambda () (interactive) (previous-error-no-select) (next-error-no-select)))
 (define-key grep-mode-map (kbd "S") (lambda () (interactive) (next-error-no-select) (previous-error-no-select)))
+
+(key-chord-define-global "\\s" 'ido-goto-symbol)
