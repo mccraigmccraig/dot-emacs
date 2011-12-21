@@ -50,7 +50,7 @@
   (interactive)
   (indent-buffer)
   (untabify-buffer)
-  (delete-trailing-whitespace))
+  (whitespace-cleanup))
 
 (defun recentf-ido-find-file ()
   "Find a recent file using ido."
@@ -225,3 +225,10 @@ children of DIRECTORY."
     (replace-string "’" "'" nil st end)
     (replace-string "“" "\`\`" nil st end)
     (replace-string "”" "''" nil st end)))
+
+(defun what-face (pos)
+  "Return the name of the face at point"
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
