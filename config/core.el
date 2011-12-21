@@ -38,9 +38,6 @@
 (add-lib-path "mk-project")
 (require 'mk-project)
 
-(add-lib-path "arduino-mode")
-(require 'arduino-mode)
-
 ;;ioke mode
 (autoload 'ioke-mode "ioke-mode")
 (autoload 'run-ioke "inf-ioke" nil t)
