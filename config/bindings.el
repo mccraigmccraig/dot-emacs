@@ -87,10 +87,6 @@
 (global-set-key (kbd "C-c p d") 'project-dired)
 (global-set-key (kbd "C-c p s") 'project-status)
 
-;;override default binding to "open-line" to one that simply inserts a blank
-;;line below and moves the cursor to it
-(global-set-key (kbd "C-o") (lambda () (interactive) (end-of-line) (newline-and-indent)))
-
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (define-key lisp-mode-shared-map (kbd "C-h") 'paredit-backward-delete)
@@ -198,3 +194,6 @@
 (define-key grep-mode-map (kbd "S") (lambda () (interactive) (next-error-no-select) (previous-error-no-select)))
 
 (key-chord-define-global "\\s" 'ido-goto-symbol)
+
+;; Ace jump mode
+(global-set-key (kbd "C-o") 'ace-jump-mode)
