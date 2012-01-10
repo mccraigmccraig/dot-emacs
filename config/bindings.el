@@ -105,9 +105,11 @@
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
-;;shrink and grow windows
+;;shrink and grow windows horizontally and vertically
 (global-set-key (kbd "C-c .") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c ,") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-c /") (lambda () (interactive) (enlarge-window -1)))
+(global-set-key (kbd "C-c '") (lambda () (interactive) (enlarge-window 1)))
 
 ;;set the mark
 (global-set-key (kbd "C-SPC") 'set-mark-command)
