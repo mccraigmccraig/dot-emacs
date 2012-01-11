@@ -2,7 +2,6 @@
 (require 'slime)
 (slime-setup '(slime-repl slime-scratch slime-editing-commands))
 (setq slime-protocol-version 'ignore)
-(add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
 
 (add-hook 'slime-repl-mode-hook (lambda ()
