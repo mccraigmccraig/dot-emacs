@@ -43,9 +43,6 @@
 [submodule "vendor/submodules/auto-complete"]
         path = vendor/submodules/auto-complete
         url = git://github.com/m2ym/auto-complete.git
-[submodule "vendor/submodules/durendal"]
-        path = vendor/submodules/durendal
-        url = git://github.com/samaaron/durendal.git
 [submodule "vendor/submodules/scel"]
         path = vendor/submodules/scel
         url = git://github.com/samaaron/scel.git
