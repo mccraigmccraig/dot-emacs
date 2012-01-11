@@ -22,7 +22,6 @@
 (add-to-list 'load-path dotfiles-lib-dir)
 (require 'dircolors)
 (require 'smooth-scrolling)
-(require 'rainbow-parens)
 (require 'rainbow-delimiters)
 (require 'mwe-log-commands)
 
@@ -37,7 +36,6 @@
 (load-live-config-file "clojure-conf.el")
 (load-live-config-file "slime-conf.el")
 (load-live-config-file "auto-complete-conf.el")
-(load-live-config-file "durendal-conf.el")
 (load-live-config-file "smex-conf.el")
 (load-live-config-file "yasnippet-conf.el")
 (load-live-config-file "undo-tree-conf.el")
