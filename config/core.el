@@ -29,9 +29,6 @@
       kept-new-versions 3
       version-control t)
 
-(add-lib-path "magit")
-(require 'magit)
-
 (add-lib-path "ibuffer-git")
 (require 'ibuffer-git)
 

@@ -19,9 +19,6 @@
 [submodule "vendor/submodules/yaml-mode"]
         path = vendor/submodules/yaml-mode
         url = git://github.com/yoshiki/yaml-mode.git
-[submodule "vendor/submodules/magit"]
-        path = vendor/submodules/magit
-        url = git://github.com/philjackson/magit.git
 [submodule "vendor/submodules/ac-slime"]
         path = vendor/submodules/ac-slime
         url = git://github.com/purcell/ac-slime.git
