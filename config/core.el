@@ -29,6 +29,9 @@
       kept-new-versions 3
       version-control t)
 
+(add-lib-path "egg")
+(require 'egg)
+
 (add-lib-path "ibuffer-git")
 (require 'ibuffer-git)
 

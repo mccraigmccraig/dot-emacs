@@ -43,3 +43,6 @@
 [submodule "vendor/submodules/scel"]
         path = vendor/submodules/scel
         url = git://github.com/samaaron/scel.git
+[submodule "vendor/submodules/egg"]
+	path = vendor/submodules/egg
+	url = git://github.com/byplayer/egg.git
