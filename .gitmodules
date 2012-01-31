@@ -46,3 +46,6 @@
 [submodule "vendor/submodules/egg"]
 	path = vendor/submodules/egg
 	url = git://github.com/byplayer/egg.git
+[submodule "vendor/submodules/actionscript-mode"]
+	path = vendor/submodules/actionscript-mode
+	url = git://github.com/austinhaas/actionscript-mode.git

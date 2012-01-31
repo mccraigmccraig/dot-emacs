@@ -71,3 +71,4 @@
 (load-dotfile "config/supercollider-conf.el")
 (load-dotfile "config/personal.el")
 (load-dotfile "config/erc-conf.el")
+(load-dotfile "config/actionscript-conf.el")
