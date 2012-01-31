@@ -14,7 +14,7 @@
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
-(define-key paredit-mode (kbd "C-h") 'paredit-backward-delete)
+(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
 
 ;;redefine help shortcut
 (global-set-key (kbd "M-§") 'help-command)
@@ -22,7 +22,7 @@
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
-(define-key paredit-mode (kbd "C-w") 'paredit-backward-kill-word)
+(define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
 
 ;;paredit
 (define-key slime-mode-map (kbd "C-M-e") 'paredit-backward-barf-sexp)
