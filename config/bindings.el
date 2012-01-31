@@ -29,10 +29,14 @@
 (define-key paredit-mode-map (kbd "C-M-s") 'paredit-backward-slurp-sexp)
 (define-key paredit-mode-map (kbd "C-M-j") 'paredit-forward-slurp-sexp)
 (define-key paredit-mode-map (kbd "C-M-y") 'paredit-forward-barf-sexp)
-(define-key paredit-mode-map (kbd "C-c p k") 'paredit-splice-sexp-killing-forward)
-(define-key paredit-mode-map (kbd "C-c p w") 'paredit-splice-sexp-killing-backward)
+(define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
+(define-key paredit-mode-map (kbd "C-c l w") 'paredit-splice-sexp-killing-backward)
+(define-key paredit-mode-map (kbd "C-c l l") 'align-cljlet)
+(define-key paredit-mode-map (kbd "C-c l t") 'fill-paragraph)
+(define-key paredit-mode-map (kbd "C-M-z") 'align-cljlet)
 
 ;;C-c handy shortcuts
+;;l - lispy shortcuts (i.e. paredit and clojure specific fns)
 ;;m - emacs eval shortcuts
 ;;s - slime eval shortcuts
 ;;t - text manipulation shortcuts
