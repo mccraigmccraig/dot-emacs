@@ -60,7 +60,6 @@
 (load-dotfile "config/recentf.el")
 (load-dotfile "config/cut-n-paste.el")
 (load-dotfile "config/ack-conf.el")
-(load-dotfile "config/bindings.el")
 (load-dotfile "config/auto-modes.el")
 (load-dotfile "config/custom-faces.el")
 (load-dotfile "config/look-and-feel.el")
@@ -72,3 +71,4 @@
 (load-dotfile "config/personal.el")
 (load-dotfile "config/erc-conf.el")
 (load-dotfile "config/actionscript-conf.el")
+(load-dotfile "config/bindings.el")
