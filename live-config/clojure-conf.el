@@ -32,3 +32,6 @@
 ;;To use: M-x align-cljlet
 (add-live-lib-path "align-cljlet")
 (require 'align-cljlet)
+
+;;teach emacs to treat hyphen-separated-words as one
+(modify-syntax-entry ?- "w" clojure-mode-syntax-table)
