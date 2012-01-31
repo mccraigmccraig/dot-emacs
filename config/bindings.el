@@ -12,9 +12,25 @@
 (global-set-key (kbd "C-c k")     'whack-whitespace)
 (global-set-key (kbd "C-c C-k")   'whack-whitespace)
 
+;;make ^h delete rather than help
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(define-key paredit-mode (kbd "C-h") 'paredit-backward-delete)
+
+;;redefine help shortcut
+(global-set-key (kbd "M-§") 'help-command)
+
+;;allow the deletion of words:
+;;backward kill word (forward kill word is M-d)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(define-key paredit-mode (kbd "C-w") 'paredit-backward-kill-word)
+
 ;;paredit
-(global-set-key (kbd "C-M-f")     'paredit-forward)
-(global-set-key (kbd "C-M-b")     'paredit-backward)
+(define-key slime-mode-map (kbd "C-M-e") 'paredit-backward-barf-sexp)
+(define-key paredit-mode-map (kbd "C-M-s") 'paredit-backward-slurp-sexp)
+(define-key paredit-mode-map (kbd "C-M-j") 'paredit-forward-slurp-sexp)
+(define-key paredit-mode-map (kbd "C-M-y") 'paredit-forward-barf-sexp)
+(define-key paredit-mode-map (kbd "C-c p k") 'paredit-splice-sexp-killing-forward)
+(define-key paredit-mode-map (kbd "C-c p w") 'paredit-splice-sexp-killing-backward)
 
 ;;C-c handy shortcuts
 ;;m - emacs eval shortcuts
@@ -86,18 +102,6 @@
 (global-set-key (kbd "C-c p t") 'project-tags)
 (global-set-key (kbd "C-c p d") 'project-dired)
 (global-set-key (kbd "C-c p s") 'project-status)
-
-;;make ^h delete rather than help
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(define-key lisp-mode-shared-map (kbd "C-h") 'paredit-backward-delete)
-
-;;redefine help shortcut
-(global-set-key (kbd "M-§") 'help-command)
-
-;;allow the deletion of words:
-;;backward kill word (forward kill word is M-d)
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(define-key lisp-mode-shared-map (kbd "C-w") 'paredit-backward-kill-word)
 
 ;;delete current word
 (global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
