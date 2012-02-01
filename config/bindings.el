@@ -13,6 +13,9 @@
 (global-set-key (kbd "C-M-f")     'paredit-forward)
 (global-set-key (kbd "C-M-b")     'paredit-backward)
 
+;;auto-complete
+(global-set-key (kbd "<C-tab>") 'ac-start)
+
 ;;C-c handy shortcuts
 ;;m - emacs eval shortcuts
 ;;s - slime eval shortcuts
