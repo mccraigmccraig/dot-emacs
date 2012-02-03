@@ -32,6 +32,7 @@
 (load-live-config-file "lisps-conf.el")
 (load-live-config-file "cosmetic.el")
 (load-live-config-file "highlight-flash-conf.el")
+(load-live-config-file "volatile-highlights-conf.el")
 (load-live-config-file "ido-conf.el")
 (load-live-config-file "clojure-conf.el")
 (load-live-config-file "slime-conf.el")

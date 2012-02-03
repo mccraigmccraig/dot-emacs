@@ -49,3 +49,6 @@
 [submodule "vendor/submodules/actionscript-mode"]
 	path = vendor/submodules/actionscript-mode
 	url = git://github.com/austinhaas/actionscript-mode.git
+[submodule "vendor/submodules/volatile-highlights"]
+	path = vendor/submodules/volatile-highlights
+	url = git://github.com/k-talo/volatile-highlights.el.git
