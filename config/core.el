@@ -8,7 +8,6 @@
 (require 'custom-ruby)
 (require 'buffer-move)
 (require 'inf-ruby)
-(require 'ace-jump-mode)
 (require 'quick-jump)
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")

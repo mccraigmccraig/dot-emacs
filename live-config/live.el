@@ -24,6 +24,7 @@
 (require 'smooth-scrolling)
 (require 'rainbow-delimiters)
 (require 'mwe-log-commands)
+(require 'ace-jump-mode)
 
 (load-live-config-file "key-chord-conf.el")
 (load-live-config-file "util-fns.el")
