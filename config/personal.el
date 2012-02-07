@@ -17,6 +17,7 @@
                ("dired" (mode . dired-mode))
 
                ))))
+(setq ibuffer-default-sorting-mode (quote filename/process))
 (add-hook 'ibuffer-mode-hook
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "default")))
