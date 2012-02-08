@@ -15,6 +15,10 @@
                          (filename . ".emacs.d")))
 
                ("dired" (mode . dired-mode))
+               ("SLIME" (or
+                         (name . "^\\*inferior-lisp\\*$")
+                         (name . "^\\*slime-events\\*$")
+                         (name . "^\\*slime-repl.*$")))
 
                ))))
 (setq ibuffer-default-sorting-mode (quote filename/process))
