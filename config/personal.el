@@ -18,9 +18,9 @@
                ("SLIME" (or
                          (name . "^\\*inferior-lisp\\*$")
                          (name . "^\\*slime-events\\*$")
-                         (name . "^\\*slime-repl.*$")))
-
-               ))))
+                         (name . "^\\*slime-repl.*$")
+                         (name . "^\\*SLIME Macroexpansion\\*")
+                         (name . "^\\*SLIME Compilation\\*")))))))
 (setq ibuffer-default-sorting-mode (quote filename/process))
 (add-hook 'ibuffer-mode-hook
           (lambda ()
