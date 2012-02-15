@@ -56,6 +56,7 @@
 (load-dotfile "config/util-fns.el")
 (load-dotfile "config/whitespace.el")
 (load-dotfile "config/built-in.el")
+(load-dotfile "config/server.el")
 (load-dotfile "config/bespoke.el")
 (load-dotfile "config/erc-growl.el")
 (load-dotfile "config/auto-modes.el")
