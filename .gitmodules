@@ -22,9 +22,6 @@
 [submodule "vendor/submodules/scratch-el"]
         path = vendor/submodules/scratch-el
         url = git://github.com/ieure/scratch-el.git
-[submodule "vendor/submodules/elein"]
-        path = vendor/submodules/elein
-        url = git://github.com/remvee/elein.git
 [submodule "vendor/submodules/smex"]
         path = vendor/submodules/smex
         url = git://github.com/nonsequitur/smex.git
@@ -50,5 +47,5 @@
         path = vendor/submodules/volatile-highlights
         url = git://github.com/k-talo/volatile-highlights.el.git
 [submodule "vendor/submodules/clojure-mode"]
-	path = vendor/submodules/clojure-mode
-	url = git://github.com/samaaron/clojure-mode.git
+        path = vendor/submodules/clojure-mode
+        url = git://github.com/samaaron/clojure-mode.git
