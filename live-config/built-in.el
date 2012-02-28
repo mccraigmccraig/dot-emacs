@@ -44,8 +44,7 @@
       uniquify-buffer-name-style 'forward
       ediff-window-setup-function 'ediff-setup-windows-plain
       xterm-mouse-mode t
-      save-place-file (concat dotfiles-tmp-dir "places")
-      fill-column 80)
+      save-place-file (concat dotfiles-tmp-dir "places"))
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
