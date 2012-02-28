@@ -83,6 +83,7 @@
 (global-set-key (kbd "C-c i 0") (lambda () (interactive) (insert "∅")))
 (global-set-key (kbd "C-c i u") (lambda () (interactive) (insert "∪")))
 (global-set-key (kbd "C-c i s") (lambda () (interactive) (insert "♯")))
+(global-set-key (kbd "C-c i p") (lambda () (interactive) (insert "£")))
 
 (global-set-key (kbd "C-c j p") 'quick-jump-go-back)
 (global-set-key (kbd "C-c j b") 'quick-jump-go-back)
@@ -150,8 +151,8 @@
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-;; Completion that uses many different methods to find options.
-(global-set-key (kbd "M-/") 'hippie-expand)
+
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
