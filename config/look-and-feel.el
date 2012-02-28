@@ -16,7 +16,7 @@
 
 
 ;; Line-wrapping
-(set-default 'fill-column 180)
+(set-default 'fill-column 70)
 
 (custom-set-variables
      '(term-default-bg-color "#000000")        ;; background color (black)
