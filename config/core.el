@@ -62,7 +62,6 @@
 (load-dotfile "config/auto-modes.el")
 (load-dotfile "config/custom-faces.el")
 (load-dotfile "config/look-and-feel.el")
-(load-dotfile "config/org-mode-conf.el")
 (load-dotfile "config/window-number-conf.el")
 (load-dotfile "config/markdown-conf.el")
 (load-dotfile "config/shell.el")
@@ -71,3 +70,4 @@
 (load-dotfile "config/erc-conf.el")
 (load-dotfile "config/actionscript-conf.el")
 (load-dotfile "config/bindings.el")
+(load-dotfile "config/org-mode-conf.el")
