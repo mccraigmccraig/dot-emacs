@@ -1,3 +1,8 @@
+(add-lib-path "ruby-mode")
+(require 'ruby-mode)
+(require 'inf-ruby)
+(require 'custom-ruby)
+
 (defun ruby-interpolate ()
   "In a double quoted string, interpolate."
   (interactive)
