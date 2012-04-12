@@ -50,5 +50,5 @@
         path = vendor/submodules/clojure-mode
         url = git://github.com/samaaron/clojure-mode.git
 [submodule "vendor/submodules/org-mode"]
-	path = vendor/submodules/org-mode
-	url = git://orgmode.org/org-mode.git
+        path = vendor/submodules/org-mode
+        url = git://orgmode.org/org-mode.git
