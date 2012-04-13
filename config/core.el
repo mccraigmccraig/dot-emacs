@@ -69,3 +69,4 @@
 (load-dotfile "config/actionscript-conf.el")
 (load-dotfile "config/bindings.el")
 (load-dotfile "config/org-mode-conf.el")
+(load-dotfile "config/deft-conf.el")

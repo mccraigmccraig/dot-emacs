@@ -61,3 +61,6 @@
 [submodule "vendor/submodules/fuzzy"]
 	path = vendor/submodules/fuzzy
 	url = git://github.com/m2ym/fuzzy-el.git
+[submodule "vendor/submodules/deft"]
+	path = vendor/submodules/deft
+	url = git://jblevins.org/git/deft.git
