@@ -55,3 +55,9 @@
 [submodule "vendor/submodules/refheap"]
 	path = vendor/submodules/refheap
 	url = git://github.com/Raynes/refheap.el.git
+[submodule "vendor/submodules/popup"]
+	path = vendor/submodules/popup
+	url = git://github.com/m2ym/popup-el.git
+[submodule "vendor/submodules/fuzzy"]
+	path = vendor/submodules/fuzzy
+	url = git://github.com/m2ym/fuzzy-el.git
