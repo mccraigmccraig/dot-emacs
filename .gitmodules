@@ -52,3 +52,6 @@
 [submodule "vendor/submodules/org-mode"]
         path = vendor/submodules/org-mode
         url = git://orgmode.org/org-mode.git
+[submodule "vendor/submodules/refheap"]
+	path = vendor/submodules/refheap
+	url = git://github.com/Raynes/refheap.el.git

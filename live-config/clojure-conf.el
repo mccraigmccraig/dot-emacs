@@ -47,3 +47,6 @@
     (transpose-words arg)))
 
 (define-key clojure-mode-map (kbd "M-t") 'transpose-words-with-hyphens)
+
+(setq auto-mode-alist (append '(("\\.cljs$" . clojure-mode))
+                              auto-mode-alist))
