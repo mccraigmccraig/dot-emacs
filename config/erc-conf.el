@@ -1,3 +1,4 @@
+(setq freenode-pass nil) ;; place a copy of this line in ~/.ercpass with correct password
 (load "~/.ercpass")
 (require 'erc-services)
 (erc-services-mode 1)
