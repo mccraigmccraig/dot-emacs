@@ -8,23 +8,12 @@
 (require 'buffer-move)
 (require 'quick-jump)
 (require 'multi-term)
+(require 'tramp)
+
 (setq multi-term-program "/bin/bash")
 
 (add-lib-path "scratch-el")
 (require 'scratch)
-
-(add-lib-path "tramp/lisp")
-(add-to-list 'Info-default-directory-list (concat dotfiles-lib-dir "tramp/info/"))
-(require 'tramp)
-
-(require 'backup-dir)
-(make-variable-buffer-local 'backup-inhibited)
-(setq bkup-backup-directory-info
-      `((t ,(concat dotfiles-tmp-dir "backups") ok-create full-path prepend-name)))
-(setq delete-old-versions t
-      kept-old-versions 1
-      kept-new-versions 3
-      version-control t)
 
 (add-lib-path "egg")
 (require 'egg)
