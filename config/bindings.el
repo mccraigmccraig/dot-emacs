@@ -41,6 +41,9 @@
 (global-set-key (kbd "C-c m n")     'eval-print-last-sexp)
 (global-set-key (kbd "C-c m r")     'eval-region)
 
+;;rspec-mode shortcuts
+(global-set-key (kbd "C-c , s") 'rspec-verify-single)
+
 ;;slime mode shortcuts
 (global-set-key (kbd "C-c s c")     'slime-connect)
 (global-set-key (kbd "C-c s e e")   'slime-eval-last-expression)

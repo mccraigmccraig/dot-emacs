@@ -30,8 +30,10 @@
 (setq warning-suppress-types '())
 (add-dotfile-path "elpa")
 (require 'package)
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 ;; Ensure the lib directory is on the load path
 (add-dotfile-path "lib")
@@ -56,6 +58,7 @@
  '(sclang-eval-line-forward nil)
  '(sclang-help-path (quote ("/Applications/SuperCollider/Help")))
  '(sclang-runtime-directory "~/.sclang/")
+ '(slime-net-coding-system (quote utf-8-unix))
  '(tab-width 2)
  '(term-default-bg-color "#000000")
  '(term-default-fg-color "#dddd00"))

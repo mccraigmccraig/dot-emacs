@@ -12,6 +12,9 @@
                          (name . "^\\*scratch\\*$")
                          (name . "^\\*Messages\\*$")
                          (name . "^\\*Completions\\*$")
+                         (name . "^\\*ack\\*$")
+                         (name . "^\\*Help\\*$")
+                         (name . "^\\*Apropos\\*$")
                          (filename . ".emacs.d")))
 
                ("dired" (mode . dired-mode))
@@ -19,12 +22,35 @@
                          (name . "^\\*inferior-lisp\\*$")
                          (name . "^\\*slime-events\\*$")
                          (name . "^\\*slime-repl.*$")
+                         (name . "^\\*sldb clojure/.*$")
                          (name . "^\\*SLIME Macroexpansion\\*")
                          (name . "^\\*SLIME Compilation\\*")))))))
 (setq ibuffer-default-sorting-mode (quote filename/process))
 (add-hook 'ibuffer-mode-hook
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "default")))
+
+;; erc
+
+(require 'erc-join)
+(erc-autojoin-mode 1)
+(setq erc-autojoin-channels-alist
+          '(("freenode.net" "#codeface" "#selectedgeeks")
+            ("irccloud.com" "#tramp0")))
+
+(defun erc-start ()
+  "connect to some servers"
+  (interactive)
+  (erc :server "irc.freenode.net"
+       :port 6667
+       :nick "mccraeg"
+       :password "c2p3m769"
+       :full-name "mccraegmccraeg of the clan mccraeg")
+  (erc :server "irc.irccloud.com"
+       :port 6667
+       :nick "mccraeg"
+       :password "c2p3m769"
+       :full-name "mccraegmccraeg of the clan mccraeg"))
 
 ;;projects
 (project-def "overtone"
@@ -118,11 +144,31 @@
                (shutdown-hook    nil)))
 
 (project-def "mdquery"
-             '((basedir          "/Users/mccraig/dev/mdquery")
+             '((basedir          "/Users/mccraig/dev/ruby/mdquery")
                (src-patterns     ("*.rb" "*.html" "*.css"))
                (ignore-patterns  ("*.log" "*#"))
                (file-list-cache  "/Users/mccraig/.emacs.d/tmp/mk-project-cache/mdquery-app-files")
                (open-files-cache "/Users/mccraig/.emacs.d/tmp/mk-project-cache/mdquery-app-open-files")
                (vcs              git)
                (ack-args         "")
+               (shutdown-hook    nil)))
+
+(project-def "sonar-server"
+             '((basedir          "/Users/mccraig/dev/sonar-server")
+               (src-patterns     ("*.rb" "*.html" "*.css"))
+               (ignore-patterns  ("*.log" "*#"))
+               (file-list-cache  "/Users/mccraig/.emacs.d/tmp/mk-project-cache/sonar-server-app-files")
+               (open-files-cache "/Users/mccraig/.emacs.d/tmp/mk-project-cache/sonar-server-app-open-files")
+               (vcs              git)
+               (ack-args         "")
+               (shutdown-hook    nil)))
+
+(project-def "incanterize"
+             '((basedir          "/Users/mccraig/dev/incanterize")
+               (src-patterns     ("*.clj"))
+               (ignore-patterns  ("*.log" "*#"))
+               (file-list-cache  "/Users/mccraig/.emacs.d/tmp/mk-project-cache/incanterize-files")
+               (open-files-cache "/Users/mccraig/.emacs.d/tmp/mk-project-cache/incanterize-open-files")
+               (vcs              git)
+               (ack-args         "--clojure")
                (shutdown-hook    nil)))
